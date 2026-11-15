@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "chests": {
+    "70115": {
+      "area": "Wishvale Trail",
+      "label": "Center-left Chest",
+      "contents": "Fire Soulstone x1",
+      "notes": "Near a squirrel. User observed 0 -> 999999999 and confirmed completion after save/reload. Reward 70115, list 10348 slot 1; item 130170, type 1001, box 1. Prototype suppression sets runtime quantity to zero.",
+      "mapping_status": "manually_verified"
+    },
+    "70117": {
+      "area": "Cerulean Caverns",
+      "label": "Southwest Cliff Chest",
+      "contents": "Buckler x1",
+      "notes": "Existing verified prototype AP location 10000001. Vanilla item 110000. Prototype suppression replaces the runtime reward with Small Shield 110001 quantity zero.",
+      "mapping_status": "manually_verified"
+    }
+  }
+}
