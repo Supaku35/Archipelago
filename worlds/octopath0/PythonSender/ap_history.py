@@ -19,24 +19,22 @@ def validate_history(packet):
     expect("ReceivedItems index", packet.get("index"), 0)
 
     items = packet.get("items")
-    if not isinstance(items, list) or len(items) != 1:
-        raise RuntimeError(
-            "Expected exactly one item in this prototype's full history."
-        )
-
-    raw = items[0]
-    if isinstance(raw, list) and len(raw) == 4:
-        item = dict(zip(FIELDS, raw))
-    elif isinstance(raw, dict):
-        item = {field: raw.get(field) for field in FIELDS}
-    else:
-        raise RuntimeError("Unrecognized NetworkItem representation.")
-
-    if any(type(value) is not int for value in item.values()):
-        raise RuntimeError("NetworkItem fields must be integers.")
-
-    expect("Small Shield history entry", item, EXPECTED_ITEM)
-    return item
+    if not isinstance(items, list) or len(items) > 1_000_000:
+        raise RuntimeError("Expected a full history of at most 1000000 items.")
+    history = []
+    for raw in items:
+        if isinstance(raw, list) and len(raw) == 4:
+            item = dict(zip(FIELDS, raw))
+        elif isinstance(raw, dict):
+            item = {field: raw.get(field) for field in FIELDS}
+        else:
+            raise RuntimeError("Unrecognized NetworkItem representation.")
+        if any(type(value) is not int for value in item.values()):
+            raise RuntimeError("NetworkItem fields must be integers.")
+        # Source metadata varies; the grant allowlist remains Small Shield only.
+        expect("Supported AP item", item["item"], EXPECTED_ITEM["item"])
+        history.append(item)
+    return history
 
 
 async def inspect_history(ws, checked):
@@ -70,17 +68,15 @@ async def inspect_history(ws, checked):
 
             # Enabling items and Sync may produce identical full snapshots.
             # Validate every snapshot in this frame, but report history once.
-            item = verified[0]
-            print("HISTORY VERIFIED: packet index=0, item count=1", flush=True)
-            print(
-                f"AP delivery index 0: item={item['item']} "
-                f"location={item['location']} "
-                f"source player={item['player']} flags={item['flags']}",
-                flush=True,
-            )
+            history = verified[0]
+            if any(snapshot != history for snapshot in verified[1:]):
+                raise RuntimeError("Conflicting full history snapshots; retry inspection.")
+            print(f"HISTORY VERIFIED: packet index=0, item count={len(history)}", flush=True)
+            for index, item in enumerate(history):
+                print(f"AP delivery index {index}: {item}", flush=True)
             print("Mapped game item: Small Shield, ID 110001, quantity 1.", flush=True)
-            print("Observed AP history length: 1. No delivery progress written.", flush=True)
-            return [dict(item)]
+            print(f"Observed AP history length: {len(history)}. No delivery progress written.", flush=True)
+            return history
 
 
 async def read_verified_history():
@@ -97,7 +93,7 @@ async def read_verified_history():
 
 
 def plan_pending(history, next_index):
-    # Retain this prototype's strict one-item history validation.
+    # Validate the entire snapshot before planning any delivery.
     validate_history({"index": 0, "items": history})
     if type(next_index) is not int or not 0 <= next_index <= len(history):
         raise RuntimeError(
@@ -105,3 +101,4 @@ def plan_pending(history, next_index):
             "Nothing reset or advanced."
         )
     return list(enumerate(history[next_index:], start=next_index))
+
