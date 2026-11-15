@@ -1,0 +1,7 @@
+name: OT0Prototype
+game: Octopath Traveler 0
+description: One-chest generation test
+
+Octopath Traveler 0:
+  progression_balancing: 0
+  accessibility: items
