@@ -1,0 +1,4 @@
+[submodule "OctopathArchipelago"]
+	path = OctopathArchipelago
+	url = https://github.com/Supaku35/OctopathArchipelago
+	branch = main
