@@ -1,19 +1,346 @@
 {
   "schema_version": 1,
   "chests": {
+    "1001": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow Laboratory Entrance",
+      "label": "Hidden Stairs",
+      "colour": "Brown",
+      "contents": "Olive of Life x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1002": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow Laboratory Entrance",
+      "label": "Miniboss",
+      "colour": "Red",
+      "contents": "Linen Robe x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1003": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow Laboratory Entrance",
+      "label": "Light Beams Slope",
+      "colour": "Brown",
+      "contents": "Wind Soulstone (S) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1040": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Snowbloom Ruins",
+      "label": "North of Save",
+      "colour": "Brown",
+      "contents": "Invigorating Nut (S) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1041": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Snowbloom Ruins",
+      "label": "Frozen Stream",
+      "colour": "Brown",
+      "contents": "Ice Soulstone (S) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1042": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Snowbloom Ruins",
+      "label": "Northeast Behind Snow Pile",
+      "colour": "Red",
+      "contents": "Round Shield x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1060": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow Slopes",
+      "label": "West of Entrance",
+      "colour": "Brown",
+      "contents": "Herb of Healing x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1061": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow Slopes",
+      "label": "Miniboss",
+      "colour": "Red",
+      "contents": "Swirling Arc Mastery x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1062": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow Slopes",
+      "label": "North Bridge, Right Path",
+      "colour": "Brown",
+      "contents": "Critical Nut (S) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1070": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Snowshard Grotto",
+      "label": "Southwest Ledge",
+      "colour": "Brown",
+      "contents": "Inspiriting Plum x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1071": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Snowshard Grotto",
+      "label": "Miniboss",
+      "colour": "Red",
+      "contents": "Giant Bow x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1072": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Snowshard Grotto",
+      "label": "Far East",
+      "colour": "Brown",
+      "contents": "Herb of Vitality x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1080": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow Wilds",
+      "label": "East of Save",
+      "colour": "Brown",
+      "contents": "Inspiriting Plum x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1081": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow Wilds",
+      "label": "Northeast of Save",
+      "colour": "Brown",
+      "contents": "340 Leaves (Currency)",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1090": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "West Emberglow Wilds",
+      "label": "Southeast of Save",
+      "colour": "Brown",
+      "contents": "Ice Soulstone (S) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1092": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "West Emberglow Wilds",
+      "label": "West",
+      "colour": "Brown",
+      "contents": "Protective Earring x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1101": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow",
+      "label": "Inside Small Eastern House",
+      "colour": "Brown",
+      "contents": "Invigorating Nut (S) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "1102": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Emberglow East District",
+      "label": "Western House",
+      "colour": "Brown",
+      "contents": "Healing Grape x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9034": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace",
+      "label": "Behind Eastern House",
+      "colour": "Brown",
+      "contents": "Light Nut (M) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9035": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace",
+      "label": "Inn Upstairs",
+      "colour": "Brown",
+      "contents": "Light Soulstone (M) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9037": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace",
+      "label": "Inside Eastern House",
+      "colour": "Brown",
+      "contents": "Bottle of Blinding Dust x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9038": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace Cathedral: Entrance",
+      "label": "Right Statue",
+      "colour": "Red",
+      "contents": "Energizing Pomegranate (L) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9039": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace Cathedral",
+      "label": "2nd Lodging Area",
+      "colour": "Brown",
+      "contents": "Olive of Life (M) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9040": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace Cathedral",
+      "label": "Behind Left Fence",
+      "colour": "Red",
+      "contents": "Virtuous Light Mastery x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9041": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace Cathedral",
+      "label": "Between Right-side Pillars",
+      "colour": "Brown",
+      "contents": "Healing Grape Bunch (x1)",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9043": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace Wilds",
+      "label": "East of North Entrance",
+      "colour": "Brown",
+      "contents": "Resistant Nut (M) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9044": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace Wilds",
+      "label": "West Boardwalk",
+      "colour": "Red",
+      "contents": "Tattered Sacred Shield x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9045": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace Wilds",
+      "label": "Ice Lake Southwest",
+      "colour": "Brown",
+      "contents": "Ice Soulstone (M) x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "9046": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Flamesgrace Wilds",
+      "label": "Southeast Clearing",
+      "colour": "Red",
+      "contents": "Unerring Cuffs x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
     "70115": {
       "area": "Wishvale Trail",
-      "label": "Center-left Chest",
-      "contents": "Fire Soulstone x1",
+      "label": "West near Squirrel",
+      "contents": "Fire Soulstone (S) x1",
       "notes": "Near a squirrel. User observed 0 -> 999999999 and confirmed completion after save/reload. Reward 70115, list 10348 slot 1; item 130170, type 1001, box 1. Prototype suppression sets runtime quantity to zero.",
-      "mapping_status": "manually_verified"
+      "mapping_status": "manually_verified",
+      "previous_labels": [
+        "Center-left Chest"
+      ],
+      "colour": "Brown",
+      "observation_source": "User's first chest cataloging test (reported table)"
     },
     "70117": {
       "area": "Cerulean Caverns",
-      "label": "Southwest Cliff Chest",
+      "label": "Southwest Ledge",
       "contents": "Buckler x1",
       "notes": "Existing verified prototype AP location 10000001. Vanilla item 110000. Prototype suppression replaces the runtime reward with Small Shield 110001 quantity zero.",
-      "mapping_status": "manually_verified"
+      "mapping_status": "manually_verified",
+      "previous_labels": [
+        "Southwest Cliff Chest"
+      ],
+      "colour": "Red",
+      "observation_source": "User's first chest cataloging test (reported table)"
+    },
+    "70328": {
+      "notes": "",
+      "mapping_status": "user_reported",
+      "area": "Wishvale Trail",
+      "label": "Nomos’ Cabin",
+      "colour": "Brown",
+      "contents": "Eerie Statue x1",
+      "observation_source": "User's first chest cataloging test (reported table)"
     }
-  }
+  },
+  "unidentified_chests": [
+    {
+      "area": "Snowshard Grotto",
+      "label": "Northeast",
+      "colour": "Blue",
+      "contents": "Unknown",
+      "observation_source": "User's first chest cataloging test (reported table)",
+      "treasure_id": null,
+      "mapping_status": "unidentified"
+    },
+    {
+      "area": "Emberglow Wilds",
+      "label": "South of Save",
+      "colour": "Blue",
+      "contents": "Unknown",
+      "observation_source": "User's first chest cataloging test (reported table)",
+      "treasure_id": null,
+      "mapping_status": "unidentified"
+    },
+    {
+      "area": "Emberglow",
+      "label": "Inn Upstairs",
+      "colour": "Blue",
+      "contents": "Unknown",
+      "observation_source": "User's first chest cataloging test (reported table)",
+      "treasure_id": null,
+      "mapping_status": "unidentified"
+    },
+    {
+      "area": "Flamesgrace Wilds",
+      "label": "North of Save",
+      "colour": "Blue",
+      "contents": "Unknown",
+      "observation_source": "User's first chest cataloging test (reported table)",
+      "treasure_id": null,
+      "mapping_status": "unidentified"
+    },
+    {
+      "area": "Flamesgrace Cathedral",
+      "label": "4th Lodging Area",
+      "colour": "Blue",
+      "contents": "Unknown",
+      "observation_source": "User's first chest cataloging test (reported table)",
+      "treasure_id": null,
+      "mapping_status": "unidentified"
+    }
+  ]
 }
