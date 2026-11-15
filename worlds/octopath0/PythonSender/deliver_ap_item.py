@@ -30,7 +30,9 @@ def main(argv=None, *, run_state=None):
     pending = plan_pending(history, binding["next_index"])
 
     if args.replay_index_zero:
-        expect("Duplicate-test starting progress", binding["next_index"], 1)
+        if binding["next_index"] < 1:
+            raise RuntimeError("Duplicate test requires live progress of at least 1.")
+        pending = [(0, history[0])]
         print("DUPLICATE TEST: replaying index 0; no grant should occur.")
     elif not pending:
         print("Already caught up. No delivery request published.")
@@ -42,32 +44,30 @@ def main(argv=None, *, run_state=None):
         raise RuntimeError("LOCALAPPDATA is unavailable.")
     folder = Path(root) / "OctopathArchipelagoBridge"
 
-    request_id = uuid.uuid4().hex
-    item = history[0]
-    payload = (
-        f"OT0AP_LIVE_V1\n{request_id}\n{binding['token']}\n"
-        f"{SEED}\n0\n1\n0\n{item['item']}\nEND\n"
-    )
-    # Mark before publication: an exception may occur after the inbox changed.
-    run_state["delivery_attempted"] = True
-    publish(folder / "inbox.txt", payload)
+    for index, item in pending:
+        request_id = uuid.uuid4().hex
+        payload = (
+            f"OT0AP_LIVE_V1\n{request_id}\n{binding['token']}\n"
+            f"{SEED}\n0\n1\n{index}\n{item['item']}\nEND\n"
+        )
+        # An earlier processed response does not confirm this new request.
+        run_state["processed"] = False
+        run_state["delivery_attempted"] = True
+        publish(folder / "inbox.txt", payload)
+        print(f"Published live index {index}; request {request_id}", flush=True)
+        print("Import and guarded application are automatic. Ctrl+F3 disarms and cancels a staged request.", flush=True)
+        next_index, _ = wait_for_bridge_response(
+            folder, request_id, "processed", args.timeout,
+            expected_save=binding["save_name"],
+        )
+        expected = binding["next_index"] if args.replay_index_zero else index + 1
+        expect("Processed live progress", next_index, expected)
+        run_state["processed"] = True
+        run_state["confirmed_next_index"] = next_index
+        print(f"Live index {index} accounted for in memory; next index={next_index}.")
 
-    print(f"Published live index 0; request {request_id}", flush=True)
-    print(
-        "Import and guarded application are automatic. "
-        "Ctrl+F3 cancels a staged delivery.",
-        flush=True,
-    )
-
-    next_index, _ = wait_for_bridge_response(
-        folder, request_id, "processed", args.timeout,
-        expected_save=binding["save_name"],
-    )
-    expect("Processed live progress", next_index, 1)
-    run_state["processed"] = True
-
-    print("Live index 0 accounted for in memory; authorization cleared.")
-    print("Save normally to persist. No checks or goal submitted.")
+    print("Snapshot caught up or duplicate test finished. Save normally to persist.")
+    print("Press Ctrl+F3 to clear this run's authorization. No checks or goal submitted.")
 
 
 def run_cli(argv=None):
@@ -77,6 +77,8 @@ def run_cli(argv=None):
     except BridgeCancelled:
         print("Live delivery cancelled: the bridge discarded this staged request.")
         print("No grant or progress change for the cancelled request. No automatic retry.")
+        if "confirmed_next_index" in state:
+            print(f"Earlier deliveries were confirmed through next index {state['confirmed_next_index']} in memory.")
         return 1
     except KeyboardInterrupt:
         print("Stopped by user.")
@@ -91,7 +93,8 @@ def run_cli(argv=None):
 
 def print_delivery_stop_guidance(state):
     if state["processed"]:
-        print("A processed response was verified: live progress is 1 in memory.")
+        print(f"A processed response was verified: live progress is {state.get('confirmed_next_index', 'unknown')} in memory.")
+        print("Press Ctrl+F3 to clear this run's authorization.")
         print("Inspect the result before retrying; normal saving persists it.")
     elif state["delivery_attempted"]:
         print(
@@ -106,3 +109,4 @@ def print_delivery_stop_guidance(state):
 
 if __name__ == "__main__":
     raise SystemExit(run_cli())
+

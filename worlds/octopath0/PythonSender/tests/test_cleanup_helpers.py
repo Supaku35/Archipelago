@@ -40,15 +40,13 @@ class HistoryTests(unittest.TestCase):
             with self.subTest(item=item):
                 self.assertEqual(
                     ap_history.validate_history({"index": 0, "items": [item]}),
-                    self.item,
+                    [self.item],
                 )
 
     def test_rejects_wrong_index_size_types_and_mapping(self):
         packets = [
             {"index": 1, "items": [self.item]},
             {"index": False, "items": [self.item]},
-            {"index": 0, "items": []},
-            {"index": 0, "items": [self.item, self.item]},
             {"index": 0, "items": [{**self.item, "player": True}]},
             {"index": 0, "items": [{**self.item, "item": 999}]},
             {"index": 0, "items": [{**self.item, "flags": 1.0}]},
@@ -212,3 +210,4 @@ class ConnectionAndImportTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
