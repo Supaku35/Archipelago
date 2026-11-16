@@ -1,0 +1,3343 @@
+{
+  "schema_version": 1,
+  "archive": "OT0-Chest-Scans(1).zip",
+  "archive_sha256": "2665e17ac532b31969f52578b471629cb931f69f033cd67f6277068edc5ca9c8",
+  "report_source": {
+    "file": "Pasted markdown.md",
+    "sha256": "b9d3a7d26d5cb25f8e2cdd4df564aa90fc9b5a8223ba0b76038c06a88a8a90a0",
+    "repository_path": "worlds/octopath0/data/chest_surveys/starting_area_20261116.md"
+  },
+  "summary": {
+    "reported_rows": 232,
+    "known_chest_ids": 183,
+    "initially_accessible_reported": 178,
+    "blue_chests": 33,
+    "blue_known_ids": 5,
+    "unfinished_placeholders": 21,
+    "captures": 367,
+    "imported_captures": 365,
+    "quarantined_captures": 2,
+    "observed_ids": 327,
+    "unclassified_ids": 144,
+    "known_with_opening_transition": 177,
+    "known_without_opening_transition": [
+      1073,
+      1082,
+      1100,
+      9042,
+      9048,
+      70115
+    ],
+    "baseline_mismatches": [],
+    "observed_ticks": {
+      "0": 23283,
+      "999999999": 39826
+    }
+  },
+  "quarantine_policy": "Exclude entire scans whose reward_status is unavailable; preserve their hashes and errors only in this audit.",
+  "captures": [
+    {
+      "file": "chest-scan-1794781399-000001.tsv",
+      "sha256": "4a33b24ac38b0372022c88eafc5cb470a6c2eceefa815cc875cc5ea8996f6ca6",
+      "captured_at": 1794781399,
+      "mode": "baseline",
+      "records": 11,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794781438-000002.tsv",
+      "sha256": "1acf41765a2b555b9940856bbda5229067a91790273cd93a81bb67b4643d7ca3",
+      "captured_at": 1794781438,
+      "mode": "comparison",
+      "records": 11,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794781754-000003.tsv",
+      "sha256": "a074f27807dc99e45101f95396cb15cb69e1bf96062d70ea9c37ab1609f0a7ef",
+      "captured_at": 1794781754,
+      "mode": "baseline",
+      "records": 11,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794781767-000004.tsv",
+      "sha256": "b5df0e0bb3a13fb855543bc964707d9a76f36c6744f9c59ab2efc9fc9d333d86",
+      "captured_at": 1794781767,
+      "mode": "comparison",
+      "records": 11,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794781994-000005.tsv",
+      "sha256": "890e617d4faefdea0088991948ad362a28b0ebc7324dd54495d08acaa259c56e",
+      "captured_at": 1794781994,
+      "mode": "baseline",
+      "records": 16,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794781997-000006.tsv",
+      "sha256": "8d72dd3974e7aafc7263d75bbf098f316059c5a28c84a7000dcabaa552daf34d",
+      "captured_at": 1794781997,
+      "mode": "comparison",
+      "records": 16,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782093-000007.tsv",
+      "sha256": "bedea3e5f00ca86e0c90c4421f526c3f27bc2b4189e32e15bbd36767874d08c1",
+      "captured_at": 1794782093,
+      "mode": "baseline",
+      "records": 24,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782095-000008.tsv",
+      "sha256": "ad7c050dc9b44071a9a5cc64e206336f0e324b19749ab8107ce851026f00e1d9",
+      "captured_at": 1794782095,
+      "mode": "comparison",
+      "records": 24,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782281-000009.tsv",
+      "sha256": "0828b2006a4a3c9d03f37f1683459a6f54f2c649596c30cc5e467b39827ea81d",
+      "captured_at": 1794782281,
+      "mode": "baseline",
+      "records": 29,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782284-000010.tsv",
+      "sha256": "d8ec3d7df7b82cb55132ccdc1776c4e86b46347e08c2a6d5d1aa918e36ed98b3",
+      "captured_at": 1794782284,
+      "mode": "comparison",
+      "records": 29,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782330-000011.tsv",
+      "sha256": "02ed52a0aea887dc25b0504f66c15098b48aac244c14732e1e7df77780074e20",
+      "captured_at": 1794782330,
+      "mode": "baseline",
+      "records": 29,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782333-000012.tsv",
+      "sha256": "d2e78422b47b96c8bee6e05f22e3687ff4325754b90e75180273c59de2474194",
+      "captured_at": 1794782333,
+      "mode": "comparison",
+      "records": 29,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782371-000013.tsv",
+      "sha256": "6c74dc2a7e56e29e01c397099237d217543e4739afd4cd993e8f14faa088845d",
+      "captured_at": 1794782371,
+      "mode": "baseline",
+      "records": 29,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782373-000014.tsv",
+      "sha256": "ba046453e8f396a72360af9c3b800a46badc53bee00cb013693422d5381686e9",
+      "captured_at": 1794782373,
+      "mode": "comparison",
+      "records": 29,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794782426-000015.tsv",
+      "sha256": "76dd30b36ee0dbf17f77960a70d3382070619d95195246c2a8da56559e6ca52b",
+      "captured_at": 1794782426,
+      "mode": "comparison",
+      "records": 29,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783034-000016.tsv",
+      "sha256": "625fb889ebe76862281b95d9c14b75f78cec41270566f9917eaba0bc635de060",
+      "captured_at": 1794783034,
+      "mode": "baseline",
+      "records": 35,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783042-000017.tsv",
+      "sha256": "7038e103844c5f97b8d576ea2db459ed15410fed8cd51ecad30d11e82c4c4718",
+      "captured_at": 1794783042,
+      "mode": "comparison",
+      "records": 35,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783117-000018.tsv",
+      "sha256": "e74e0819c3bc23ad86f2bf0491d861e7bf23f9d5155d3be5fbb924c138354c92",
+      "captured_at": 1794783117,
+      "mode": "baseline",
+      "records": 35,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783123-000019.tsv",
+      "sha256": "2073f41b7c6b504d7c00ccaacb200181e82a2c0a398e5b2729a7ff8521c4042e",
+      "captured_at": 1794783123,
+      "mode": "comparison",
+      "records": 35,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783149-000020.tsv",
+      "sha256": "92585296165ac3f0af64e0099eff09ed6cc85f7eae0a0eaa4f961920c2e540ef",
+      "captured_at": 1794783149,
+      "mode": "baseline",
+      "records": 35,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783153-000021.tsv",
+      "sha256": "db96106f58a2b2256a9419c65de0a1f13ea14432110d80059af35e3f37b4edd1",
+      "captured_at": 1794783153,
+      "mode": "comparison",
+      "records": 35,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783258-000022.tsv",
+      "sha256": "3ae251438248f4ec59330ca63d5a54d3ed952e13576a60a5631707c036db2d6a",
+      "captured_at": 1794783258,
+      "mode": "baseline",
+      "records": 38,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783261-000023.tsv",
+      "sha256": "85fad5b6b743f3fa2eeaf1bc9d979e33b8adc7936b7e404e8a9915c999a273f0",
+      "captured_at": 1794783261,
+      "mode": "comparison",
+      "records": 38,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783347-000024.tsv",
+      "sha256": "ba20d30245654377966f72cbc0cf7014a149e89fa1bab19c7e8cc1900649033f",
+      "captured_at": 1794783347,
+      "mode": "baseline",
+      "records": 41,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783349-000025.tsv",
+      "sha256": "844b5a2d7bf5880b18fbb601f275309a19b55bc11f3bbdc5cd666e2055a1fcaa",
+      "captured_at": 1794783349,
+      "mode": "comparison",
+      "records": 41,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783419-000026.tsv",
+      "sha256": "8c6b9c1199711eade13044f2b1b70873f3ddb645451b420e0365957284c825fe",
+      "captured_at": 1794783419,
+      "mode": "baseline",
+      "records": 41,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783422-000027.tsv",
+      "sha256": "5dd87ce74f3c81474a21a1b9221ab3f7077c068b18e9627f3cd8360a958c2ead",
+      "captured_at": 1794783422,
+      "mode": "comparison",
+      "records": 41,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783593-000028.tsv",
+      "sha256": "b2e8a98e80dd54f703724484f6ecea6b7cdd251f97e998972b1e9b810b9efb0d",
+      "captured_at": 1794783593,
+      "mode": "baseline",
+      "records": 43,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783596-000029.tsv",
+      "sha256": "6ba162e05ff0a166e3d5788c47fc6c7092e52bb091d0413d45d6e61f517c70d2",
+      "captured_at": 1794783596,
+      "mode": "comparison",
+      "records": 43,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783650-000030.tsv",
+      "sha256": "6c28e5d26b10c1c05acafad4ac485569bab5a17fbfcf30a61a1582d0276c791c",
+      "captured_at": 1794783650,
+      "mode": "baseline",
+      "records": 45,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783653-000031.tsv",
+      "sha256": "bcb01481bfd4cf33d704c0efff2e210be03e1102add2942aac34101beb15bda3",
+      "captured_at": 1794783653,
+      "mode": "comparison",
+      "records": 45,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783766-000032.tsv",
+      "sha256": "f5901082df295995edf3d8ba68bf1c8efbc6ae3d817b9bbe433efbae5c74356b",
+      "captured_at": 1794783766,
+      "mode": "baseline",
+      "records": 48,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783768-000033.tsv",
+      "sha256": "2ebfd5dc5c4efcbc32d642e49fa38a7258942570a12afd0c9187142a6253cb62",
+      "captured_at": 1794783768,
+      "mode": "comparison",
+      "records": 48,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783823-000034.tsv",
+      "sha256": "0ed8a2b9df5b2e042a8b5191e6cd3883ebdeb7c56ffa2bfe27cb1d0194e4c642",
+      "captured_at": 1794783823,
+      "mode": "baseline",
+      "records": 48,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783825-000035.tsv",
+      "sha256": "a3939c12d43b78c9cae609cfd124415d0e6d45a59fa10cdddd2ff22d0c2ced16",
+      "captured_at": 1794783825,
+      "mode": "comparison",
+      "records": 48,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783862-000036.tsv",
+      "sha256": "40ca2e3a9dbb90f117b41aa5f55ba4636233eb7dae11e8d8d10ed714653a33b3",
+      "captured_at": 1794783862,
+      "mode": "baseline",
+      "records": 48,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794783864-000037.tsv",
+      "sha256": "21c778cfeaded2c9948c3261d1bc159a7c1c35a5fad359ca02981101eead866e",
+      "captured_at": 1794783864,
+      "mode": "comparison",
+      "records": 48,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784065-000038.tsv",
+      "sha256": "b4a21e9933672ca8f597a57d23099722bb6cd856faa87e071d9606709e39be67",
+      "captured_at": 1794784065,
+      "mode": "baseline",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784067-000039.tsv",
+      "sha256": "afb0d03cbdc8cd85fd6ea488d4a31aa655387845b99f25cf7c151295e52a95b0",
+      "captured_at": 1794784067,
+      "mode": "comparison",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784103-000040.tsv",
+      "sha256": "5ad33b74d0a2b866bb8b3779f0ffe65d043ff5112f60a1fd29dc237d0f4b705a",
+      "captured_at": 1794784103,
+      "mode": "baseline",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784114-000041.tsv",
+      "sha256": "100428d1c185435a01064a373628c1f3ebaf85c2757dc98cd3d9adb6901f8105",
+      "captured_at": 1794784114,
+      "mode": "comparison",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784160-000042.tsv",
+      "sha256": "12842aed939c53fbfca7d8d7540a978a3f9c9e158f33b815708e2a1dbc7745c8",
+      "captured_at": 1794784160,
+      "mode": "baseline",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784162-000043.tsv",
+      "sha256": "dc9aa72f60e3a598a543710b9acb36b7f9054287575a6d1dc0e77009eaff09aa",
+      "captured_at": 1794784162,
+      "mode": "comparison",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784221-000044.tsv",
+      "sha256": "6bd3d1be2d94c191fa9f12366a3aeb7817c9d704f33cec1aa310805aedb4f21d",
+      "captured_at": 1794784221,
+      "mode": "baseline",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784234-000045.tsv",
+      "sha256": "f46d8631376ddd4eb3613a3940b3a4467e264344144f70a278f711c15546ec74",
+      "captured_at": 1794784234,
+      "mode": "comparison",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784264-000046.tsv",
+      "sha256": "e56830b62b9d8905d480d656db4c7e1c4d57fab1b2d1d524f69b2dc84fbb79c8",
+      "captured_at": 1794784264,
+      "mode": "baseline",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784275-000047.tsv",
+      "sha256": "80358d8b45def47874f89f244980aae0f9968f7f50d94cadd5c12a713f358d89",
+      "captured_at": 1794784275,
+      "mode": "comparison",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784307-000048.tsv",
+      "sha256": "c732e31706faaf4b22931836993fdd33c06bf5feb2d2c2043441ab7338afc7e2",
+      "captured_at": 1794784307,
+      "mode": "baseline",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784310-000049.tsv",
+      "sha256": "5964f90c1e5b2b29afa430a122fcaa4f20536c0ce2186195fe8c8018d432a0c7",
+      "captured_at": 1794784310,
+      "mode": "comparison",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784373-000050.tsv",
+      "sha256": "7139d2a20cdbaeb7564c28c8bd5a3a126fc840a9997030015a0f839a6a433c3c",
+      "captured_at": 1794784373,
+      "mode": "baseline",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784383-000051.tsv",
+      "sha256": "f85897023eee9c57cefab0a1c51cdc56621b535edbe6d86f7f6428a1211100ba",
+      "captured_at": 1794784383,
+      "mode": "comparison",
+      "records": 51,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784445-000052.tsv",
+      "sha256": "e881f2de1c06bc83c1a11e34a03433f61812b39c461fd8b33e11bf88a23ebd12",
+      "captured_at": 1794784445,
+      "mode": "baseline",
+      "records": 54,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784448-000053.tsv",
+      "sha256": "80cca03290bea39873fa70ebae7a91afd0af524eaa9cd81d7dc982da0f24304c",
+      "captured_at": 1794784448,
+      "mode": "comparison",
+      "records": 54,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784516-000054.tsv",
+      "sha256": "2fe205d238402498907597f7611dab4d10adf89fbdc8aa93e40b4a0a00a5b764",
+      "captured_at": 1794784516,
+      "mode": "baseline",
+      "records": 54,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784518-000055.tsv",
+      "sha256": "58a12a33136d254d9b9030d1f9c2d8bc18aeeefcf4acf8c0749f5483598f0d93",
+      "captured_at": 1794784518,
+      "mode": "comparison",
+      "records": 54,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784566-000056.tsv",
+      "sha256": "25d8200e4acf379ccb9777b299724897052f3ca720b9a7280b1523e7b8b0591a",
+      "captured_at": 1794784566,
+      "mode": "baseline",
+      "records": 54,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784569-000057.tsv",
+      "sha256": "9a06373c86469ddbcf28b5ac798f73159d442d13e52e800fa540e76045a336b4",
+      "captured_at": 1794784569,
+      "mode": "comparison",
+      "records": 54,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784643-000058.tsv",
+      "sha256": "a291f9983bec63b448d30e2941c53b46ceffcbdb85217048c918da7a631ce024",
+      "captured_at": 1794784643,
+      "mode": "baseline",
+      "records": 56,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784658-000059.tsv",
+      "sha256": "84855687e25bea0f5a3b339d581d284f5d70049140b0fcf4e8e158bb31b5c12a",
+      "captured_at": 1794784658,
+      "mode": "comparison",
+      "records": 56,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784730-000060.tsv",
+      "sha256": "e6a08d2b4a378ec06f0db5d195b709baaeeedad7bb888f1f086895f0fbd60e8a",
+      "captured_at": 1794784730,
+      "mode": "baseline",
+      "records": 60,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784733-000061.tsv",
+      "sha256": "3a4cecf882a08d566b923cc61f1518deace8589d5e3e686f793695a2dfaca57f",
+      "captured_at": 1794784733,
+      "mode": "comparison",
+      "records": 60,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784769-000062.tsv",
+      "sha256": "33ce724ea056866b54ff9000008b4e88732fe6ea1d8461c93566f61e3d964b14",
+      "captured_at": 1794784769,
+      "mode": "baseline",
+      "records": 60,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784783-000063.tsv",
+      "sha256": "5fc2001380e233544c266419ff00d9ba38d1e73258b26565e19b958d4c1d0bd6",
+      "captured_at": 1794784783,
+      "mode": "comparison",
+      "records": 60,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784839-000064.tsv",
+      "sha256": "2f04e368061c035d59ff16137c30d637af0ae824e7913c8849976c3e7f678248",
+      "captured_at": 1794784839,
+      "mode": "baseline",
+      "records": 60,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794784842-000065.tsv",
+      "sha256": "905943451f386d88e77131d54beef4d6ac620aca33a67b8b138cf8466f4c8004",
+      "captured_at": 1794784842,
+      "mode": "comparison",
+      "records": 60,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794798806-000001.tsv",
+      "sha256": "92e47173b2362a77eb1db6f52e311131eb882b0f45d785ed32957d35d8d77804",
+      "captured_at": 1794798806,
+      "mode": "baseline",
+      "records": 67,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794798811-000002.tsv",
+      "sha256": "b6a88dfc2edfd9f47d94b92f94bbc844e9eff3e29ec136e1e78ed23f486ea85c",
+      "captured_at": 1794798811,
+      "mode": "comparison",
+      "records": 67,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794799780-000001.tsv",
+      "sha256": "a69629c12d10f2398f7764851873d9c7801016f2230ec155283cdee5f191269b",
+      "captured_at": 1794799780,
+      "mode": "baseline",
+      "records": 67,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794799783-000002.tsv",
+      "sha256": "48687ad1a10e3f1039ce2243d70c646b0a8e46b300226a73d4c799e44f1a9f14",
+      "captured_at": 1794799783,
+      "mode": "comparison",
+      "records": 67,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794799817-000003.tsv",
+      "sha256": "74e49f40d9fc8ee88b9c23148b685f9cb3b11c36efe3263ad6d6e1ca1f6f8e1a",
+      "captured_at": 1794799817,
+      "mode": "baseline",
+      "records": 67,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794799830-000004.tsv",
+      "sha256": "a7390fb96396b9e2c1e33422f39d64ea65c89bb5c96dd2b0e1e7db605774518a",
+      "captured_at": 1794799830,
+      "mode": "comparison",
+      "records": 67,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794799914-000005.tsv",
+      "sha256": "8d22277678f9280bd4feca4305de75253601ff5ee3487332a0e38296be1b3913",
+      "captured_at": 1794799914,
+      "mode": "baseline",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794799917-000006.tsv",
+      "sha256": "5763507a404d461bc9110ecc319477e6c52158e19e8cff7a24d9ead0d1beb1f9",
+      "captured_at": 1794799917,
+      "mode": "comparison",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794799967-000007.tsv",
+      "sha256": "51d2cd9dc2859a372c12e099f74f964722e4ac479a086c9eab514ca6eaf8756e",
+      "captured_at": 1794799967,
+      "mode": "baseline",
+      "records": 74,
+      "reward_status": "unavailable: ...s/OctopathArchipelago/Scripts/OT0AP_ChestCatalogScan.lua:46: attempt to index a function value (field 'm_ItemNum')",
+      "disposition": "quarantined"
+    },
+    {
+      "file": "chest-scan-1794799971-000008.tsv",
+      "sha256": "14b254d13e6fc65124fa92b73edc943790599f22c5ee94b6e9584e6484711a30",
+      "captured_at": 1794799971,
+      "mode": "comparison",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794800223-000009.tsv",
+      "sha256": "26ad9835fccc79d41ea5ee625de8288c7dea63b4444502c9c9b576d2390affb3",
+      "captured_at": 1794800223,
+      "mode": "comparison",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794800229-000010.tsv",
+      "sha256": "2645300f929ba0a8f01698293d331158ec192755a1ab35707fe5436dbdebc597",
+      "captured_at": 1794800229,
+      "mode": "baseline",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794800239-000011.tsv",
+      "sha256": "b454512fc58dea6cf9bc8c038c1c47e06dff9b50df54dfb70f39aceeadf2da95",
+      "captured_at": 1794800239,
+      "mode": "comparison",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794800294-000012.tsv",
+      "sha256": "97f84cbae577387d0d1564f91cf6b22f77910e5a2561c7667a1f51636d99ce01",
+      "captured_at": 1794800294,
+      "mode": "baseline",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794800297-000013.tsv",
+      "sha256": "a58d74e805fccb1ea2e36790ceb41f1beb8c3bb78e842c9a3c18b62504093e22",
+      "captured_at": 1794800297,
+      "mode": "comparison",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794800385-000014.tsv",
+      "sha256": "22a3461e2fd96870ae8de63fd0eed28257fa84ea9844f55d41593b5d512043b4",
+      "captured_at": 1794800385,
+      "mode": "baseline",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794800388-000015.tsv",
+      "sha256": "39718475fe9d16a030a82252f042a1b27f85dbf7615b06b57816b02db12b5a11",
+      "captured_at": 1794800388,
+      "mode": "comparison",
+      "records": 74,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794833358-000001.tsv",
+      "sha256": "3ab789df8b868645365709dcc7b0cadf1fd02dc1dafafb9180d8f0ee9c5af0c8",
+      "captured_at": 1794833358,
+      "mode": "baseline",
+      "records": 81,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794833361-000002.tsv",
+      "sha256": "2cf2fd35049df8246db40169b6e13fd79727011e5ad3c7e314031d11f1a255c0",
+      "captured_at": 1794833361,
+      "mode": "comparison",
+      "records": 81,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794833409-000003.tsv",
+      "sha256": "f851fe6214feb15e0f15e7965613de7b37b3f5df6ef10c00c2cae91b05e82b66",
+      "captured_at": 1794833409,
+      "mode": "baseline",
+      "records": 81,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794833412-000004.tsv",
+      "sha256": "14b6c8a6e8645e14ba343a9d53cf7a9e7a104683eec1661a679e6fba67f13ed8",
+      "captured_at": 1794833412,
+      "mode": "comparison",
+      "records": 81,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794833501-000005.tsv",
+      "sha256": "a2f03aed92eeca031a2e6ab0da2ce067357a6fd480b136d2d7c1a4e33dc127af",
+      "captured_at": 1794833501,
+      "mode": "baseline",
+      "records": 85,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794833503-000006.tsv",
+      "sha256": "866ef27744da3c646baed1850f014b17e2ef1ca5a70ca9b34fbd14d7ea20e7ca",
+      "captured_at": 1794833503,
+      "mode": "comparison",
+      "records": 85,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794833560-000007.tsv",
+      "sha256": "2cf7503c3e413fb8ebcff9b985a3402270db19213dda2908c7d3a64bd9dd3a03",
+      "captured_at": 1794833560,
+      "mode": "baseline",
+      "records": 85,
+      "reward_status": "unavailable: ...s/OctopathArchipelago/Scripts/OT0AP_ChestCatalogScan.lua:46: attempt to index a function value (field 'm_RewardProbability')",
+      "disposition": "quarantined"
+    },
+    {
+      "file": "chest-scan-1794834093-000001.tsv",
+      "sha256": "a1aad77eeb7c1bc08342d09e6946ae6bef921a384ea1532349cc40867109670c",
+      "captured_at": 1794834093,
+      "mode": "baseline",
+      "records": 85,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834096-000002.tsv",
+      "sha256": "b954766f8ddfc8658bbbdd6282016cc2b2bf06416f057f15cb42cbeec8d7f130",
+      "captured_at": 1794834096,
+      "mode": "comparison",
+      "records": 85,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834149-000003.tsv",
+      "sha256": "8e3686d7cb863d270a562b93149e2a0921626553e4ff3b7e9165cff2c4cb1880",
+      "captured_at": 1794834149,
+      "mode": "baseline",
+      "records": 85,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834152-000004.tsv",
+      "sha256": "b098afe580b6c3a77561fde5d84561611c1db610d5b2fd8b3d981cbf8b7f8c91",
+      "captured_at": 1794834152,
+      "mode": "comparison",
+      "records": 85,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834190-000005.tsv",
+      "sha256": "8856b12aa29a75d5a83fbaceb76593ea0f375d3db8f0d72cd970bc019538005c",
+      "captured_at": 1794834190,
+      "mode": "baseline",
+      "records": 85,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834193-000006.tsv",
+      "sha256": "f7c3c8a4142c17e054672af373ba4fb3b5939088409524f52f59d65c5d0e481d",
+      "captured_at": 1794834193,
+      "mode": "comparison",
+      "records": 85,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834299-000007.tsv",
+      "sha256": "d10af9f06c59011c96cc487cffb6c0884e9f7d6da3161d460df1ac0a5daf2844",
+      "captured_at": 1794834299,
+      "mode": "baseline",
+      "records": 94,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834302-000008.tsv",
+      "sha256": "ce6bc864ba6cdab5ba6966f81c82b99c8780d4e00334bd83c4d2b420ae70b417",
+      "captured_at": 1794834302,
+      "mode": "comparison",
+      "records": 94,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834386-000009.tsv",
+      "sha256": "d3c4210a850fadae841aed566ba16fa6c0ac747313a1578671c5bcacc3fc5000",
+      "captured_at": 1794834386,
+      "mode": "baseline",
+      "records": 95,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834389-000010.tsv",
+      "sha256": "9a1da4793222870dd77c1c64b0208479ff2e0878ec37543e1a2c084bdc761f8d",
+      "captured_at": 1794834389,
+      "mode": "comparison",
+      "records": 95,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834470-000011.tsv",
+      "sha256": "78a2a92004e8840025f21b7e8100a59e4ba34e98782629907aed81b212b5ecaa",
+      "captured_at": 1794834470,
+      "mode": "baseline",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834473-000012.tsv",
+      "sha256": "eb4c5920e6e7111a34242b60a4700d5a9b286df825c9df8f70a0546c715bb32c",
+      "captured_at": 1794834473,
+      "mode": "comparison",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834520-000013.tsv",
+      "sha256": "14921cca0c07349b571db66a057f7a5df0df4a3140de9f8ef8a4da2345358019",
+      "captured_at": 1794834520,
+      "mode": "baseline",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834523-000014.tsv",
+      "sha256": "85f32aedeb63b058d987ec78eacf299504ebe5f8629cb87186e75af17882b191",
+      "captured_at": 1794834523,
+      "mode": "comparison",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834587-000015.tsv",
+      "sha256": "ad1252fd06d3cd4ce74fb5933b1af9eedbe948770e0c3fbd0d580cac04a179b4",
+      "captured_at": 1794834587,
+      "mode": "baseline",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834590-000016.tsv",
+      "sha256": "a355ca9a1e4111590bc7b88cc6418044008a0a0c7e7fef6b3fdeedb486dab3f7",
+      "captured_at": 1794834590,
+      "mode": "comparison",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834682-000017.tsv",
+      "sha256": "9306b31c49b2e2d12aef412b2b4481d5e380c6b3ba56b6c806d60dd58c6431b2",
+      "captured_at": 1794834682,
+      "mode": "baseline",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834683-000018.tsv",
+      "sha256": "3a9f93b8f14dd8bff376c4adaa521b5508b40c5de19c84a691b5d5c8b5688831",
+      "captured_at": 1794834683,
+      "mode": "comparison",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834752-000019.tsv",
+      "sha256": "4926c8ba66dfafb4052b2e59379ddf07047c54bddd795015dff595cfb8a997df",
+      "captured_at": 1794834752,
+      "mode": "baseline",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834755-000020.tsv",
+      "sha256": "a01f1fb91fba94792b17776ff585e83d72e2cf84f3bcd0d7ce2b682d91b45925",
+      "captured_at": 1794834755,
+      "mode": "comparison",
+      "records": 104,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834810-000021.tsv",
+      "sha256": "14fb3e7bb844412d5078e4f0597f93fe9ad8091202103a4a28f7d129af28a453",
+      "captured_at": 1794834810,
+      "mode": "baseline",
+      "records": 111,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834813-000022.tsv",
+      "sha256": "458d5a19e27a32b685fd051b0b0403e7ee21328d7285e08ef36a18bfd954706d",
+      "captured_at": 1794834813,
+      "mode": "comparison",
+      "records": 111,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834878-000023.tsv",
+      "sha256": "51b22635fbf8689e38e08c9e6dde8fe98980a4c90b38d1481739b9b0b32ca1df",
+      "captured_at": 1794834878,
+      "mode": "baseline",
+      "records": 111,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834882-000024.tsv",
+      "sha256": "2c8b88934fadfccd0b8ddedcfef05ce3a5e1611b202b1cfb160e51fb434aa30f",
+      "captured_at": 1794834882,
+      "mode": "comparison",
+      "records": 111,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834939-000025.tsv",
+      "sha256": "1d215e2f688074478002f9102d952e75786ab076471349e97042e255274bbe6a",
+      "captured_at": 1794834939,
+      "mode": "baseline",
+      "records": 111,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794834942-000026.tsv",
+      "sha256": "39d5263c5b4fe67c326c42f7c9bb944b091bc62b144b8be425e58732d37a34f4",
+      "captured_at": 1794834942,
+      "mode": "comparison",
+      "records": 111,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835009-000027.tsv",
+      "sha256": "c55542221f13d9e4a68c4d628203ba7f8055a257d9172554bbebc1b9259d134d",
+      "captured_at": 1794835009,
+      "mode": "baseline",
+      "records": 112,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835011-000028.tsv",
+      "sha256": "b4f3dbde2e7e42344410a2f5e46506060593edcefc106555819814d9dc0b7db8",
+      "captured_at": 1794835011,
+      "mode": "comparison",
+      "records": 112,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835087-000029.tsv",
+      "sha256": "5c8beb367d1948ec59afe7deeea32a8aa171dce31734cc9152143e2798cbb332",
+      "captured_at": 1794835087,
+      "mode": "baseline",
+      "records": 115,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835090-000030.tsv",
+      "sha256": "8cb093ff7a40af52d07332bac3d5fb381a9e3c954bb2cf0ee2f5d6e7deffb370",
+      "captured_at": 1794835090,
+      "mode": "comparison",
+      "records": 115,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835154-000031.tsv",
+      "sha256": "049bcc85aee5121cbbce70b51f95870ceef29856268a2b9f77ee8690ad593f56",
+      "captured_at": 1794835154,
+      "mode": "baseline",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835156-000032.tsv",
+      "sha256": "e14f78f1c40fed285dc9d61d7596165a9a4d77b4b5f809a2d1003597f8718811",
+      "captured_at": 1794835156,
+      "mode": "comparison",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835172-000033.tsv",
+      "sha256": "a11fb24c807800f0ce4a399b07b9205f58ddd7366860d087485f2e79b850f59f",
+      "captured_at": 1794835172,
+      "mode": "baseline",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835176-000034.tsv",
+      "sha256": "cd26c84f23ef654e027de0946c6853e983d518049e3af607ee34d8996b543bf4",
+      "captured_at": 1794835176,
+      "mode": "comparison",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835219-000035.tsv",
+      "sha256": "578f0fc02c13a6c23d6e3a61824000d4b66a356dde4aa11c8b053229ddf98aa6",
+      "captured_at": 1794835219,
+      "mode": "baseline",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835222-000036.tsv",
+      "sha256": "46127c8b9797c182faf646d15641f0510bf6f6cf14cf424fd2f3778344a5d4ab",
+      "captured_at": 1794835222,
+      "mode": "comparison",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835317-000037.tsv",
+      "sha256": "0cba25914685e4c98d739e8b219beda8373f2ddd2cdd799ad99ce848b74d04d6",
+      "captured_at": 1794835317,
+      "mode": "baseline",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835320-000038.tsv",
+      "sha256": "d21be130b94deb2e900570c6c23e9a8f8fd0770a43ddd7df45f4c38d117b862f",
+      "captured_at": 1794835320,
+      "mode": "comparison",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835378-000039.tsv",
+      "sha256": "1bbb6892fe3ba1117247e8d8b3bb1a17c77ea1478b53937047bae25a9df73b5a",
+      "captured_at": 1794835378,
+      "mode": "baseline",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835380-000040.tsv",
+      "sha256": "3dc4cb7d9dec719c9cafdc7bd9e224577f4c5b7fc824064cc95458747307c2e2",
+      "captured_at": 1794835380,
+      "mode": "comparison",
+      "records": 119,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835417-000041.tsv",
+      "sha256": "efc2015b5276992e9f6056a833e1b52d0f43007d84eecb624f2c1994db7eda06",
+      "captured_at": 1794835417,
+      "mode": "baseline",
+      "records": 125,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835420-000042.tsv",
+      "sha256": "22e14425e63d1395d57c977d61796edba100cdb8157383cc2d76431b6dd3a371",
+      "captured_at": 1794835420,
+      "mode": "comparison",
+      "records": 125,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835476-000043.tsv",
+      "sha256": "96043539a69fdde0166669ad649a10c02e563a2ffc04ca74c2e815a8e5c032e4",
+      "captured_at": 1794835476,
+      "mode": "baseline",
+      "records": 125,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835478-000044.tsv",
+      "sha256": "7f6f429dc2a373cac773119c3c609d4aab3fc135f396e74c820cf49846695d61",
+      "captured_at": 1794835478,
+      "mode": "comparison",
+      "records": 125,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835571-000045.tsv",
+      "sha256": "fed91df10231b765d7b3714d360b7ec231f3e0202100c92c77fd458d645a4821",
+      "captured_at": 1794835571,
+      "mode": "baseline",
+      "records": 130,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835575-000046.tsv",
+      "sha256": "76e5b65f46eca9a4db3083f9570d87ba17b68e7fdb7c16c7871f7bc5aabcb273",
+      "captured_at": 1794835575,
+      "mode": "comparison",
+      "records": 130,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835619-000047.tsv",
+      "sha256": "a33579e033856c20f1f4785a62801917a713f9080ed11c9172bbfcdf656b0259",
+      "captured_at": 1794835619,
+      "mode": "baseline",
+      "records": 130,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835621-000048.tsv",
+      "sha256": "6ecf1c091e6fec863f70ce87f26ff4e609b924a2ccd7bf58deba48a6a50aa7b3",
+      "captured_at": 1794835621,
+      "mode": "comparison",
+      "records": 130,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835653-000049.tsv",
+      "sha256": "5d57d674472805072e4a6e59d72df337888dd982cba0265a94e110c48d8ec50a",
+      "captured_at": 1794835653,
+      "mode": "baseline",
+      "records": 130,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835656-000050.tsv",
+      "sha256": "a0ebe12459163e52ba6686e38f2bbc1a7c05096ea1d5d0617e873ccb89900dff",
+      "captured_at": 1794835656,
+      "mode": "comparison",
+      "records": 130,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835710-000051.tsv",
+      "sha256": "592963a4bb96c7415724b3dbf6af93f27b2f05f8fe29ec150721341ebdd4b7b2",
+      "captured_at": 1794835710,
+      "mode": "baseline",
+      "records": 135,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835713-000052.tsv",
+      "sha256": "a2d7a9dd02d1e541128a0402e25e99cfbf489806489c714069cc9677f09e022e",
+      "captured_at": 1794835713,
+      "mode": "comparison",
+      "records": 135,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835751-000053.tsv",
+      "sha256": "37ab97109222db50ddd0a9085f4ff4f2504e20dc42f3ddd45a4c8ceaeee43ee7",
+      "captured_at": 1794835751,
+      "mode": "baseline",
+      "records": 135,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835753-000054.tsv",
+      "sha256": "08717493a21b800641bb63730189bf7048305a96d7f21828b88b9c25fca0fbdf",
+      "captured_at": 1794835753,
+      "mode": "comparison",
+      "records": 135,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835803-000055.tsv",
+      "sha256": "28d5430b085a4ac28e48e9be7635e5fbb2649bee2007b285bdc8b2c2feb046b6",
+      "captured_at": 1794835803,
+      "mode": "baseline",
+      "records": 141,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835806-000056.tsv",
+      "sha256": "f22cfa8516c6db087c7a26b774de747258ac21d777a7f6011a3b1241be14f894",
+      "captured_at": 1794835806,
+      "mode": "comparison",
+      "records": 141,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835863-000057.tsv",
+      "sha256": "99a49c03a4d89a801a68abfd9ff5994cc2b3eeac4abbe58fcc2f1a96ae8bc0b8",
+      "captured_at": 1794835863,
+      "mode": "baseline",
+      "records": 141,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835865-000058.tsv",
+      "sha256": "ce55371e4b655632d0a50f6e03159bbe90b3329a142ecb5ff1fce07ff97fcf7a",
+      "captured_at": 1794835865,
+      "mode": "comparison",
+      "records": 141,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835910-000059.tsv",
+      "sha256": "aa4d426e1833dc0c9062fa407bf9cde50d28a3a2c122c6b890e55a39d78f02e1",
+      "captured_at": 1794835910,
+      "mode": "baseline",
+      "records": 141,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835912-000060.tsv",
+      "sha256": "5430a14f958b46e9224d14fbbd9917d557356cb3969e8de732f7fcc4659408e2",
+      "captured_at": 1794835912,
+      "mode": "comparison",
+      "records": 141,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835981-000061.tsv",
+      "sha256": "052fe2e7ed9a87ad127584b5b58d2f3f6bf10eb02ab5d43c1c0e240fe238e923",
+      "captured_at": 1794835981,
+      "mode": "baseline",
+      "records": 141,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794835983-000062.tsv",
+      "sha256": "53cc2936cb9c34db6ca992ab939cf32e57026e32e5cdf6f12f568be8a08a70ef",
+      "captured_at": 1794835983,
+      "mode": "comparison",
+      "records": 141,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836056-000063.tsv",
+      "sha256": "8de7e2c0809e2e735610831868aabf16d3665f3e07976ab2ec43480c2f88a049",
+      "captured_at": 1794836056,
+      "mode": "baseline",
+      "records": 147,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836060-000064.tsv",
+      "sha256": "962dea9f7b50481c7c80952c2f0c8225e1c08ab96bf5028239002cd37eb9ce3c",
+      "captured_at": 1794836060,
+      "mode": "comparison",
+      "records": 147,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836155-000065.tsv",
+      "sha256": "ab217a3ba64c2c212a9f981cd3c89406587766721ecc93c3f40ca5b797b65a27",
+      "captured_at": 1794836155,
+      "mode": "baseline",
+      "records": 147,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836157-000066.tsv",
+      "sha256": "5618cbe75c4f1b6b0a2642e697adbb1380274b4f827d6abf990a60b46e9fae73",
+      "captured_at": 1794836157,
+      "mode": "comparison",
+      "records": 147,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836211-000067.tsv",
+      "sha256": "5ce22b32ba12e72fbc712face2f451b2fb0680eabfbe7e60e098991eb6205213",
+      "captured_at": 1794836211,
+      "mode": "baseline",
+      "records": 150,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836214-000068.tsv",
+      "sha256": "d8dc00cb843f30e210ecac458febf0903b15825a1c2820bc1d5dd6b780d51fcf",
+      "captured_at": 1794836214,
+      "mode": "comparison",
+      "records": 150,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836273-000069.tsv",
+      "sha256": "7d292628e9a2dd55af061c8631a991d819e4f1837d752c2d9b1d333b127dd966",
+      "captured_at": 1794836273,
+      "mode": "baseline",
+      "records": 150,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836277-000070.tsv",
+      "sha256": "cde605e7a9e3de3ca9c908b45d18b10dae8debef383a21995fc77cd71783b7be",
+      "captured_at": 1794836277,
+      "mode": "comparison",
+      "records": 150,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836318-000071.tsv",
+      "sha256": "67baa05a7c51f8c942855f46de2f2339a0984fc84dffcd35417f17af7b308eba",
+      "captured_at": 1794836318,
+      "mode": "baseline",
+      "records": 157,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836322-000072.tsv",
+      "sha256": "3c5971b3a44cc33ae5bdd71e9cf5bf9bc5d904cbbef958b5536f3a6c3e4c2bb4",
+      "captured_at": 1794836322,
+      "mode": "comparison",
+      "records": 157,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836382-000073.tsv",
+      "sha256": "f51ded5174cd93e31cf6f6bdfdef0e739a19c95f2348513c55210ab6ae9a921d",
+      "captured_at": 1794836382,
+      "mode": "baseline",
+      "records": 157,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836384-000074.tsv",
+      "sha256": "f4dc56f89653c599bc807f10b3428c310bde0b1f3cb2fdbaf5c4ed62865251b3",
+      "captured_at": 1794836384,
+      "mode": "comparison",
+      "records": 157,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836423-000075.tsv",
+      "sha256": "579f9755185bbebd3478667dc15e1d26e3225f40e5a160728b904297088464e5",
+      "captured_at": 1794836423,
+      "mode": "baseline",
+      "records": 157,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836425-000076.tsv",
+      "sha256": "1f51999c3bbf5bc7da31c790fe223da2dd9c4562ee392a15c943a4dfebcf938b",
+      "captured_at": 1794836425,
+      "mode": "comparison",
+      "records": 157,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836489-000077.tsv",
+      "sha256": "e10d493923dc6c5deb4c2d30c0c16a0cf04301a70c5e472a2f0b30b57f88dfcf",
+      "captured_at": 1794836489,
+      "mode": "baseline",
+      "records": 161,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836491-000078.tsv",
+      "sha256": "9a73708f608c24e3ac5c775e29eaea19891496cf41c2961a48e31d79b665edd9",
+      "captured_at": 1794836491,
+      "mode": "comparison",
+      "records": 161,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836515-000079.tsv",
+      "sha256": "9a82e50b93dcbeb08e6d58af7ed2a049de2fd82f0663a919afef731eb11a1608",
+      "captured_at": 1794836515,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836518-000080.tsv",
+      "sha256": "dbd1aa12eac4b67ca85a04523a960c16198f96cca7ac4529d4945920143bf994",
+      "captured_at": 1794836518,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836548-000081.tsv",
+      "sha256": "a1e18657faa41d947a7b71d2c70c4494a5bf68ccae3c88d8a1b6ee6f15764a79",
+      "captured_at": 1794836548,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836550-000082.tsv",
+      "sha256": "5d07629cb2f9813b9fd6d2d313038d4d2c51d078d39186014d040aeb7b7581c2",
+      "captured_at": 1794836550,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836583-000083.tsv",
+      "sha256": "dfc839fae2f40184ee44c45352cf17696853546d492c4b82a84119b3c13430c8",
+      "captured_at": 1794836583,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836586-000084.tsv",
+      "sha256": "5a4bb8d067e2713ec574643d20f0063927595cee63716f19db097e017f39e654",
+      "captured_at": 1794836586,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836643-000085.tsv",
+      "sha256": "3ecea8e980752b1e8fa580f784a2e088c9e6c31b59155a10f639b35ac5cd2ac9",
+      "captured_at": 1794836643,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836646-000086.tsv",
+      "sha256": "80cdc21fe19d5724fe0da1da7c539bd635f638a34e9eb98530369f21e84b3698",
+      "captured_at": 1794836646,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836677-000087.tsv",
+      "sha256": "0489f7388869419a0f8a9b4392cc957781c671226fe94206e23b70c12a946144",
+      "captured_at": 1794836677,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836680-000088.tsv",
+      "sha256": "2258446aac85fe5296209f92e7c7c552278df9d0e4019c0b001376276d98c489",
+      "captured_at": 1794836680,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836727-000089.tsv",
+      "sha256": "321237a2930a171cd3d86b4a444d9292b3998d75b03974174e025c4b886936b0",
+      "captured_at": 1794836727,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836730-000090.tsv",
+      "sha256": "e927f07140ef8e23fb7d204fdd3b37975dcd5a2bf34a4f549a6ea4fba60c6e0f",
+      "captured_at": 1794836730,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836786-000091.tsv",
+      "sha256": "233cfed9f4dd3706660a8e822e3f9c56033e0b1605dcfe925a279cbdfc0808dd",
+      "captured_at": 1794836786,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836789-000092.tsv",
+      "sha256": "ff5539f1ce5c5335bf8d263d346d2aab8d2eb4e2de69e2da0b84f261c26bbaca",
+      "captured_at": 1794836789,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836838-000093.tsv",
+      "sha256": "ba0035d245f0dcfc0f9bf7488ccfa09ef80685ebac19966ba83d0158e4adb6dd",
+      "captured_at": 1794836838,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836841-000094.tsv",
+      "sha256": "aa2e0fb8c1cfaf00c5c898502a4ff1af784f8b1b485917da4a8d1e56c36a62c3",
+      "captured_at": 1794836841,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836873-000095.tsv",
+      "sha256": "0cd4f43fdb2dc6528381ef8b871da8d0f169930746d82669dee18f6492e8868f",
+      "captured_at": 1794836873,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836876-000096.tsv",
+      "sha256": "9505225c090e8934f1b32e03d78a4faa50dec6534b3426971c8f9c257114ae6a",
+      "captured_at": 1794836876,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836911-000097.tsv",
+      "sha256": "82add22f640bb04dbb7f61016650d6a0de309964e508721613f95f10314a609d",
+      "captured_at": 1794836911,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836913-000098.tsv",
+      "sha256": "7a0d11f6f87813bfebc6cb99933d2e0f610eec7c6cc55e0dd77820d6787a11a7",
+      "captured_at": 1794836913,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836940-000099.tsv",
+      "sha256": "ec8891e4a6aac3781ed8f0845121757d1f1d30a248a202640a53d96ab22ca754",
+      "captured_at": 1794836940,
+      "mode": "baseline",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794836942-000100.tsv",
+      "sha256": "c736b8e0445ed33923c7c5ec928a02583ce1862bf58014c6bb9c5ccc22bcad30",
+      "captured_at": 1794836942,
+      "mode": "comparison",
+      "records": 169,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837047-000101.tsv",
+      "sha256": "134e697310df8daa7be0e8fb7948484f8a05ee1c13c30e3aae22a9169ac0e0a0",
+      "captured_at": 1794837047,
+      "mode": "baseline",
+      "records": 176,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837051-000102.tsv",
+      "sha256": "057d1f8a4623853200fe83b04de79049908b79eeb8f7e335f26d3a4d44111ade",
+      "captured_at": 1794837051,
+      "mode": "comparison",
+      "records": 176,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837110-000103.tsv",
+      "sha256": "459bbae1abc061cdfa34b7595be1fa156fbc47b6af9bd7d3bf4a5e4baf37ff69",
+      "captured_at": 1794837110,
+      "mode": "baseline",
+      "records": 176,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837113-000104.tsv",
+      "sha256": "8121d38933522f93e7f6cf62c273f0929b4383c5ecd2e48cabb9d87de1a2f221",
+      "captured_at": 1794837113,
+      "mode": "comparison",
+      "records": 176,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837162-000105.tsv",
+      "sha256": "747d5086c0debf2230e19cd835462bbde484cb1c566447ac6f0982af2457dd49",
+      "captured_at": 1794837162,
+      "mode": "baseline",
+      "records": 176,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837164-000106.tsv",
+      "sha256": "3781dc03de95c91892abf768afdd3aa0cbf8429f4cc988b0c52bc6bccc458f95",
+      "captured_at": 1794837164,
+      "mode": "comparison",
+      "records": 176,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837196-000107.tsv",
+      "sha256": "e9a642a8bdb2ec27d28d9de330e44e5fd518fdacb03f84c52fd00147f4a02385",
+      "captured_at": 1794837196,
+      "mode": "baseline",
+      "records": 176,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837199-000108.tsv",
+      "sha256": "c2a1858673a70ac860cfc1699b85eb8298ea7608430a8eaa4c1a00218befdae5",
+      "captured_at": 1794837199,
+      "mode": "comparison",
+      "records": 176,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837245-000109.tsv",
+      "sha256": "f601c35f844df14bd8e66bb31d4eb8fad63f7774e593064d33f6c5365b01fb3a",
+      "captured_at": 1794837245,
+      "mode": "baseline",
+      "records": 183,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837248-000110.tsv",
+      "sha256": "c2d2fbe266bc1c4418fcada7d88af87abff64325b0cc1f82ec16fcc560b1e58a",
+      "captured_at": 1794837248,
+      "mode": "comparison",
+      "records": 183,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837280-000111.tsv",
+      "sha256": "1d9dad68c77bd9f2ec3fa96a3bf4397af2b371ceba5f3dc52ee458b881f8855d",
+      "captured_at": 1794837280,
+      "mode": "baseline",
+      "records": 183,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837284-000112.tsv",
+      "sha256": "92b87f6174136b7443d0b5ff81d582436df6d8b8748d4fcb5ce9f8569570bb60",
+      "captured_at": 1794837284,
+      "mode": "comparison",
+      "records": 183,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837333-000113.tsv",
+      "sha256": "c92b3f506eaa83244637993b994c61bc6ee0b94b438f0723837463c4027f25d2",
+      "captured_at": 1794837333,
+      "mode": "baseline",
+      "records": 183,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837336-000114.tsv",
+      "sha256": "5db68a40b7199ab9447b99d11229b4a52dbaa6fb2ee0d49a6529af75ca98aad8",
+      "captured_at": 1794837336,
+      "mode": "comparison",
+      "records": 183,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837421-000115.tsv",
+      "sha256": "b4cc2a78505768fe6c3f0c457ee3e070eec961f6ef5fe9f217e80ee3aafcd086",
+      "captured_at": 1794837421,
+      "mode": "baseline",
+      "records": 186,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837423-000116.tsv",
+      "sha256": "56ea1ad20b01e712a588e9fd58c6634e3ffa57eb18e355357855212211c90c1b",
+      "captured_at": 1794837423,
+      "mode": "comparison",
+      "records": 186,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837472-000117.tsv",
+      "sha256": "be51747a0cc34245ce16e432d4608a36ece0b29196e9155469041daf998cab62",
+      "captured_at": 1794837472,
+      "mode": "baseline",
+      "records": 186,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837474-000118.tsv",
+      "sha256": "1e6250afd1947d5cd8180760432b8847ca2e8b85f628753ed058588d61611a78",
+      "captured_at": 1794837474,
+      "mode": "comparison",
+      "records": 186,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837542-000119.tsv",
+      "sha256": "ca7787a369a5bcae6275703f4ba170792411451c3575e7326568ed79a6d22da2",
+      "captured_at": 1794837542,
+      "mode": "baseline",
+      "records": 191,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837545-000120.tsv",
+      "sha256": "21c1c7ddf4bb509a0ab42d2031d2058adb3dd64dc836f104389f943374897d55",
+      "captured_at": 1794837545,
+      "mode": "comparison",
+      "records": 191,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837585-000121.tsv",
+      "sha256": "fea109c63c04a74447520383d739e168d6e8c8497b9e972f4960d7a189b40e1c",
+      "captured_at": 1794837585,
+      "mode": "baseline",
+      "records": 191,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837588-000122.tsv",
+      "sha256": "847a77c2123c10d4232dfdec5258061b1ef08d7e2569d26c7049c3f670acad7d",
+      "captured_at": 1794837588,
+      "mode": "comparison",
+      "records": 191,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837646-000123.tsv",
+      "sha256": "e4564382262d3ecb8c1f6484ca741ea796cfd546cc4a56e3838aca12bb45fd16",
+      "captured_at": 1794837646,
+      "mode": "baseline",
+      "records": 191,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837648-000124.tsv",
+      "sha256": "4041456b45e58e7e5bdbf6af4cca58d3fe94f24692222e3085037455f4d43f24",
+      "captured_at": 1794837648,
+      "mode": "comparison",
+      "records": 191,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837684-000125.tsv",
+      "sha256": "3150bb92f7b748262336d7b4e59b1215c702676a54c0c1d682e3b117ba6ae78f",
+      "captured_at": 1794837684,
+      "mode": "baseline",
+      "records": 191,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837686-000126.tsv",
+      "sha256": "fa94d20c4ce988e6f9313b87522dd94fe669fcba3dbf621612bbee780a54dd4c",
+      "captured_at": 1794837686,
+      "mode": "comparison",
+      "records": 191,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837778-000127.tsv",
+      "sha256": "e201025497d6a32c719a8759ddc96078044bccd37c536ec4f2336d7dbe579334",
+      "captured_at": 1794837778,
+      "mode": "baseline",
+      "records": 196,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837781-000128.tsv",
+      "sha256": "cd9f11a7807d27eda48215eb57ac3e2512b67083bf6290040cdceadc1fe6caa1",
+      "captured_at": 1794837781,
+      "mode": "comparison",
+      "records": 196,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837812-000129.tsv",
+      "sha256": "f87c274c647373e62c379a070ae7fe6644e13c20161519a4745cfe1832d5f0ef",
+      "captured_at": 1794837812,
+      "mode": "baseline",
+      "records": 196,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837816-000130.tsv",
+      "sha256": "665b9bb7299c87ab926c6fc07fb2582ed836506fba7d6c1aa7ff0785365480e7",
+      "captured_at": 1794837816,
+      "mode": "comparison",
+      "records": 196,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837880-000131.tsv",
+      "sha256": "0732d07fa5e0736a670623164991facfc52046ec87e84154e05adc18f8284fdc",
+      "captured_at": 1794837880,
+      "mode": "baseline",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837883-000132.tsv",
+      "sha256": "7a4948a5e5e78543d7301fc7325b8dbc90798e5ba4694b1eae620409c4d8841b",
+      "captured_at": 1794837883,
+      "mode": "comparison",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837911-000133.tsv",
+      "sha256": "07f7e6e9af9a38881ab372f231d03bb62e04081e3d67a636fced57f2093ae5aa",
+      "captured_at": 1794837911,
+      "mode": "baseline",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837914-000134.tsv",
+      "sha256": "2a8be650f597da4e267a198f3ebc5b7615c5a8f3d8e200d46fd5a6d2f755313c",
+      "captured_at": 1794837914,
+      "mode": "comparison",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837954-000135.tsv",
+      "sha256": "ac502c585a3879823c1a785a75b248ca7c3a6b731cdf8486a8be9500ba56dc86",
+      "captured_at": 1794837954,
+      "mode": "baseline",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837957-000136.tsv",
+      "sha256": "a71d29038c0fa50c5607386251483e124bebb1e54dcac8ac496cd77478813871",
+      "captured_at": 1794837957,
+      "mode": "comparison",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794837999-000137.tsv",
+      "sha256": "4b31ab2a35dfc76228e9911676782f3a396ed2dcb72fc85a6f49e8100ddb38fa",
+      "captured_at": 1794837999,
+      "mode": "baseline",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838002-000138.tsv",
+      "sha256": "569d5a5d1bc2da6a60f8c1e57b139e69271997998568bd7efd75e1da649b8fe5",
+      "captured_at": 1794838002,
+      "mode": "comparison",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838012-000139.tsv",
+      "sha256": "3d9e2c4d9f8228323d768cbe8b9e04af312c5425e91413bc750bf16dc260df45",
+      "captured_at": 1794838012,
+      "mode": "baseline",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838016-000140.tsv",
+      "sha256": "68bd2a907b841313815107651f76520f8ec8144924420a3eb18de005fe434d42",
+      "captured_at": 1794838016,
+      "mode": "comparison",
+      "records": 202,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838127-000141.tsv",
+      "sha256": "ae503ba2431a146915b0cd0ce9533ed8e54967e007fab0c04aa6349a067a7073",
+      "captured_at": 1794838127,
+      "mode": "baseline",
+      "records": 208,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838129-000142.tsv",
+      "sha256": "c04dd2610fee44851e7adacf835085ec733383a7d7b0d880b9da1c6db3c3ddad",
+      "captured_at": 1794838129,
+      "mode": "comparison",
+      "records": 208,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838142-000143.tsv",
+      "sha256": "f0dc90fa2205fa8fb8b16ee57acdbae7aaf2b918c6c7d43f6adb6ff36ba4f645",
+      "captured_at": 1794838142,
+      "mode": "baseline",
+      "records": 208,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838144-000144.tsv",
+      "sha256": "bdef595c4d27026b4ca431da5e05145aab63a288a4e8b251a92cc044455ca755",
+      "captured_at": 1794838144,
+      "mode": "comparison",
+      "records": 208,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838202-000145.tsv",
+      "sha256": "f7f24d41b27dfe15c54fb6851b1e187a601f9b0ebffc316f0a949bc620c13a13",
+      "captured_at": 1794838202,
+      "mode": "baseline",
+      "records": 211,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838204-000146.tsv",
+      "sha256": "a64529c959bbb1d1039621b9df824397221aa86363a6315c684434d4eac55131",
+      "captured_at": 1794838204,
+      "mode": "comparison",
+      "records": 211,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838240-000147.tsv",
+      "sha256": "9f698afff3ad63de36fdc60e213c9060e54733192982459eb1fafa6cbc428777",
+      "captured_at": 1794838240,
+      "mode": "baseline",
+      "records": 211,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838244-000148.tsv",
+      "sha256": "01a3c634116049b51bd58379ed59c279b0d62ee1a05ef636384d86c29dee66b5",
+      "captured_at": 1794838244,
+      "mode": "comparison",
+      "records": 211,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838323-000149.tsv",
+      "sha256": "4793408da15dcdeb2b8db4342896bf65f9745834ef639eb446aabc56b6ff47c5",
+      "captured_at": 1794838323,
+      "mode": "baseline",
+      "records": 217,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838326-000150.tsv",
+      "sha256": "805f0326a87e359e2614ba7db4ca988a6b306387f994b4a8d6a2c08b8474de75",
+      "captured_at": 1794838326,
+      "mode": "comparison",
+      "records": 217,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838372-000151.tsv",
+      "sha256": "02ea66630367e06ab974b514d9576bd44154b6c1e868d006b9da1b2f387b0830",
+      "captured_at": 1794838372,
+      "mode": "baseline",
+      "records": 217,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838374-000152.tsv",
+      "sha256": "16e5f5ac85988069c0880f856529c780c701d5f34f2240480075181c792e37dd",
+      "captured_at": 1794838374,
+      "mode": "comparison",
+      "records": 217,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838415-000153.tsv",
+      "sha256": "0523111a0aedc1e8ff7adbb559162ca650ca8365670bf65d8e901738029bdcd6",
+      "captured_at": 1794838415,
+      "mode": "baseline",
+      "records": 220,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838417-000154.tsv",
+      "sha256": "1036435f4357ebb8e0ddcde8cbdde4d4b4dbe323de46a4cf32a4d74cb1058cb9",
+      "captured_at": 1794838417,
+      "mode": "comparison",
+      "records": 220,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838529-000155.tsv",
+      "sha256": "e4788b9f3427f2f412ea3b79a6d7945da74947b48c803a0d1b67bc6e6b884665",
+      "captured_at": 1794838529,
+      "mode": "baseline",
+      "records": 228,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838532-000156.tsv",
+      "sha256": "7b8dd83b17eeb3703345b82979e46557cf4134d64b4d0c2daf85098bbb81ab55",
+      "captured_at": 1794838532,
+      "mode": "comparison",
+      "records": 228,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838566-000157.tsv",
+      "sha256": "c80f42779d73a6559183656ef9aa9cecc2e4198d2468cbdcc971e5fe96d9fb45",
+      "captured_at": 1794838566,
+      "mode": "baseline",
+      "records": 228,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838569-000158.tsv",
+      "sha256": "87c8fba612d6142c995d73391fe7824c28033d0a45438f907e90376ade19841c",
+      "captured_at": 1794838569,
+      "mode": "comparison",
+      "records": 228,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838610-000159.tsv",
+      "sha256": "94d310d78d4cc118dec907f9005983de687161e3bcc9d28471926d65418c0944",
+      "captured_at": 1794838610,
+      "mode": "baseline",
+      "records": 228,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838612-000160.tsv",
+      "sha256": "1889c8dc346d24bd92e9b03b2668e0fcf1350ce486845cc3e2ee3271b550f6c5",
+      "captured_at": 1794838612,
+      "mode": "comparison",
+      "records": 228,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838659-000161.tsv",
+      "sha256": "83d10917f1b3f4d8215e2fb0783e9e92627930725fa4d4f9083f2e801ec7d594",
+      "captured_at": 1794838659,
+      "mode": "baseline",
+      "records": 228,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838663-000162.tsv",
+      "sha256": "5a1d4c83dd057ab5377b98846ea30206fe21c74ef63d7f449c67d6599b443742",
+      "captured_at": 1794838663,
+      "mode": "comparison",
+      "records": 228,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838746-000163.tsv",
+      "sha256": "d8d087d870c8f41796ee52407228ae14ff606ae368ad90e2d27f9b3f3569cf0e",
+      "captured_at": 1794838746,
+      "mode": "baseline",
+      "records": 235,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838748-000164.tsv",
+      "sha256": "2aaf9c4ee251d6dd2580476677e74e3b95f0dccb82e4b1b056fcaea2aa8926ab",
+      "captured_at": 1794838748,
+      "mode": "comparison",
+      "records": 235,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838783-000165.tsv",
+      "sha256": "f0ce49e384239c2218ce21e0ae6a8bca63699b147394c43d1280cd88af26db77",
+      "captured_at": 1794838783,
+      "mode": "baseline",
+      "records": 235,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838785-000166.tsv",
+      "sha256": "075691fa58108017e6c3042de72217fe5057efd437b308fb52bdc226ba89f858",
+      "captured_at": 1794838785,
+      "mode": "comparison",
+      "records": 235,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838827-000167.tsv",
+      "sha256": "48a73bf6bde2508703d50b3c343c8daadc23c38b9d8767b3cc278804aa2acbe6",
+      "captured_at": 1794838827,
+      "mode": "baseline",
+      "records": 235,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838830-000168.tsv",
+      "sha256": "5c61094fd0f190ce21a19540c5d3687e3c84fe1fd5c8b31d80cab96dfae2a67c",
+      "captured_at": 1794838830,
+      "mode": "comparison",
+      "records": 235,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838918-000169.tsv",
+      "sha256": "37c836fa8aa3fe490d0be07c229030bcec395dad972e30ee82661723d80032b4",
+      "captured_at": 1794838918,
+      "mode": "baseline",
+      "records": 239,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838923-000170.tsv",
+      "sha256": "d5d4a00d143f48f2b051cf43b820959761ff557e90931f961e43efbf9a37028e",
+      "captured_at": 1794838923,
+      "mode": "comparison",
+      "records": 239,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838960-000171.tsv",
+      "sha256": "d037940a89b76995bfdbfe3f60d14f6154a635a32f6f534d0d528cb58357f41a",
+      "captured_at": 1794838960,
+      "mode": "baseline",
+      "records": 239,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794838962-000172.tsv",
+      "sha256": "f7f991b4b487929d99c70170416d419bda983aca54cbe9b5d3d186789f65a67a",
+      "captured_at": 1794838962,
+      "mode": "comparison",
+      "records": 239,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839041-000173.tsv",
+      "sha256": "edacd3d87ec790d567eabe2a5587c265419d72a3f6f0503c15d6b5fe4cf5fe0e",
+      "captured_at": 1794839041,
+      "mode": "baseline",
+      "records": 244,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839044-000174.tsv",
+      "sha256": "b86d4645fff22a9f44ce2671be44ecdd84d5981038f60b20d40ae6cb97d25098",
+      "captured_at": 1794839044,
+      "mode": "comparison",
+      "records": 244,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839087-000175.tsv",
+      "sha256": "abfe4511e10bb4bbd3a7ca200f112a6dca87b29e6fbc3ef399a166beb697c5ea",
+      "captured_at": 1794839087,
+      "mode": "baseline",
+      "records": 244,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839089-000176.tsv",
+      "sha256": "479baec4218a2ff8557a94378faaaa11c6d27248f575b3e167e0ed8333b961b5",
+      "captured_at": 1794839089,
+      "mode": "comparison",
+      "records": 244,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839117-000177.tsv",
+      "sha256": "3c28f042998452353d655f6b079425ad2281fab022215d8c0126a014314546ad",
+      "captured_at": 1794839117,
+      "mode": "baseline",
+      "records": 248,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839120-000178.tsv",
+      "sha256": "17dfb03f18a595b8ee07686b58917e423ee6e204d328c39bb2836b41f7f2c4b7",
+      "captured_at": 1794839120,
+      "mode": "comparison",
+      "records": 248,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839157-000179.tsv",
+      "sha256": "f15f23b315bd8605a23e75868dbea9345fa1b91225cc086ca65c00b9cd9ee645",
+      "captured_at": 1794839157,
+      "mode": "baseline",
+      "records": 248,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839160-000180.tsv",
+      "sha256": "2102ed2329915fb19c51f3a718c45d3c1f02f3b281fde62d11b7c3aae62a5889",
+      "captured_at": 1794839160,
+      "mode": "comparison",
+      "records": 248,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839218-000181.tsv",
+      "sha256": "c62ff1da79b5e2cc2c9ac4f71430cc0c9f1828ad6a400bbd4e2f22c5b73841a5",
+      "captured_at": 1794839218,
+      "mode": "baseline",
+      "records": 248,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794839220-000182.tsv",
+      "sha256": "16cec659c12844764aac728a493d05441a742c171a40f955e98ed1d70068650c",
+      "captured_at": 1794839220,
+      "mode": "comparison",
+      "records": 248,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841332-000183.tsv",
+      "sha256": "65edaa94b047bfc2bc56291fc3f238e681cda33349bd5564661f2670931f36f0",
+      "captured_at": 1794841332,
+      "mode": "baseline",
+      "records": 257,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841334-000184.tsv",
+      "sha256": "609f875a01833cfa6db380b5b64c31e42f11c506abe6488ae86f1c19452afd2d",
+      "captured_at": 1794841334,
+      "mode": "comparison",
+      "records": 257,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841412-000185.tsv",
+      "sha256": "a284bce937c2fdc649d46534d7da529489d1c03b9c9ffc39392adabd32394d43",
+      "captured_at": 1794841412,
+      "mode": "baseline",
+      "records": 257,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841417-000186.tsv",
+      "sha256": "e8c5c217e6e83c827949b82fa1593e391146bda8c7fec4dc8f33da29e083ba91",
+      "captured_at": 1794841417,
+      "mode": "comparison",
+      "records": 257,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841459-000187.tsv",
+      "sha256": "3ab55f64ab191238572efab81e334f9f5b3f182e67d4ff4dbebe3759e7b921ca",
+      "captured_at": 1794841459,
+      "mode": "baseline",
+      "records": 257,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841461-000188.tsv",
+      "sha256": "ade5bf48006ed6c4cf2c4e4d4e603e484c9588e7e17448ec16b636dfeaf296a5",
+      "captured_at": 1794841461,
+      "mode": "comparison",
+      "records": 257,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841586-000189.tsv",
+      "sha256": "7cbb43f502bfc190ca5e4bfd4d3f7ed3f10c721afd18143bad691beb8606fd14",
+      "captured_at": 1794841586,
+      "mode": "baseline",
+      "records": 267,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841588-000190.tsv",
+      "sha256": "b79c9aa6413aad714de72ea0033944b4dd91cb14f1506d65fd1223a5e20e6acb",
+      "captured_at": 1794841588,
+      "mode": "comparison",
+      "records": 267,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841622-000191.tsv",
+      "sha256": "4348b50c190fb2141348339dd3a3e9fb3aacf8cbe7d1518246fa8f7da4a370c9",
+      "captured_at": 1794841622,
+      "mode": "baseline",
+      "records": 267,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841626-000192.tsv",
+      "sha256": "08c3e4e01e4ea5b094e3e806dd50520a1f0aefcec977c39c596e89cef7fb1b25",
+      "captured_at": 1794841626,
+      "mode": "comparison",
+      "records": 267,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841688-000193.tsv",
+      "sha256": "464d7a6573b1b313b3e86706ebdc2877cac97a0c7ac96a1cab1815e45ff283fd",
+      "captured_at": 1794841688,
+      "mode": "baseline",
+      "records": 271,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841690-000194.tsv",
+      "sha256": "5877a697b30d83c62421521af794dd450e670b324facf2e8d1ad6cf492d0dba6",
+      "captured_at": 1794841690,
+      "mode": "comparison",
+      "records": 271,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841759-000195.tsv",
+      "sha256": "f24e90b89eef0e462a6d267699a614e4453dcf989d3ba032a3e9fa7ca3ec5404",
+      "captured_at": 1794841759,
+      "mode": "baseline",
+      "records": 271,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841761-000196.tsv",
+      "sha256": "1480a38333c5f1720d1bc09cc0ef07e7d18eae7a7637efc55462f7a1fc0c8640",
+      "captured_at": 1794841761,
+      "mode": "comparison",
+      "records": 271,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841831-000197.tsv",
+      "sha256": "05f463cd68e8be96b1dd61dd3a893ca5f043914df4be5ea10d8cece151fb2c66",
+      "captured_at": 1794841831,
+      "mode": "baseline",
+      "records": 271,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841833-000198.tsv",
+      "sha256": "1e59808b41d97f21c18fd699d12a14dd4b2e626febf1830ff87564beef868e78",
+      "captured_at": 1794841833,
+      "mode": "comparison",
+      "records": 271,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841880-000199.tsv",
+      "sha256": "b73f593db8a19116af115c4fe6eaa50ae387ac541ee522f4d2f5af52175a8d92",
+      "captured_at": 1794841880,
+      "mode": "baseline",
+      "records": 271,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841883-000200.tsv",
+      "sha256": "a6b14d4fc233ce35b92330dd0a9150005f9f4598a62abdc40630880dbf551f1d",
+      "captured_at": 1794841883,
+      "mode": "comparison",
+      "records": 271,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841959-000201.tsv",
+      "sha256": "45d40db614521b3f2e9a013da0f531ae3150d937bf4bf041792beedbb8302e67",
+      "captured_at": 1794841959,
+      "mode": "baseline",
+      "records": 275,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794841961-000202.tsv",
+      "sha256": "9faae27f96e30ebc8241404a55c4df837ebee483bebd57ac507e751f031cb723",
+      "captured_at": 1794841961,
+      "mode": "comparison",
+      "records": 275,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842025-000203.tsv",
+      "sha256": "72ff0dc8d5f93e73a2bda0688c148de71e3b5557c702692bd277a627b3693854",
+      "captured_at": 1794842025,
+      "mode": "baseline",
+      "records": 275,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842027-000204.tsv",
+      "sha256": "cf9d9df08e2768ef4d136bbebc0b873c70524db3dc1d5e9270b22cab29d8014d",
+      "captured_at": 1794842027,
+      "mode": "comparison",
+      "records": 275,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842071-000205.tsv",
+      "sha256": "d8defdadfe555ce0a945ff1d4c23c07ca45716af071e25a786c2493cfad8ca22",
+      "captured_at": 1794842071,
+      "mode": "baseline",
+      "records": 275,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842074-000206.tsv",
+      "sha256": "b8bed971f70b9295d9113f3680ccc73370bda1b31dec16e07ceffb7d5f9024c0",
+      "captured_at": 1794842074,
+      "mode": "comparison",
+      "records": 275,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842144-000207.tsv",
+      "sha256": "a79d1ccd149cd3136b73802a8d0c7eb6646634abac72dfee17b2834b2f15a9c0",
+      "captured_at": 1794842144,
+      "mode": "baseline",
+      "records": 275,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842147-000208.tsv",
+      "sha256": "653fe0c6db4b3e2967ac34e15af62275c31337c4e9c27ed1dc6b21ee81380519",
+      "captured_at": 1794842147,
+      "mode": "comparison",
+      "records": 275,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842198-000209.tsv",
+      "sha256": "7fbd59da8688fb0bf9cf590a83a27aeb344f7f9f24cf028d310fe07af85dda4f",
+      "captured_at": 1794842198,
+      "mode": "baseline",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842200-000210.tsv",
+      "sha256": "5e110afc2814951b07a6e51756b14deba2f1ca66faaa4795008c3308b5055a0c",
+      "captured_at": 1794842200,
+      "mode": "comparison",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842247-000211.tsv",
+      "sha256": "9ecb032e5e5a7c3cf587a487dabd296d665cea5b95cc764cfa84f69a4876b1e0",
+      "captured_at": 1794842247,
+      "mode": "baseline",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842249-000212.tsv",
+      "sha256": "7b93b2806561cfe07216e5f00577cb607d3022ae5f11d64614010aa83438b38e",
+      "captured_at": 1794842249,
+      "mode": "comparison",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842311-000213.tsv",
+      "sha256": "8b295a6e3580abfb8b90e9a543602355d900e4c1f0e3ab05a078565347b5a6f1",
+      "captured_at": 1794842311,
+      "mode": "baseline",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842313-000214.tsv",
+      "sha256": "18ffba43efef5c760a1cbebb217740aabfa86d448c8ff646d1fae126caf0483b",
+      "captured_at": 1794842313,
+      "mode": "comparison",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842347-000215.tsv",
+      "sha256": "6c24e626f9fa2a5197c1f44e08c3320d6085d6ea43ac35991331738d5bad76f8",
+      "captured_at": 1794842347,
+      "mode": "baseline",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842349-000216.tsv",
+      "sha256": "93487b4f2cba17b2492070d2cc3f76fe988abb51f0c253080832dd6a818bb36b",
+      "captured_at": 1794842349,
+      "mode": "comparison",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842483-000217.tsv",
+      "sha256": "53c1ce51e00ed8000c9b0c8bdff7650d11ac6dec67dd9c5b9a5361d507161fff",
+      "captured_at": 1794842483,
+      "mode": "baseline",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842485-000218.tsv",
+      "sha256": "05af012a1d9fbb0848ae6c49089f93774444d14f9845d6ed00234d3e61bd8d8c",
+      "captured_at": 1794842485,
+      "mode": "comparison",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842529-000219.tsv",
+      "sha256": "fa76d9fe670946c4d0b960b7a5d8c03a9e6d0adf8b60aa41db4a5007e1aefde4",
+      "captured_at": 1794842529,
+      "mode": "baseline",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794842531-000220.tsv",
+      "sha256": "2bbd1e3661402b6f07b5423524a51874cf8ef7aca57b85957008a3565b3d1565",
+      "captured_at": 1794842531,
+      "mode": "comparison",
+      "records": 279,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846449-000221.tsv",
+      "sha256": "c70a12abd9d1eaddb92a007c8ab46afae6a151c69b6abd23858e19d2a6198cb1",
+      "captured_at": 1794846449,
+      "mode": "baseline",
+      "records": 286,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846452-000222.tsv",
+      "sha256": "d0e6bd2f17bfdf41b2915951c5c2f4c43e2be4f41c181496ee795dcf2373cedd",
+      "captured_at": 1794846452,
+      "mode": "comparison",
+      "records": 286,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846579-000223.tsv",
+      "sha256": "d1ba9c42762ac79bdde04e1de0ed01a8e98b6c563ff64354061034aa63293027",
+      "captured_at": 1794846579,
+      "mode": "baseline",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846582-000224.tsv",
+      "sha256": "eababcb0ff8e6ebcc669a1d16ad6bb993eea692844684419c2acee136f247d78",
+      "captured_at": 1794846582,
+      "mode": "comparison",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846622-000225.tsv",
+      "sha256": "4f17b72e1554c2d0a4fe7a512e130bdd7bf5378e076e0889bf72e03183335cfa",
+      "captured_at": 1794846622,
+      "mode": "baseline",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846625-000226.tsv",
+      "sha256": "328a2f27fc9d652a407fef4d0d89858ebf20f470663d2b42e3200ef3f83d04f1",
+      "captured_at": 1794846625,
+      "mode": "comparison",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846680-000227.tsv",
+      "sha256": "fe36041e3c641c5cbdb040a54c3e709b1cd168f9a72b433dccb07711e61eb80f",
+      "captured_at": 1794846680,
+      "mode": "baseline",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846682-000228.tsv",
+      "sha256": "d5b56de6224519c48343bb964ddbe0237c5aa2e68f749ae50cbfb43f833a490a",
+      "captured_at": 1794846682,
+      "mode": "comparison",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846748-000229.tsv",
+      "sha256": "d6a280027caa4251de2915f1eb2ed08fdb38ff448feee6aa10b68522426a2b06",
+      "captured_at": 1794846748,
+      "mode": "baseline",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846751-000230.tsv",
+      "sha256": "4fc67d282c04baadba9efa41aa0549aa59fa19ea6e3e17938d6d673a7fe399d0",
+      "captured_at": 1794846751,
+      "mode": "comparison",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846822-000231.tsv",
+      "sha256": "1ddcf4497f34ed975e0af7a554a2fdec1ab6d64967e61f2c60421898ed97fcb3",
+      "captured_at": 1794846822,
+      "mode": "baseline",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846824-000232.tsv",
+      "sha256": "e2c75eb5bc6a80ceca373d946eac45a89b6c9a9b61cfc0ee6f5d6fa7ebc971c0",
+      "captured_at": 1794846824,
+      "mode": "comparison",
+      "records": 290,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846901-000233.tsv",
+      "sha256": "07d0c9b4539f8ee30848f4aa9b14d7270bf357bacd40514fc982c158792a0bf7",
+      "captured_at": 1794846901,
+      "mode": "baseline",
+      "records": 293,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846903-000234.tsv",
+      "sha256": "86d5edf92c34bea9fa01eaf18e5b5122806cc72c23e3c99575d213588d5cf848",
+      "captured_at": 1794846903,
+      "mode": "comparison",
+      "records": 293,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846928-000235.tsv",
+      "sha256": "5948e7a7b07354f3e4bac3b0b3182558375c40b0a16c5ac9328355aa888c8c38",
+      "captured_at": 1794846928,
+      "mode": "baseline",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846932-000236.tsv",
+      "sha256": "4acc72dba6a0c6ef541514a4fbb8415f6bcda9f0d9e68e7499f453acdafc32d5",
+      "captured_at": 1794846932,
+      "mode": "comparison",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846975-000237.tsv",
+      "sha256": "854c6daf1d49c8578bf51d095ad26ca85417aec24a9c1970dbdb87831ccf6aa3",
+      "captured_at": 1794846975,
+      "mode": "baseline",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794846978-000238.tsv",
+      "sha256": "e2f18f1580b62e222fac9cd1f637b918468dc5616a12cfedb6799a3bc7517496",
+      "captured_at": 1794846978,
+      "mode": "comparison",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847016-000239.tsv",
+      "sha256": "66b8e0583908de2f339cd0b1ad4505e3d666fd839a0cc4d08c62ff4a95569bbe",
+      "captured_at": 1794847016,
+      "mode": "baseline",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847018-000240.tsv",
+      "sha256": "be3691609467f9ec345e6d9cdb353675d07246a39f95e032a0da6561957c79c0",
+      "captured_at": 1794847018,
+      "mode": "comparison",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847041-000241.tsv",
+      "sha256": "f98b0520d4385700a7987abc0b133117e984d1626c7fe0f1cbcf9f302a65d586",
+      "captured_at": 1794847041,
+      "mode": "baseline",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847043-000242.tsv",
+      "sha256": "5da8878be8efa578113edeaf8b732c0e9417c51848ddcae6dd60ec246cdd5e89",
+      "captured_at": 1794847043,
+      "mode": "comparison",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847078-000243.tsv",
+      "sha256": "258e75a393e118061c9fce72ceb8a68c06b9b0c7380244f51b2bd8520f1899e4",
+      "captured_at": 1794847078,
+      "mode": "baseline",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847081-000244.tsv",
+      "sha256": "9f8a3c6581ed551d27144f04b190d46063188ddac977026aee09bdbe2b4e672e",
+      "captured_at": 1794847081,
+      "mode": "comparison",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847123-000245.tsv",
+      "sha256": "98944a3402b773f6f52b336ba31ac534982232a70bac3ae8c72f814dc16290b0",
+      "captured_at": 1794847123,
+      "mode": "baseline",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847125-000246.tsv",
+      "sha256": "81457fb78b779e258e3bb583c65ece50b2beefbb864435a4408c57936190db01",
+      "captured_at": 1794847125,
+      "mode": "comparison",
+      "records": 298,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847175-000247.tsv",
+      "sha256": "717f44b6af11af9971d0d14b39183e49a311010e120ffe5be1a494474dee9eab",
+      "captured_at": 1794847175,
+      "mode": "baseline",
+      "records": 306,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847177-000248.tsv",
+      "sha256": "a729c05491c9b97b2d354854477d291ce0e9972d517dcac681b721ccefed79af",
+      "captured_at": 1794847177,
+      "mode": "comparison",
+      "records": 306,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847223-000249.tsv",
+      "sha256": "c7ba4a7f94925ac568490c202fe87cb57ee8d51e81dab0a6da3ebb5dbc6cfebf",
+      "captured_at": 1794847223,
+      "mode": "baseline",
+      "records": 306,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847225-000250.tsv",
+      "sha256": "07073ba610b789729e8c105a355f5cb965bdc1a88fa334475601b01ae21784f8",
+      "captured_at": 1794847225,
+      "mode": "comparison",
+      "records": 306,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847264-000251.tsv",
+      "sha256": "68f33d542866bbd844f12b7fa77aac3ea85e6d39fc42dad61f4408fbc664b6d8",
+      "captured_at": 1794847264,
+      "mode": "baseline",
+      "records": 306,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847266-000252.tsv",
+      "sha256": "3fcf118dfea611cc8d9d73b2d3e69a651d1ea48ef56b32124e49ef1b923a499b",
+      "captured_at": 1794847266,
+      "mode": "comparison",
+      "records": 306,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847339-000253.tsv",
+      "sha256": "78fd31ec7eff489043c00f227ba8bde8b7b6f711961bdcfb5c6930c5237428f7",
+      "captured_at": 1794847339,
+      "mode": "baseline",
+      "records": 306,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847341-000254.tsv",
+      "sha256": "ec53ae10bc49e4777b25929acb9535113716316a0bc5765972013d83af0141db",
+      "captured_at": 1794847341,
+      "mode": "comparison",
+      "records": 306,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847386-000255.tsv",
+      "sha256": "498a4dba57308cb53298f4f4a1e51dc4edcb79d4b56f3e4ee41e5d50a920ba07",
+      "captured_at": 1794847386,
+      "mode": "baseline",
+      "records": 315,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847388-000256.tsv",
+      "sha256": "49a45e3303b1f8384c22e9a834c37b93d20c8725ae543987c02dbf90926a1330",
+      "captured_at": 1794847388,
+      "mode": "comparison",
+      "records": 315,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847444-000257.tsv",
+      "sha256": "4593249c7a9b08f4b8e8c54df84e92ae3d97b863c487b95d5e1bb719d2433af5",
+      "captured_at": 1794847444,
+      "mode": "baseline",
+      "records": 315,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847446-000258.tsv",
+      "sha256": "cfadb4043fef6be2c63dcf97ca2d4ef323a7226b30ed4fcc052ff09c9134cdbe",
+      "captured_at": 1794847446,
+      "mode": "comparison",
+      "records": 315,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847509-000259.tsv",
+      "sha256": "9e0f955bdde61b88ffbda9b461214bc8ecce8482b6ea94b229b4564386175a23",
+      "captured_at": 1794847509,
+      "mode": "baseline",
+      "records": 315,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847511-000260.tsv",
+      "sha256": "268a50d5624c3980089cf48abd8319ad9b90fb0e53f6bbeb5af6493a8810eea8",
+      "captured_at": 1794847511,
+      "mode": "comparison",
+      "records": 315,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847579-000261.tsv",
+      "sha256": "a2e42ee16fd7ed8f28d2583c666f8179e49315e233949530cfadfd911cad855e",
+      "captured_at": 1794847579,
+      "mode": "baseline",
+      "records": 321,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847581-000262.tsv",
+      "sha256": "35df197691120a6f4e8c99e2ae2d7f195718a50d4363c983111cb03632dc5f47",
+      "captured_at": 1794847581,
+      "mode": "comparison",
+      "records": 321,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847637-000263.tsv",
+      "sha256": "f6ed87ead908cd96bc43f0aeb5b6ce9b79562a9c0cd4d9699573c79222a826bd",
+      "captured_at": 1794847637,
+      "mode": "baseline",
+      "records": 321,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847640-000264.tsv",
+      "sha256": "391bfc0ca752f340c4caa22f00bcf8ec70ecbdb61651b78178cd595553e2547a",
+      "captured_at": 1794847640,
+      "mode": "comparison",
+      "records": 321,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847694-000265.tsv",
+      "sha256": "c5de584feb3bf59a32c0ac73d2c5e835e797805bf8cedba7a124a9087e808447",
+      "captured_at": 1794847694,
+      "mode": "baseline",
+      "records": 321,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847696-000266.tsv",
+      "sha256": "a9022a075039f4ebd589d9b3bddcea73d01332e50c870dd3db214d3a2327645f",
+      "captured_at": 1794847696,
+      "mode": "comparison",
+      "records": 321,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847744-000267.tsv",
+      "sha256": "066685e2b7d7b1e66ef320de66cc042c268f4455715ffa05fbbf9ad96c532f8a",
+      "captured_at": 1794847744,
+      "mode": "baseline",
+      "records": 326,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847746-000268.tsv",
+      "sha256": "90094c869d015db43dce54ffc1efd14b0512e15c16ad539fa1b5b046156f198b",
+      "captured_at": 1794847746,
+      "mode": "comparison",
+      "records": 326,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847782-000269.tsv",
+      "sha256": "be07dc2ad01fd4d4d91ed76f9ca9a19464c1fd6daeb78ad1e47c7753f9fe4a41",
+      "captured_at": 1794847782,
+      "mode": "baseline",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847784-000270.tsv",
+      "sha256": "745f255e2fbecdf4c0b9c53adfdafda69d22054f2f4c324414e7e99e4d20bb81",
+      "captured_at": 1794847784,
+      "mode": "comparison",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847927-000271.tsv",
+      "sha256": "3d2fa7b0cce4b4c13644a08cf9f5de2f2803699c46d44a9369f49a13b3e8792a",
+      "captured_at": 1794847927,
+      "mode": "baseline",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847929-000272.tsv",
+      "sha256": "3e0096616f8509db36b891335891b7d6937cbc24f6bb539a2c9ebf44d1a0df43",
+      "captured_at": 1794847929,
+      "mode": "comparison",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847953-000273.tsv",
+      "sha256": "0b6538db3e35df85ae16ab1b11304eff08b6cc67d2f88e21c47ba5a76d9985c1",
+      "captured_at": 1794847953,
+      "mode": "baseline",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847955-000274.tsv",
+      "sha256": "9b642e466a3c9901ba2f1790cd5f4789e682f15da953c68a24f7e853dfb905d1",
+      "captured_at": 1794847955,
+      "mode": "comparison",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794847998-000275.tsv",
+      "sha256": "df10fa30327096d737c171c496de36be77cac256f97d6f4be162f464d44bdf31",
+      "captured_at": 1794847998,
+      "mode": "baseline",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794848001-000276.tsv",
+      "sha256": "a86174fbcb9659dc9149b73bdd33da97c439a68d18a35a474c0e25efb5901dc9",
+      "captured_at": 1794848001,
+      "mode": "comparison",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794848053-000277.tsv",
+      "sha256": "d9e8f9563c86e9414f138b17ddd4e82ab02a3e7ad5d9f7d4006f757304704645",
+      "captured_at": 1794848053,
+      "mode": "baseline",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    },
+    {
+      "file": "chest-scan-1794848055-000278.tsv",
+      "sha256": "d1c5123d38f4863b6d73e6ffe6b049d59df4af527c65856c09bb5177bc49d265",
+      "captured_at": 1794848055,
+      "mode": "comparison",
+      "records": 327,
+      "reward_status": "runtime_candidates_not_vanilla_verified",
+      "disposition": "imported"
+    }
+  ]
+}
