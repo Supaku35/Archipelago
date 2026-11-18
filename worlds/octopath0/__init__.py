@@ -1,17 +1,24 @@
+from dataclasses import dataclass
+
 from BaseClasses import Item, ItemClassification, Location, Region
-from Options import PerGameCommonOptions
+from Options import PerGameCommonOptions, Toggle
 from worlds.AutoWorld import World
 
 from .items import ITEM_NAME, ITEM_ID, GAME_ITEM_ID, item_name_to_id
-from .locations import (
-    LOCATION_NAME,
-    LOCATION_ID,
-    TREASURE_ID,
-    location_name_to_id,
-)
+from .locations import PROTOTYPE_CHEST, TEST_CHESTS, location_name_to_id
 
 
 GAME_NAME = "Octopath Traveler 0"
+
+
+class TwoChestTest(Toggle):
+    """Include the Wishvale Trail chest and require both Small Shields for the test goal."""
+    display_name = "Two-Chest Integration Test"
+
+
+@dataclass
+class Octopath0Options(PerGameCommonOptions):
+    two_chest_test: TwoChestTest
 
 
 class Octopath0Item(Item):
@@ -23,33 +30,30 @@ class Octopath0Location(Location):
 
 
 class Octopath0World(World):
-    """One-chest integration prototype; full game logic is not implemented."""
+    """Chest integration prototype with an optional two-chest test."""
 
     game = GAME_NAME
 
-    options_dataclass = PerGameCommonOptions
-    options: PerGameCommonOptions
+    options_dataclass = Octopath0Options
+    options: Octopath0Options
 
     topology_present = True
 
     item_name_to_id = item_name_to_id
     location_name_to_id = location_name_to_id
 
+    @property
+    def test_chests(self):
+        return TEST_CHESTS if self.options.two_chest_test else (PROTOTYPE_CHEST,)
+
     def create_regions(self):
         menu = Region("Menu", self.player, self.multiworld)
-        cavern = Region("Cerulean Caverns", self.player, self.multiworld)
-
-        cavern.locations.append(
-            Octopath0Location(
-                self.player,
-                LOCATION_NAME,
-                LOCATION_ID,
-                cavern,
-            )
-        )
-
-        self.multiworld.regions.extend([menu, cavern])
-        menu.connect(cavern)
+        self.multiworld.regions.append(menu)
+        for area, name, ap_id, _ in self.test_chests:
+            region = Region(area, self.player, self.multiworld)
+            self.multiworld.regions.append(region)
+            region.locations.append(Octopath0Location(self.player, name, ap_id, region))
+            menu.connect(region)
 
     def create_item(self, name):
         if name not in item_name_to_id:
@@ -64,12 +68,13 @@ class Octopath0World(World):
         )
 
     def create_items(self):
-        self.multiworld.itempool.append(self.create_item(ITEM_NAME))
+        for _ in self.test_chests:
+            self.multiworld.itempool.append(self.create_item(ITEM_NAME))
 
     def set_rules(self):
         # Generator goal only; this does not report a goal to a live server.
         self.multiworld.completion_condition[self.player] = (
-            lambda state: state.has(ITEM_NAME, self.player)
+            lambda state: state.has(ITEM_NAME, self.player, len(self.test_chests))
         )
 
     def get_filler_item_name(self):
@@ -77,13 +82,12 @@ class Octopath0World(World):
 
     def fill_slot_data(self):
         return {
-            "prototype_schema": 1,
-            "prototype_goal": "receive_small_shield",
-            "locations": [{
-                "name": LOCATION_NAME,
-                "ap_location_id": LOCATION_ID,
-                "game_treasure_id": TREASURE_ID,
-            }],
+            "prototype_schema": 2 if self.options.two_chest_test else 1,
+            "prototype_goal": "receive_two_small_shields" if self.options.two_chest_test else "receive_small_shield",
+            "locations": [
+                {"name": name, "ap_location_id": ap_id, "game_treasure_id": treasure_id}
+                for _, name, ap_id, treasure_id in self.test_chests
+            ],
             "items": [{
                 "name": ITEM_NAME,
                 "ap_item_id": ITEM_ID,

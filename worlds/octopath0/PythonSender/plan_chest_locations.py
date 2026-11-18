@@ -17,10 +17,13 @@ WORLD_LOCATIONS = Path(__file__).resolve().parents[1] / 'locations.py'
 def current_locations():
     # Load only the standalone constants file, without importing worlds or AP.
     values = runpy.run_path(str(WORLD_LOCATIONS))
-    mapping = values['location_name_to_id']
-    if mapping != {values['LOCATION_NAME']: values['LOCATION_ID']}:
-        raise ValueError('Active world mappings changed; update the planner before use.')
-    return {values['TREASURE_ID']: (values['LOCATION_NAME'], values['LOCATION_ID'])}
+    rows = values['TEST_CHESTS']
+    existing = {treasure_id: (name, ap_id) for _, name, ap_id, treasure_id in rows}
+    if len(existing) != len(rows) or values['location_name_to_id'] != {
+        name: ap_id for name, ap_id in existing.values()
+    }:
+        raise ValueError('Inconsistent prototype chest mappings.')
+    return existing
 
 
 def build_plan(catalog, existing):
@@ -123,3 +126,4 @@ if __name__ == '__main__':
         main()
     except (OSError, ValueError, RuntimeError) as exc:
         raise SystemExit(f'Location plan error: {exc}')
+

@@ -79,10 +79,14 @@ async def inspect_connection(after_verified=None):
             }]))
             package = await receive_command(ws, "DataPackage")
             game_data = package.get("data", {}).get("games", {}).get(GAME, {})
-            expect(
-                "Location catalog", game_data.get("location_name_to_id"),
-                {LOCATION: 10000001},
-            )
+            # A seed stores the game-wide catalog from its generation. Both
+            # catalogs can describe a schema-1 slot with just the cavern chest.
+            catalog = game_data.get("location_name_to_id")
+            expected_catalog = {LOCATION: 10000001}
+            trail = "Wishvale Trail - West near Squirrel"
+            if isinstance(catalog, dict) and trail in catalog:
+                expected_catalog[trail] = 10170115
+            expect("Location catalog", catalog, expected_catalog)
             expect(
                 "Item catalog", game_data.get("item_name_to_id"),
                 {"Small Shield": 10000002},
@@ -140,3 +144,4 @@ async def inspect_connection(after_verified=None):
         print("Verified session closed.")
 
     return set(checked)
+

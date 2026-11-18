@@ -1,0 +1,7 @@
+name: OT0TwoChest
+game: Octopath Traveler 0
+description: Two-chest integration seed
+Octopath Traveler 0:
+  two_chest_test: true
+  progression_balancing: 0
+  accessibility: items
