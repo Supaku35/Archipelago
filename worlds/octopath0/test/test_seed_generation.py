@@ -1,10 +1,12 @@
 """Exercise the player YAMLs through Generate.py and read the final server archives."""
+import json
 import os
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 import zlib
 
@@ -17,6 +19,18 @@ TRAIL = ("Wishvale Trail - West near Squirrel", 10170115, 70115)
 
 
 class SeedGenerationTests(unittest.TestCase):
+    def test_live_sender_matches_shipped_seed(self):
+        # This fixture stays pinned when the generator's catalog evolves.
+        with patch.object(sys, "path", [str(WORLD / "PythonSender"), *sys.path]):
+            import submit_two_chest as sender
+
+        with zipfile.ZipFile(WORLD / "test" / f"AP_{sender.SEED}.zip") as archive:
+            data = restricted_loads(zlib.decompress(archive.read(f"AP_{sender.SEED}.archipelago")[1:]))
+        self.assertEqual(data["seed_name"], sender.SEED)
+        self.assertEqual(data["slot_info"][1].name, sender.PLAYER)
+        self.assertEqual(json.loads(json.dumps(data["slot_data"][1])), sender.SLOT_DATA)
+        self.assertEqual(set(data["locations"][1]), set(sender.location_map(sender.SLOT_DATA).values()))
+
     def test_player_presets(self):
         for player, rows, schema, goal in [
             ("OT0Prototype", [CAVERN], 1, "receive_small_shield"),
