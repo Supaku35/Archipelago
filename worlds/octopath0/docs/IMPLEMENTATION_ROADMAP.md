@@ -1,6 +1,6 @@
 # Octopath Traveler 0 Archipelago implementation roadmap
 
-**Current milestone · M1, complete the revised two-chest loop.** The revised Wishvale submission and reconnect test passed in-game. The next deliverable is a read-only reconciliation of this room’s received Small Shield against the intended save. Inventory changes come after the room, item mapping and save binding all agree.
+**Current milestone · M1, complete the revised two-chest loop.** The revised Wishvale submission and reconnect test passed in-game. The revised reconciliation command has passed server tests. The current in-game checkpoint is to match Wishvale’s received shield at index 0 to the intended save, then verify its binding after a disk reload.
 
 This is the working implementation order. The [original design notes](Octopath%200%20Archipelago.md) remain the reference for area inventories, route details, chapter thresholds and desired settings. The first proposed playable release targets **Master of All**, the design’s default goal. Bestower of All and Traveler Hunt have their own milestones. Milestone order is a recommendation. A playtest result can change it.
 
@@ -76,3 +76,5 @@ These are design targets. Expose a setting to players when the generator, game b
 At the end of each milestone, update the opening status and its table row in the same branch as the tested change. Add a dated evidence line with the build or commit, seed/slot, test performed and result. Identify whether the result came from generation, a server with simulated game input, or an in-game run with a disk reload. Carry an unresolved result into the next session as a named test. Revise the design notes when the intended player experience changes and this roadmap when the order or evidence changes.
 
 **2026-11-20 · M0.** Catalog integration build `7685ee9`, revised seed `84576831886948881492`, slot `OT0TwoChest`. User confirmed the Wishvale in-game submission and reconnect procedure passed. Next evidence needed is the revised room’s inbound item history and its relationship to the selected game save.
+
+**M1 · Revised reconciliation ready for in-game testing.** Run `PythonSender/reconcile_ap_items.py --profile revised` against the existing revised room. With only Wishvale checked, expect one history entry from location `10070115`. An unbound save reports an unknown next index. To bind the intended unbound test save, run `PythonSender/bind_ap_save.py --initialize --profile revised`, save normally, reload and rerun reconciliation. For an undelivered shield, expect saved next index 0 and one pending delivery. A mismatched save keeps its existing binding. Server tests covered zero, one and two checks using simulated game responses. In-game persistence, grant and goal tests are pending.

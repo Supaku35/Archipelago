@@ -8,7 +8,10 @@ def main(argv=None):
     modes.add_argument("--inspect", action="store_true")
     modes.add_argument("--authorize", action="store_true")
     modes.add_argument("--test-mismatch", action="store_true")
+    parser.add_argument("--profile", choices=("prototype", "revised"), default="prototype")
     args = parser.parse_args(argv)
+    if args.profile == "revised" and args.authorize:
+        parser.error("Revised profile supports binding inspection and initialization only.")
 
     operation = (
         "authorize" if args.authorize
@@ -17,7 +20,7 @@ def main(argv=None):
     )
     return request_save_binding(
         operation,
-        test_mismatch=args.test_mismatch,
+        test_mismatch=args.test_mismatch, revised=args.profile == "revised",
     )
 
 if __name__ == "__main__":

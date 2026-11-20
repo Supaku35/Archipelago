@@ -7,9 +7,10 @@ from pathlib import Path
 
 from ap_connection import SEED, expect, inspect_connection
 from bridge_io import publish
+from two_chest_profiles import REVISED_SEED, verify_revised_room
 
 
-def request_save_binding(operation, *, test_mismatch=False):
+def request_save_binding(operation, *, test_mismatch=False, revised=False):
     if operation not in {"initialize", "inspect", "authorize"}:
         raise ValueError("Unknown binding operation.")
     if test_mismatch and operation != "inspect":
@@ -20,9 +21,12 @@ def request_save_binding(operation, *, test_mismatch=False):
     authorize = operation == "authorize"
 
     # This verifier requires the known seed, team 0, slot 1, and mappings.
-    asyncio.run(inspect_connection())
+    if revised and authorize:
+        raise ValueError("Revised-room delivery is not enabled.")
+    seed = REVISED_SEED if revised else SEED
+    asyncio.run(verify_revised_room() if revised else inspect_connection())
 
-    if not re.fullmatch(r"[0-9]{1,64}", SEED):
+    if not re.fullmatch(r"[0-9]{1,64}", seed):
         raise RuntimeError("This metadata prototype supports numeric seed names only.")
 
     root = os.environ.get("LOCALAPPDATA")
@@ -36,7 +40,7 @@ def request_save_binding(operation, *, test_mismatch=False):
     requested_slot = 2 if test_mismatch else 1
     payload = (
         f"OT0AP_BIND_V1\n{request_id}\n{operation}\n"
-        f"{SEED}\n0\n{requested_slot}\nEND\n"
+        f"{seed}\n0\n{requested_slot}\nEND\n"
     )
     publish(folder / "inbox.txt", payload)
 
@@ -111,7 +115,7 @@ def request_save_binding(operation, *, test_mismatch=False):
         expect("Absent metadata fields", lines[4:8], ["unknown"] * 4)
         return
 
-    expect("Stored seed", lines[4], SEED)
+    expect("Stored seed", lines[4], seed)
     expect("Stored team", lines[5], "0")
     expect("Stored slot", lines[6], "1")
     if not re.fullmatch(r"[0-9]{1,7}", lines[7]):
@@ -153,3 +157,4 @@ def request_save_binding(operation, *, test_mismatch=False):
         "token": request_id,
         "save_name": lines[3],
     }
+

@@ -1,25 +1,41 @@
+import argparse
 import asyncio
 
 from save_binding import request_save_binding
 from ap_connection import SEED, expect
-from ap_history import read_verified_history, plan_pending
+from ap_history import EXPECTED_ITEM, read_verified_history, plan_pending
+from two_chest_profiles import REVISED_SEED, REVISED_SLOT_DATA
 
 
-def main():
-    history = asyncio.run(read_verified_history())
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Compare server item history with the loaded save.")
+    parser.add_argument("--profile", choices=("prototype", "revised"), default="prototype")
+    revised = parser.parse_args(argv).profile == "revised"
+    history = asyncio.run(read_verified_history(revised=revised))
+    if revised:
+        names = {row["ap_location_id"]: row["name"] for row in REVISED_SLOT_DATA["locations"]}
+        for index, item in enumerate(history):
+            source = item["location"]
+            print(f"Index {index}: {names[source]} ({source}) -> Small Shield "
+                  f"(AP {item['item']}, game 110001, quantity 1).")
 
     # Reuses the verified server identity and read-only Lua request.
-    binding = request_save_binding("inspect")
+    binding = request_save_binding("inspect", revised=revised)
     if binding is None:
+        if revised:
+            print("Save has no binding. Its next index is unknown. Use --initialize --profile revised "
+                  "with bind_ap_save.py only on the intended test save.")
+            return
         raise RuntimeError(
             "This save has no live binding. Initialize it separately first."
         )
 
-    expect("Reconciliation seed", binding["seed"], SEED)
+    expect("Reconciliation seed", binding["seed"], REVISED_SEED if revised else SEED)
     expect("Reconciliation team", binding["team"], 0)
     expect("Reconciliation slot", binding["slot"], 1)
     next_index = binding["next_index"]
-    pending = plan_pending(history, next_index)
+    item_id = REVISED_SLOT_DATA["items"][0]["ap_item_id"] if revised else EXPECTED_ITEM["item"]
+    pending = plan_pending(history, next_index, item_id=item_id)
 
     print("\nREAD-ONLY RECONCILIATION")
     print(f"Verified AP history length: {len(history)}")
@@ -56,3 +72,4 @@ if __name__ == "__main__":
         raise SystemExit("Reconciliation timed out. No automatic retry.")
     except Exception as exc:
         raise SystemExit(f"Reconciliation failed: {type(exc).__name__}: {exc}")
+
