@@ -6,7 +6,8 @@ from pathlib import Path
 
 from save_binding import request_save_binding
 from ap_connection import SEED, expect
-from ap_history import read_verified_history, plan_pending
+from ap_history import EXPECTED_ITEM, read_verified_history, plan_pending
+from two_chest_profiles import REVISED_SEED, REVISED_SLOT_DATA
 from bridge_io import BridgeCancelled, publish, wait_for_bridge_response
 
 def main(argv=None, *, run_state=None):
@@ -15,19 +16,23 @@ def main(argv=None, *, run_state=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--timeout", type=int, default=600)
     parser.add_argument("--replay-index-zero", action="store_true")
+    parser.add_argument("--profile", choices=("prototype", "revised"), default="prototype")
     args = parser.parse_args(argv)
+    revised = args.profile == "revised"
+    seed = REVISED_SEED if revised else SEED
+    item_id = REVISED_SLOT_DATA["items"][0]["ap_item_id"] if revised else EXPECTED_ITEM["item"]
     if args.timeout < 1:
         raise RuntimeError("Timeout must be positive.")
 
-    history = asyncio.run(read_verified_history())
-    binding = request_save_binding("authorize")
+    history = asyncio.run(read_verified_history(revised=revised))
+    binding = request_save_binding("authorize", revised=revised)
     if binding is None:
         raise RuntimeError("No live binding. Initialize it separately first.")
 
-    expect("Live seed", binding["seed"], SEED)
+    expect("Live seed", binding["seed"], seed)
     expect("Live team", binding["team"], 0)
     expect("Live slot", binding["slot"], 1)
-    pending = plan_pending(history, binding["next_index"])
+    pending = plan_pending(history, binding["next_index"], item_id=item_id)
 
     if args.replay_index_zero:
         if binding["next_index"] < 1:
@@ -38,6 +43,9 @@ def main(argv=None, *, run_state=None):
         print("Already caught up. No delivery request published.")
         print("Press Ctrl+F3 to clear this run's authorization.")
         return
+    elif revised:
+        # Observe the inventory delta for one received index per authorization.
+        pending = pending[:1]
 
     root = os.environ.get("LOCALAPPDATA")
     if not root:
@@ -48,7 +56,7 @@ def main(argv=None, *, run_state=None):
         request_id = uuid.uuid4().hex
         payload = (
             f"OT0AP_LIVE_V1\n{request_id}\n{binding['token']}\n"
-            f"{SEED}\n0\n1\n{index}\n{item['item']}\nEND\n"
+            f"{seed}\n0\n1\n{index}\n{item['item']}\nEND\n"
         )
         # An earlier processed response does not confirm this new request.
         run_state["processed"] = False
@@ -66,7 +74,7 @@ def main(argv=None, *, run_state=None):
         run_state["confirmed_next_index"] = next_index
         print(f"Live index {index} accounted for in memory; next index={next_index}.")
 
-    print("Snapshot caught up or duplicate test finished. Save normally to persist.")
+    print("Save normally to persist the confirmed inventory and delivery index.")
     print("Press Ctrl+F3 to clear this run's authorization. No checks or goal submitted.")
 
 
@@ -109,4 +117,5 @@ def print_delivery_stop_guidance(state):
 
 if __name__ == "__main__":
     raise SystemExit(run_cli())
+
 

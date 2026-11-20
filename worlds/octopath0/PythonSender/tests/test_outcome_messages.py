@@ -17,7 +17,8 @@ import save_binding
 class DeliveryMessages(unittest.TestCase):
     def run_command(self, *, progress=0, binding_error=None, publish_error=None,
                     response_error=None, response_index=1, args=None):
-        async def history():
+        async def history(*, revised):
+            assert not revised
             return [{"item": 10000002, "location": 10000001, "player": 1, "flags": 1}]
         binding = {"seed": delivery.SEED, "team": 0, "slot": 1,
                    "next_index": progress, "token": "a" * 32, "save_name": "save A"}
@@ -123,3 +124,4 @@ class BindingMessages(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

@@ -21,8 +21,6 @@ def request_save_binding(operation, *, test_mismatch=False, revised=False):
     authorize = operation == "authorize"
 
     # This verifier requires the known seed, team 0, slot 1, and mappings.
-    if revised and authorize:
-        raise ValueError("Revised-room delivery is not enabled.")
     seed = REVISED_SEED if revised else SEED
     asyncio.run(verify_revised_room() if revised else inspect_connection())
 
