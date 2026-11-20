@@ -1,0 +1,79 @@
+Opened log file 'D:\Archipelago\ot0-freeze-symbols.txt'
+0:000> .sympath+ D:\SteamLibrary\steamapps\common\Octopath_Traveler0\Octopath_Traveler0\Binaries\Win64\ue4ss
+.sympath+ D:\SteamLibrary\steamapps\common\Octopath_Traveler0\Octopath_Traveler0\Binaries\Win64\ue4ss
+Symbol search path is: srv*;D:\SteamLibrary\steamapps\common\Octopath_Traveler0\Octopath_Traveler0\Binaries\Win64\ue4ss
+Expanded Symbol search path is: cache*;SRV*https://msdl.microsoft.com/download/symbols;d:\steamlibrary\steamapps\common\octopath_traveler0\octopath_traveler0\binaries\win64\ue4ss
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+OK                                             D:\SteamLibrary\steamapps\common\Octopath_Traveler0\Octopath_Traveler0\Binaries\Win64\ue4ss
+0:000> .reload /f UE4SS.dll
+.reload /f UE4SS.dll
+*** WARNING: Unable to verify checksum for UE4SS.dll
+0:000> lmvm UE4SS
+lmvm UE4SS
+Browse full module list
+start             end                 module name
+00007ffc`20270000 00007ffc`21244000   UE4SS    C (private pdb symbols)  C:\ProgramData\Dbg\sym\UE4SS.pdb\50B6129B44954FE1B14F5D9569B3F7FD7\UE4SS.pdb
+    Loaded symbol image file: UE4SS.dll
+    Image path: D:\SteamLibrary\steamapps\common\Octopath_Traveler0\Octopath_Traveler0\Binaries\Win64\ue4ss\UE4SS.dll
+    Image name: UE4SS.dll
+    Browse all global symbols  functions  data  Symbol Reload
+    Timestamp:        Wed Jul 15 23:51:22 2026 (6A584022)
+    CheckSum:         00000000
+    ImageSize:        00FD4000
+    Mapping Form:     Loaded
+    Translations:     0000.04b0 0000.04e4 0409.04b0 0409.04e4
+    Information from resource tables:
+0:000> ~0s
+~0s
+ntdll!NtWriteFile+0x14:
+00007ffc`cde764e4 c3              ret
+0:000> kb
+kb
+ # RetAddr               : Args to Child                                                           : Call Site
+00 00007ffc`cb01454d     : 00007ffc`20c42d22 000000e5`b1f7cc60 00000000`00000000 00000000`00000000 : ntdll!NtWriteFile+0x14
+01 00007ffc`cb85d517     : 00000000`000000d1 000000e5`b1f7df88 000002d1`82424120 000000e5`b1f7cb00 : KERNELBASE!WriteFile+0x8d
+02 00007ffc`cb85c7b5     : 00000000`00000000 00000000`00000000 000000e5`b1f7dfa8 00000000`00000000 : ucrtbase!write_text_ansi_nolock+0xc7
+03 00007ffc`cb85c3be     : 00000000`00000004 0000ee46`900d11fc 00000000`00000000 00007ffc`cb840000 : ucrtbase!write_nolock+0x195
+04 00007ffc`cb85c156     : 00007ffc`00000004 000002d0`a41056e0 00007ffc`cb978c98 000002d0`a41056e0 : ucrtbase!write_internal+0xae
+05 00007ffc`cb85b183     : 00000000`000000d0 000000e5`b1f7e5d0 00000000`00000001 000000e5`b1f7e6e0 : ucrtbase!_acrt_stdio_flush_nolock+0x56
+06 00007ffc`cb85b047     : 000000e5`b1f7e5a8 000000e5`b1f7e5a8 000000e5`b1f7e5d1 00000000`00000170 : ucrtbase!<lambda_12129ca491078c9e25e3e1c40c47083e>::operator()+0x113
+07 00007ffc`cb85b008     : 00007ffc`cb978c98 00007ffc`cdd41cfb 00000000`00000000 000000e5`b1f7e648 : ucrtbase!__crt_seh_guarded_call<int>::operator()<<lambda_740b16f11d3f1d0e3539b6f82067f039>,<lambda_12129ca491078c9e25e3e1c40c47083e> &,<lambda_726acf3f6ef76bdfe9ce222780860567> >+0x2b
+08 00007ffc`205ca99b     : 00000000`00000024 00007ffc`20c42d98 000000e5`b1f7e688 00007ffc`cb978c98 : ucrtbase!_stdio_common_vfwprintf_s+0xe8
+09 (Inline Function)     : --------`-------- --------`-------- --------`-------- --------`-------- : UE4SS!_vfwprintf_s_l+0x1e [C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wstdio.h @ 338] 
+0a 00007ffc`205ca80d     : 00007ffc`20c42d98 00007ffc`20d62c3a 000000e5`b1f7e6c0 000002d0`99f00920 : UE4SS!wprintf_s+0x4b [C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wstdio.h @ 658] 
+0b 00007ffc`205ca2d1     : 00000000`00000168 000002d1`819121d0 000002d0`a4121b38 000000e5`b1f7e7f0 : UE4SS!RC::Output::DebugConsoleDevice::receive_with_optional_arg+0x22d [D:\a\RE-UE4SS\RE-UE4SS\deps\first\DynamicOutput\src\DebugConsoleDevice.cpp @ 52] 
+0c 00007ffc`204c3344     : 000002d0`9de5a830 000002d1`819121d0 00000000`00000000 000002d0`9de5a830 : UE4SS!RC::Output::send+0x61 [D:\a\RE-UE4SS\RE-UE4SS\deps\first\DynamicOutput\src\Output.cpp @ 40] 
+0d 00007ffc`20ae7ab4     : 00000000`00000000 000002d0`9ed6c1a8 00000000`0000009e 00000000`00000000 : UE4SS!RC::LuaLibrary::global_print+0x7d4 [D:\a\RE-UE4SS\RE-UE4SS\UE4SS\src\LuaLibrary.cpp @ 103] 
+0e (Inline Function)     : --------`-------- --------`-------- --------`-------- --------`-------- : UE4SS!RC::LuaMadeSimple::process_lua_function::__l2::<lambda_1>::operator()+0x23 [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaMadeSimple\src\LuaMadeSimple.cpp @ 1196] 
+0f 00007ffc`20aec8bc     : 00000000`00000000 00000000`00000000 000002d0`9ed6c1a8 01dd768e`d5a31d7f : UE4SS!RC::LuaMadeSimple::TRY<`RC::LuaMadeSimple::process_lua_function'::`2'::<lambda_1> >+0x44 [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaMadeSimple\include\LuaMadeSimple\LuaMadeSimple.hpp @ 801] 
+10 00007ffc`20bbb75e     : 000002d0`9ed6c1a8 00007ffc`20bc8357 000002d1`820ed890 000002d0`9ed6c1a8 : UE4SS!RC::LuaMadeSimple::process_lua_function+0x40c [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaMadeSimple\src\LuaMadeSimple.cpp @ 1203] 
+11 00007ffc`20bba94a     : 000002d0`9ed72174 000002d0`9ed6c1a8 000002d0`9ed72174 0000a158`8555da74 : UE4SS!precallC+0x11e [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaRaw\src\ldo.c @ 530] 
+12 00007ffc`20bc642b     : 00000000`00030135 00000000`00030135 000002d0`9ed72170 00000000`00030135 : UE4SS!luaD_precall+0xda [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaRaw\src\ldo.c @ 593] 
+13 00007ffc`20bba129     : 000002d0`9ed6c1a8 000002d1`81ac4130 cccccccc`00000000 000002d0`9ed72178 : UE4SS!luaV_execute+0x32ab [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaRaw\src\lvm.c @ 1682] 
+14 00007ffc`20bbaeb3     : 00000d66`00000cf0 00000e50`00000d70 00000ed0`00000e5a 00000f20`00000eda : UE4SS!ccall+0xb9 [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaRaw\src\ldo.c @ 639] 
+15 00007ffc`20bba774     : 000002d1`32a08080 00007ff7`78e35a15 000000e5`b1f7ef20 00000000`00000000 : UE4SS!luaD_rawrunprotected+0x73 [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaRaw\src\ldo.c @ 147] 
+16 00007ffc`20bb282c     : 00000000`00000001 00000000`00000000 00007ff7`7fff71d0 00000000`00000000 : UE4SS!luaD_pcall+0x34 [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaRaw\src\ldo.c @ 958] 
+17 00007ffc`20ae91e5     : 00000000`00000000 000002d0`9ed6c1a8 0000000d`ffffe000 00000000`00000000 : UE4SS!lua_pcallk+0x10c [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaRaw\src\lapi.c @ 1064] 
+18 00007ffc`2052da82     : 000002d0`9de5a8d0 00007ffc`20aea848 000002d1`820bfe10 00000000`00000018 : UE4SS!RC::LuaMadeSimple::Lua::call_function+0x75 [D:\a\RE-UE4SS\RE-UE4SS\deps\first\LuaMadeSimple\src\LuaMadeSimple.cpp @ 970] 
+19 (Inline Function)     : --------`-------- --------`-------- --------`-------- --------`-------- : UE4SS!RC::process_delayed_actions::__l31::<lambda_1>::operator()+0xe [D:\a\RE-UE4SS\RE-UE4SS\UE4SS\src\Mod\LuaMod.cpp @ 3915] 
+1a 00007ffc`20516d69     : 000002d1`85432670 000002d1`85432670 000002d1`820bfe10 00000000`00000002 : UE4SS!RC::TRY<`RC::process_delayed_actions<0>'::`31'::<lambda_1> >+0x12 [D:\a\RE-UE4SS\RE-UE4SS\UE4SS\include\ExceptionHandling.hpp @ 78] 
+1b (Inline Function)     : --------`-------- --------`-------- --------`-------- --------`-------- : UE4SS!RC::process_delayed_actions+0x36e [D:\a\RE-UE4SS\RE-UE4SS\UE4SS\src\Mod\LuaMod.cpp @ 3914] 
+1c 00007ffc`20646c1a     : 000002d0`eb298900 000002d0`eb298900 000002d0`ebcedd98 00000018`00000011 : UE4SS!RC::engine_tick_hook+0x3c9 [D:\a\RE-UE4SS\RE-UE4SS\UE4SS\src\Mod\LuaMod.cpp @ 4029] 
+1d (Inline Function)     : --------`-------- --------`-------- --------`-------- --------`-------- : UE4SS!std::_Func_class<void,RC::Unreal::Hook::TCallbackIterationData<void> &,RC::Unreal::UEngine *,float,bool>::operator()+0x33 [C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC\Tools\MSVC\14.51.36231\include\functional @ 1057] 
+1e 00007ffc`2065040a     : 000002d0`eb298900 00007ff7`7927db00 000000e5`b1f7f2b0 000002d1`7b05f020 : UE4SS!RC::Unreal::Hook::Internal::TDetourInstance<9007199254740992,std::function<void __cdecl(RC::Unreal::UEngine *,float,bool)> >::InvokeCallbacks+0x19a [D:\a\RE-UE4SS\RE-UE4SS\deps\first\Unreal\include\Unreal\Hooks\Internal\DetourInstance.hpp @ 433] 
+1f (Inline Function)     : --------`-------- --------`-------- --------`-------- --------`-------- : UE4SS!RC::Unreal::Hook::Internal::TDetourInstance<9007199254740992,std::function<void __cdecl(RC::Unreal::UEngine *,float,bool)> >::Invoke+0x37 [D:\a\RE-UE4SS\RE-UE4SS\deps\first\Unreal\include\Unreal\Hooks\Internal\DetourInstance.hpp @ 367] 
+20 00007ff7`7ba738a4     : 000002d1`7b05f020 00000000`00000000 000000e5`b1f7f3f0 00000000`00000000 : UE4SS!RC::Unreal::Hook::Internal::TDetourInstance<9007199254740992,std::function<void __cdecl(RC::Unreal::UEngine *,float,bool)> >::StaticHookFn+0x5a [D:\a\RE-UE4SS\RE-UE4SS\deps\first\Unreal\include\Unreal\Hooks\Internal\DetourInstance.hpp @ 476] 
+21 00007ff7`7ba7ae8c     : 00000000`00000000 00000000`00000000 000002d0`ec4e3ca0 00000000`00000000 : Octopath_Traveler0_Win64_Shipping!src_strerror+0x1f420c4
+22 00007ff7`7ba7af0a     : 00000000`0000001c 000002d0`ec4e3ca0 00000000`00000000 00000000`00000000 : Octopath_Traveler0_Win64_Shipping!src_strerror+0x1f496ac
+23 00007ff7`7ba7bd30     : 000002d0`ec4e3ca0 00000000`00000000 00000000`00000000 00000000`00000000 : Octopath_Traveler0_Win64_Shipping!src_strerror+0x1f4972a
+24 00007ff7`7ba83ff4     : 00000000`0000000a 00000000`00000000 00000000`00000000 00007ffc`cb9780b0 : Octopath_Traveler0_Win64_Shipping!src_strerror+0x1f4a550
+25 00007ff7`7df6b5a2     : 00000000`0000000a 00000000`00000000 00000000`00000000 00000000`00000000 : Octopath_Traveler0_Win64_Shipping!src_strerror+0x1f52814
+26 00007ffc`ccabdda7     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : Octopath_Traveler0_Win64_Shipping!NVSDK_NGX_VULKAN_Shutdown1+0x17c472
+27 00007ffc`cddd9c5c     : 00000000`00000000 00000000`00000000 00000000`00000000 000000e5`b1f7fa30 : kernel32!BaseThreadInitThunk+0x17
+28 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x2c
+0:000> .logclose
+.logclose
+Closing open log file D:\Archipelago\ot0-freeze-symbols.txt

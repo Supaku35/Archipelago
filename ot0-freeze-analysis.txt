@@ -1,0 +1,4 @@
+Opened log file 'D:\Archipelago\ot0-freeze-analysis.txt'
+0:000> .logopen D:\Archipelago\ot0-freeze-symbols.txt
+.logopen D:\Archipelago\ot0-freeze-symbols.txt
+Closing open log file D:\Archipelago\ot0-freeze-analysis.txt

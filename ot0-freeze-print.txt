@@ -1,0 +1,55 @@
+Opened log file 'D:\Archipelago\ot0-freeze-print.txt'
+0:000> ~0s
+~0s
+ntdll!NtWriteFile+0x14:
+00007ffc`cde764e4 c3              ret
+0:000> .frame /r 0b
+.frame /r 0b
+0b 000000e5`b1f7e680 00007ffc`205ca2d1     UE4SS!RC::Output::DebugConsoleDevice::receive_with_optional_arg+0x22d [D:\a\RE-UE4SS\RE-UE4SS\deps\first\DynamicOutput\src\DebugConsoleDevice.cpp @ 52] 
+rax=0000000000000008 rbx=000002d0a4121b38 rcx=0000000000000294
+rdx=0000000000000000 rsi=0000000000000000 rdi=000002d0a5c426a0
+rip=00007ffc205ca80d rsp=000000e5b1f7e680 rbp=000000e5b1f7e6d9
+ r8=000000e5b1f7d238  r9=000002d183762b9c r10=000000000336670b
+r11=000000e5b1f7d020 r12=0000000000000000 r13=0000000000000002
+r14=000000e5b1f7e760 r15=0000000000000000
+iopl=0         nv up ei pl zr na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000246
+UE4SS!RC::Output::DebugConsoleDevice::receive_with_optional_arg+0x22d:
+00007ffc`205ca80d 488b55ff        mov     rdx,qword ptr [rbp-1] ss:000000e5`b1f7e6d8=000000000000000f
+0:000> dv /t /v
+dv /t /v
+@rdi              class RC::Output::DebugConsoleDevice * this = 0x000002d0`a5c426a0
+@r14              class std::basic_string_view<wchar_t,std::char_traits<wchar_t> > * fmt = 0x000000e5`b1f7e760 "[Lua] [LocalBridge] WATCH: request=83c0a576f15d401398641b7f480864d7 status=watching observation=70115=checked,70117=unopened | Read-only dry-run observation; no checks submitted.
+"
+@rsi              int optional_arg = 0n0
+0:000> .frame /r 0d
+.frame /r 0d
+0d 000000e5`b1f7e790 00007ffc`20ae7ab4     UE4SS!RC::LuaLibrary::global_print+0x7d4 [D:\a\RE-UE4SS\RE-UE4SS\UE4SS\src\LuaLibrary.cpp @ 103] 
+rax=0000000000000008 rbx=000002d09de5a830 rcx=0000000000000294
+rdx=0000000000000000 rsi=000002d1819121d0 rdi=0000000000000168
+rip=00007ffc204c3344 rsp=000000e5b1f7e790 rbp=000000e5b1f7ea09
+ r8=000000e5b1f7d238  r9=000002d183762b9c r10=000000000336670b
+r11=000000e5b1f7d020 r12=0000000000000000 r13=0000000000000002
+r14=000000000000007f r15=0000000000000000
+iopl=0         nv up ei pl zr na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000246
+UE4SS!RC::LuaLibrary::global_print+0x7d4:
+00007ffc`204c3344 4d85ff          test    r15,r15
+0:000> dv /t /v
+dv /t /v
+@rbx              class RC::LuaMadeSimple::Lua * lua = 0x000002d0`9de5a830
+000000e5`b1f7e7d8 int stack_size = 0n1
+000000e5`b1f7e828 class std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> > outdevice_string = ""
+@r15              class RC::Unreal::FOutputDevice * output_device = 0x00000000`00000000
+000000e5`b1f7e848 class std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> > formatted_string = "[Lua] [LocalBridge] WATCH: request=83c0a576f15d401398641b7f480864d7 status=watching observation=70115=checked,70117=unopened | Read-only dry-run observation; no checks submitted.
+"
+000000e5`b1f7e7c8 int i = 0n2
+<unavailable>     char * raw_string = <value unavailable>
+000000e5`b1f7e868 class std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> > lua_str = "[LocalBridge] WATCH: request=83c0a576f15d401398641b7f480864d7 status=watching observation=70115=checked,70117=unopened | Read-only dry-run observation; no checks submitted.
+"
+000000e5`b1f7e868 class std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> > nil_str = "[LocalBridge] WATCH: request=83c0a576f15d401398641b7f480864d7 status=watching observation=70115=checked,70117=unopened | Read-only dry-run observation; no checks submitted.
+"
+000000e5`b1f7e820 class std::exception * e = 0x000000e5`b1f7ed40
+0:000> .logclose
+.logclose
+Closing open log file D:\Archipelago\ot0-freeze-print.txt
