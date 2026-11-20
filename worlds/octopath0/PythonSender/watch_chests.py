@@ -26,7 +26,8 @@ def validate_ids(ids):
 
 
 class WatchEvents:
-    def __init__(self, request_id, ids):
+    def __init__(self, request_id, ids, *, live=False):
+        self.header = "OT0AP_LIVE_WATCH_V1" if live else "OT0AP_WATCH_V2"
         self.request_id = request_id
         self.ids = validate_ids(ids)
         self.save = None
@@ -39,7 +40,7 @@ class WatchEvents:
         if len(raw) > 8192:
             raise RuntimeError('Watch event exceeds the size limit.')
         lines = raw.decode('utf-8').splitlines()
-        if (len(lines) != 8 or lines[0] != 'OT0AP_WATCH_V2'
+        if (len(lines) != 8 or lines[0] != self.header
                 or lines[1] != self.request_id
                 or lines[3] != ','.join(map(str, self.ids)) or lines[7] != 'END'):
             raise RuntimeError('Invalid or mismatched watch event.')
@@ -75,13 +76,17 @@ class WatchEvents:
         return status, states, newly_checked, lines[6]
 
 
-def run_watch(folder, timeout, ids=(70117,)):
+def observe_watch(folder, timeout, ids, *, live=False):
     ids = validate_ids(ids)
     request_id = uuid.uuid4().hex
-    events = WatchEvents(request_id, ids)
-    query = '\n'.join(['OT0AP_WATCH_QUERY_V2', request_id, str(len(ids)), *map(str, ids), 'END', ''])
+    events = WatchEvents(request_id, ids, live=live)
+    header = 'OT0AP_LIVE_WATCH_QUERY_V1' if live else 'OT0AP_WATCH_QUERY_V2'
+    query = '\n'.join([header, request_id, str(len(ids)), *map(str, ids), 'END', ''])
     publish(folder / 'inbox.txt', query)
-    print('DRY RUN ONLY: no server connection, item grants, or location submission.', flush=True)
+    if live:
+        print('LIVE: Ctrl+F7 authorizes submitting the selected chest, including if already open.', flush=True)
+    else:
+        print('DRY RUN ONLY: no server connection, item grants, or location submission.', flush=True)
     print('Ctrl+F3 to disarm, then Ctrl+F7 on the intended save. Ctrl+F3 stops the watch.', flush=True)
     print('Already-open chests count as checked. Observations are in memory, not proof of a disk save.', flush=True)
     deadline, sequence = time.monotonic() + timeout, 0
@@ -96,7 +101,7 @@ def run_watch(folder, timeout, ids=(70117,)):
         if raw is not None:
             status, states, newly_checked, detail = events.accept(raw)
             print(f'Watch={status}; save={events.save or "unbound"}; {states}; {detail}', flush=True)
-            for id in newly_checked:
+            for id in ([] if live else newly_checked):
                 location = DRAFT_LOCATIONS[id]
                 print(f"DRY RUN: {location['name']} -> AP location {location['ap_location_id']}", flush=True)
                 print(json.dumps([{'cmd': 'LocationChecks', 'locations': [location['ap_location_id']]}]), flush=True)
@@ -104,11 +109,16 @@ def run_watch(folder, timeout, ids=(70117,)):
             if status in {'blocked', 'error'}:
                 raise RuntimeError(detail)
             if events.finished:
-                print('Watch ended. No location checks were sent.', flush=True)
-                return
+                if not live:
+                    print('Watch ended. No location checks were sent.', flush=True)
+                return events if status == 'complete' else None
         if time.monotonic() >= deadline:
             raise RuntimeError('Watch timed out. Press Ctrl+F3 to stop the in-game watch.')
         time.sleep(0.5)
+
+
+def run_watch(folder, timeout, ids=(70117,)):
+    observe_watch(folder, timeout, ids)
 
 
 def main():

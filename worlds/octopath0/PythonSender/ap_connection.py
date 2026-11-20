@@ -59,19 +59,22 @@ async def receive_command(ws, wanted):
         if matches:
             return matches[0]
 
-async def inspect_connection(after_verified=None):
+async def verified_connection(seed, player, slot_data, after_verified=None, *, legacy_catalog=False):
+    expected_catalog = {row["name"]: row["ap_location_id"] for row in slot_data["locations"]}
+    item_catalog = {row["name"]: row["ap_item_id"] for row in slot_data["items"]}
+    slot_ids = sorted(expected_catalog.values())
     async with asyncio.timeout(30):
         async with connect(
             SERVER, open_timeout=10, close_timeout=5, max_size=1_048_576
         ) as ws:
             room = await receive_command(ws, "RoomInfo")
-            expect("Seed", room.get("seed_name"), SEED)
+            expect("Seed", room.get("seed_name"), seed)
             if GAME not in room.get("games", []):
                 raise RuntimeError("Expected game is absent from this room.")
             if room.get("password"):
                 raise RuntimeError("This inspector expects the passwordless local room.")
 
-            print(f"Seed verified: {SEED}", flush=True)
+            print(f"Seed verified: {seed}", flush=True)
 
             await ws.send(json.dumps([{
                 "cmd": "GetDataPackage",
@@ -82,14 +85,13 @@ async def inspect_connection(after_verified=None):
             # A seed stores the game-wide catalog from its generation. Both
             # catalogs can describe a schema-1 slot with just the cavern chest.
             catalog = game_data.get("location_name_to_id")
-            expected_catalog = {LOCATION: 10000001}
             trail = "Wishvale Trail - West near Squirrel"
-            if isinstance(catalog, dict) and trail in catalog:
+            if legacy_catalog and isinstance(catalog, dict) and trail in catalog:
                 expected_catalog[trail] = 10170115
             expect("Location catalog", catalog, expected_catalog)
             expect(
                 "Item catalog", game_data.get("item_name_to_id"),
-                {"Small Shield": 10000002},
+                item_catalog,
             )
             print("Data-package mappings verified.", flush=True)
 
@@ -97,7 +99,7 @@ async def inspect_connection(after_verified=None):
                 "cmd": "Connect",
                 "password": None,
                 "game": GAME,
-                "name": PLAYER,
+                "name": player,
                 "uuid": uuid.uuid4().hex,
                 "version": {
                     "major": 0, "minor": 6, "build": 9, "class": "Version",
@@ -111,9 +113,9 @@ async def inspect_connection(after_verified=None):
             expect("Slot", connected.get("slot"), 1)
 
             slot_info = connected.get("slot_info", {}).get("1", {})
-            expect("Player name", slot_info.get("name"), PLAYER)
+            expect("Player name", slot_info.get("name"), player)
             expect("Game", slot_info.get("game"), GAME)
-            expect("Slot data", connected.get("slot_data"), EXPECTED_SLOT_DATA)
+            expect("Slot data", connected.get("slot_data"), slot_data)
 
             missing = connected.get("missing_locations")
             checked = connected.get("checked_locations")
@@ -128,15 +130,15 @@ async def inspect_connection(after_verified=None):
 
             if set(missing) & set(checked):
                 raise RuntimeError("Location is both checked and missing.")
-            expect("Slot location set", sorted(missing + checked), [10000001])
+            expect("Slot location set", sorted(missing + checked), slot_ids)
 
-            print(f"Slot verified: team 0, slot 1, player {PLAYER}", flush=True)
+            print(f"Slot verified: team 0, slot 1, player {player}", flush=True)
             print("Slot schema, goal, and game-ID mappings verified.", flush=True)
             print(f"Missing locations: {missing}", flush=True)
             print(f"Checked locations: {checked}", flush=True)
 
             if after_verified is not None:
-                await after_verified(ws, set(checked))
+                await after_verified(ws, set(checked), connected["slot_data"])
 
     if after_verified is None:
         print("AP connection verified and closed. This inspection submitted no checks, granted no items, and reported no goal.")
@@ -145,3 +147,11 @@ async def inspect_connection(after_verified=None):
 
     return set(checked)
 
+
+async def inspect_connection(after_verified=None):
+    async def legacy_callback(ws, checked, slot_data):
+        await after_verified(ws, checked)
+
+    return await verified_connection(SEED, PLAYER, EXPECTED_SLOT_DATA,
+                                     legacy_callback if after_verified else None,
+                                     legacy_catalog=True)
