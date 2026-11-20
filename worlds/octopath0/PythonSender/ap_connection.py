@@ -2,6 +2,7 @@
 
 import asyncio
 import json
+import hashlib
 import uuid
 
 from websockets import connect
@@ -59,7 +60,7 @@ async def receive_command(ws, wanted):
         if matches:
             return matches[0]
 
-async def verified_connection(seed, player, slot_data, after_verified=None, *, legacy_catalog=False):
+async def verified_connection(seed, player, slot_data, after_verified=None, *, legacy_catalog=False, catalog_digest=None):
     expected_catalog = {row["name"]: row["ap_location_id"] for row in slot_data["locations"]}
     item_catalog = {row["name"]: row["ap_item_id"] for row in slot_data["items"]}
     slot_ids = sorted(expected_catalog.values())
@@ -88,7 +89,15 @@ async def verified_connection(seed, player, slot_data, after_verified=None, *, l
             trail = "Wishvale Trail - West near Squirrel"
             if legacy_catalog and isinstance(catalog, dict) and trail in catalog:
                 expected_catalog[trail] = 10170115
-            expect("Location catalog", catalog, expected_catalog)
+            if catalog_digest is None:
+                expect("Location catalog", catalog, expected_catalog)
+            else:
+                if not isinstance(catalog, dict):
+                    raise RuntimeError("Missing location catalog.")
+                serialized = json.dumps(catalog, sort_keys=True, separators=(",", ":")).encode()
+                expect("Pinned location catalog", hashlib.sha256(serialized).hexdigest(), catalog_digest)
+                for name, ap_id in expected_catalog.items():
+                    expect(name, catalog.get(name), ap_id)
             expect(
                 "Item catalog", game_data.get("item_name_to_id"),
                 item_catalog,

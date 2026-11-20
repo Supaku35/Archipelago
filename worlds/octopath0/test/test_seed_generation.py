@@ -1,4 +1,5 @@
 """Exercise the player YAMLs through Generate.py and read the final server archives."""
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -14,8 +15,8 @@ from Utils import restricted_loads
 
 
 WORLD = Path(__file__).resolve().parents[1]
-CAVERN = ("Cerulean Caverns - Southwest Cliff Chest", 10000001, 70117)
-TRAIL = ("Wishvale Trail - West near Squirrel", 10170115, 70115)
+CAVERN = ("Cerulean Caverns - Southwest Cliff Chest", 10070117, 70117)
+TRAIL = ("Wishvale Trail - West Stump Chest", 10070115, 70115)
 
 
 class SeedGenerationTests(unittest.TestCase):
@@ -24,12 +25,18 @@ class SeedGenerationTests(unittest.TestCase):
         with patch.object(sys, "path", [str(WORLD / "PythonSender"), *sys.path]):
             import submit_two_chest as sender
 
-        with zipfile.ZipFile(WORLD / "test" / f"AP_{sender.SEED}.zip") as archive:
-            data = restricted_loads(zlib.decompress(archive.read(f"AP_{sender.SEED}.archipelago")[1:]))
-        self.assertEqual(data["seed_name"], sender.SEED)
-        self.assertEqual(data["slot_info"][1].name, sender.PLAYER)
-        self.assertEqual(json.loads(json.dumps(data["slot_data"][1])), sender.SLOT_DATA)
-        self.assertEqual(set(data["locations"][1]), set(sender.location_map(sender.SLOT_DATA).values()))
+        for seed, expected_slot, digest in sender.PROFILES.values():
+            with self.subTest(seed=seed), zipfile.ZipFile(WORLD / "test" / f"AP_{seed}.zip") as archive:
+                data = restricted_loads(zlib.decompress(archive.read(f"AP_{seed}.archipelago")[1:]))
+                self.assertEqual(data["seed_name"], seed)
+                self.assertEqual(data["slot_info"][1].name, sender.PLAYER)
+                self.assertEqual(json.loads(json.dumps(data["slot_data"][1])), expected_slot)
+                self.assertEqual(set(data["locations"][1]), set(sender.location_map(expected_slot).values()))
+                if digest:
+                    catalog = data["datapackage"]["Octopath Traveler 0"]["location_name_to_id"]
+                    self.assertEqual(len(catalog), 168)
+                    serialized = json.dumps(catalog, sort_keys=True, separators=(",", ":")).encode()
+                    self.assertEqual(hashlib.sha256(serialized).hexdigest(), digest)
 
     def test_player_presets(self):
         for player, rows, schema, goal in [
@@ -49,13 +56,13 @@ class SeedGenerationTests(unittest.TestCase):
                     data = restricted_loads(zlib.decompress(seed.read(datafile)[1:]))
                 self.assertEqual(data["slot_info"][1].name, player)
                 self.assertEqual(data["locations"], {
-                    1: {ap_id: (10000002, 1, 1) for _, ap_id, _ in rows}
+                    1: {ap_id: (10110001, 1, 1) for _, ap_id, _ in rows}
                 })
                 self.assertEqual(data["slot_data"][1], {
                     "prototype_schema": schema,
                     "prototype_goal": goal,
                     "locations": tuple({"name": n, "ap_location_id": a, "game_treasure_id": t}
                                        for n, a, t in rows),
-                    "items": ({"name": "Small Shield", "ap_item_id": 10000002,
+                    "items": ({"name": "Small Shield", "ap_item_id": 10110001,
                                "game_item_id": 110001, "quantity": 1},),
                 })

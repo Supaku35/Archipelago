@@ -7,9 +7,9 @@ import runpy
 
 from catalog_chests import DEFAULT_CATALOG, load_catalog, parse_scan, save_catalog
 
-# Draft namespace, deliberately separate from the existing prototype ID.
+# New seed IDs follow the catalog convention.
 # Treasure IDs determine IDs; filtering/reordering never renumbers other chests.
-DRAFT_BASE = 10_100_000
+DRAFT_BASE = 10_000_000
 MAX_TREASURE_ID = 99_999
 WORLD_LOCATIONS = Path(__file__).resolve().parents[1] / 'locations.py'
 
@@ -17,12 +17,12 @@ WORLD_LOCATIONS = Path(__file__).resolve().parents[1] / 'locations.py'
 def current_locations():
     # Load only the standalone constants file, without importing worlds or AP.
     values = runpy.run_path(str(WORLD_LOCATIONS))
-    rows = values['TEST_CHESTS']
+    rows = values['CHEST_CATALOG']
     existing = {treasure_id: (name, ap_id) for _, name, ap_id, treasure_id in rows}
     if len(existing) != len(rows) or values['location_name_to_id'] != {
         name: ap_id for name, ap_id in existing.values()
     }:
-        raise ValueError('Inconsistent prototype chest mappings.')
+        raise ValueError('Inconsistent catalog chest mappings.')
     return existing
 
 
@@ -62,7 +62,7 @@ def build_plan(catalog, existing):
         locations.append({
             'game_treasure_id': ident, 'ap_location_id': ap_id, 'name': ap_name,
             'catalog_name': name, 'area': area, 'colour': entry['colour'],
-            'mapping_state': 'existing_prototype' if ident in existing else 'draft_only',
+            'mapping_state': 'catalogued' if ident in existing else 'draft_only',
             'reported_contents': entry.get('contents', ''),
             'access_basis': 'user_reported_initial_access', 'ap_logic_verified': False,
             'completion_evidence': 'opening_transition_observed' if observed else
@@ -70,7 +70,7 @@ def build_plan(catalog, existing):
         })
     selected = {row['game_treasure_id'] for row in locations}
     if set(existing) - selected:
-        raise ValueError('Plan would exclude an existing prototype location.')
+        raise ValueError('Plan would exclude a catalogued location.')
     for entry in catalog.get('unidentified_chests', []):
         excluded.append({'game_treasure_id': None,
                          'catalog_name': entry.get('area', '') + ' - ' + entry.get('label', ''),

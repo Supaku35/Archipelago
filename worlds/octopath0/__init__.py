@@ -1,11 +1,12 @@
 from dataclasses import dataclass
 
-from BaseClasses import Item, ItemClassification, Location, Region
+from BaseClasses import Item, ItemClassification, Location
 from Options import PerGameCommonOptions, Toggle
 from worlds.AutoWorld import World
 
 from .items import ITEM_NAME, ITEM_ID, GAME_ITEM_ID, item_name_to_id
-from .locations import PROTOTYPE_CHEST, TEST_CHESTS, location_name_to_id
+from .locations import CHEST_BY_TREASURE, TWO_CHEST_TEST_IDS, location_name_to_id
+from .regions import create_test_regions
 
 
 GAME_NAME = "Octopath Traveler 0"
@@ -44,16 +45,11 @@ class Octopath0World(World):
 
     @property
     def test_chests(self):
-        return TEST_CHESTS if self.options.two_chest_test else (PROTOTYPE_CHEST,)
+        ids = TWO_CHEST_TEST_IDS if self.options.two_chest_test else (70117,)
+        return tuple(CHEST_BY_TREASURE[tid] for tid in ids)
 
     def create_regions(self):
-        menu = Region("Menu", self.player, self.multiworld)
-        self.multiworld.regions.append(menu)
-        for area, name, ap_id, _ in self.test_chests:
-            region = Region(area, self.player, self.multiworld)
-            self.multiworld.regions.append(region)
-            region.locations.append(Octopath0Location(self.player, name, ap_id, region))
-            menu.connect(region)
+        create_test_regions(self, Octopath0Location)
 
     def create_item(self, name):
         if name not in item_name_to_id:

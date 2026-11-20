@@ -26,11 +26,33 @@ SLOT_DATA = {
 }
 
 
+REVISED_SEED = "84576831886948881492"
+REVISED_SLOT_DATA = {
+    "prototype_schema": 2,
+    "prototype_goal": "receive_two_small_shields",
+    "locations": [
+        {"name": "Cerulean Caverns - Southwest Cliff Chest",
+         "ap_location_id": 10070117, "game_treasure_id": 70117},
+        {"name": "Wishvale Trail - West Stump Chest",
+         "ap_location_id": 10070115, "game_treasure_id": 70115},
+    ],
+    "items": [{"name": "Small Shield", "ap_item_id": 10110001,
+               "game_item_id": 110001, "quantity": 1}],
+}
+# SHA-256 of the revised archive's full name-to-ID map in sorted compact JSON.
+REVISED_CATALOG_DIGEST = "af5485eb136acb4c62f4c7878b0d52031c8486aa1270485139f2eb7d9fa5578b"
+PROFILES = {
+    "original": (SEED, SLOT_DATA, None),
+    "revised": (REVISED_SEED, REVISED_SLOT_DATA, REVISED_CATALOG_DIGEST),
+}
+
+
 def location_map(slot_data):
     return {row["game_treasure_id"]: row["ap_location_id"] for row in slot_data["locations"]}
 
 
-async def run(treasure, folder, timeout=600):
+async def run(treasure, folder, timeout=600, *, profile="original"):
+    seed, expected_slot, digest = PROFILES[profile]
     observed = False
     attempted = False
     pending = False
@@ -60,7 +82,7 @@ async def run(treasure, folder, timeout=600):
                 print(f"CONFIRMED {target}.", flush=True)
                 return
 
-    await verified_connection(SEED, PLAYER, SLOT_DATA, check)
+    await verified_connection(seed, PLAYER, expected_slot, check, catalog_digest=digest)
     if not pending:
         return
     folder.mkdir(parents=True, exist_ok=True)
@@ -73,7 +95,7 @@ async def run(treasure, folder, timeout=600):
     print(f"Verified treasure {treasure} on {evidence.save}. Rechecking room.", flush=True)
     observed = True
     try:
-        await verified_connection(SEED, PLAYER, SLOT_DATA, check)
+        await verified_connection(seed, PLAYER, expected_slot, check, catalog_digest=digest)
     except (Exception, asyncio.CancelledError, KeyboardInterrupt):
         if attempted:
             print("Submission outcome uncertain. Inspect !checked before retrying. No automatic resend.")
@@ -83,9 +105,10 @@ async def run(treasure, folder, timeout=600):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--submit-treasure", required=True, type=int, choices=tuple(location_map(SLOT_DATA)))
+    parser.add_argument("--profile", choices=tuple(PROFILES), default="original")
     args = parser.parse_args()
     folder = Path(os.environ["LOCALAPPDATA"]) / "OctopathArchipelagoBridge"
-    asyncio.run(run(args.submit_treasure, folder))
+    asyncio.run(run(args.submit_treasure, folder, profile=args.profile))
 
 
 if __name__ == "__main__":

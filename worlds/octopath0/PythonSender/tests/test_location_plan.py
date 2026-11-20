@@ -29,9 +29,9 @@ def scan():
 class LocationPlanTests(unittest.TestCase):
     def test_real_catalog_and_legacy_mapping(self):
         plan=p.build_plan(p.load_catalog(p.DEFAULT_CATALOG),p.current_locations())
-        self.assertEqual(plan['summary'],{'selected':178,'draft_only':176,'excluded':198})
+        self.assertEqual(plan['summary'],{'selected':178,'draft_only':10,'excluded':198})
         legacy=next(r for r in plan['locations'] if r['game_treasure_id']==70117)
-        self.assertEqual((legacy['name'],legacy['ap_location_id']),('Cerulean Caverns - Southwest Cliff Chest',10000001))
+        self.assertEqual((legacy['name'],legacy['ap_location_id']),('Cerulean Caverns - Southwest Cliff Chest',10070117))
         self.assertTrue(all(not r['ap_logic_verified'] for r in plan['locations']))
         self.assertFalse(plan['live_submission_authorized'])
         self.assertEqual(len({r['ap_location_id'] for r in plan['locations']}),178)

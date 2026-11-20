@@ -86,7 +86,7 @@ def observe_watch(folder, timeout, ids, *, live=False):
     if live:
         print('LIVE: Ctrl+F7 authorizes submitting the selected chest, including if already open.', flush=True)
     else:
-        print('DRY RUN ONLY: no server connection, item grants, or location submission.', flush=True)
+        print('DRY RUN ONLY: preview uses the original two-chest seed IDs. No checks sent.', flush=True)
     print('Ctrl+F3 to disarm, then Ctrl+F7 on the intended save. Ctrl+F3 stops the watch.', flush=True)
     print('Already-open chests count as checked. Observations are in memory, not proof of a disk save.', flush=True)
     deadline, sequence = time.monotonic() + timeout, 0
