@@ -38,15 +38,17 @@ def validate_history(packet, *, item_id=EXPECTED_ITEM["item"]):
     return history
 
 
-async def inspect_history(ws, checked, *, revised=False):
-    item_id = EXPECTED_ITEM["item"]
+async def inspect_history(ws, checked, *, revised=False, slot_data=None):
     if revised:
-        item_id = REVISED_SLOT_DATA["items"][0]["ap_item_id"]
+        slot_data = REVISED_SLOT_DATA
+    item_id = EXPECTED_ITEM["item"]
+    if slot_data is not None:
+        item_id = slot_data["items"][0]["ap_item_id"]
     else:
         expect("Server checked locations", sorted(checked), [10000001])
 
     requests = [{"cmd": "ConnectUpdate", "items_handling": 7}, {"cmd": "Sync"}]
-    if revised:
+    if slot_data is not None:
         # MultiServer omits ReceivedItems for empty histories. Its reply to the
         # following command marks the end of both ordered snapshot requests.
         requests.append({"cmd": "GetDataPackage", "games": []})
@@ -72,11 +74,11 @@ async def inspect_history(ws, checked, *, revised=False):
                     if history is not None and snapshot != history:
                         raise RuntimeError("Conflicting full history snapshots; retry inspection.")
                     history = snapshot
-                elif revised and command == "DataPackage":
+                elif slot_data is not None and command == "DataPackage":
                     expect("End of history query", packet.get("data"), {"games": {}})
                     finished = True
 
-            if revised:
+            if slot_data is not None:
                 if not finished:
                     continue
                 if history is None:
@@ -99,14 +101,16 @@ async def inspect_history(ws, checked, *, revised=False):
             return history
 
 
-async def read_verified_history(*, revised=False):
+async def read_verified_history(*, revised=False, room=None):
     history = None
 
     async def capture(ws, checked, slot_data=None):
         nonlocal history
-        history = await inspect_history(ws, checked, revised=revised)
+        history = await inspect_history(ws, checked, revised=revised, slot_data=slot_data if room else None)
 
-    if revised:
+    if room is not None:
+        await room.verify(capture)
+    elif revised:
         await verify_revised_room(capture)
     else:
         await inspect_connection(after_verified=capture)

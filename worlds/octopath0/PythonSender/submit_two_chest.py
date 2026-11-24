@@ -15,8 +15,14 @@ def location_map(slot_data):
     return {row["game_treasure_id"]: row["ap_location_id"] for row in slot_data["locations"]}
 
 
-async def run(treasure, folder, timeout=600, *, profile="original"):
-    seed, expected_slot, digest = PROFILES[profile]
+async def run(treasure, folder, timeout=600, *, profile="original", room=None):
+    async def verify(callback):
+        if room is not None:
+            await room.verify(callback)
+        else:
+            seed, expected_slot, digest = PROFILES[profile]
+            await verified_connection(seed, PLAYER, expected_slot, callback, catalog_digest=digest)
+
     observed = False
     attempted = False
     pending = False
@@ -24,6 +30,8 @@ async def run(treasure, folder, timeout=600, *, profile="original"):
     async def check(ws, checked, slot_data):
         nonlocal pending, attempted
         locations = location_map(slot_data)
+        if treasure not in locations:
+            raise RuntimeError("Treasure is not enabled in this slot.")
         target = locations[treasure]
         if target in checked:
             print(f"Already checked on server: {target}. Skipped.")
@@ -46,11 +54,12 @@ async def run(treasure, folder, timeout=600, *, profile="original"):
                 print(f"CONFIRMED {target}.", flush=True)
                 return
 
-    await verified_connection(seed, PLAYER, expected_slot, check, catalog_digest=digest)
+    await verify(check)
     if not pending:
         return
     folder.mkdir(parents=True, exist_ok=True)
-    evidence = observe_watch(folder, timeout, [treasure], live=True)
+    watch_args = {"bound_seed": room.seed} if room is not None else {}
+    evidence = observe_watch(folder, timeout, [treasure], live=True, **watch_args)
     if evidence is None:
         print("Cancelled. Nothing submitted.")
         return
@@ -59,7 +68,7 @@ async def run(treasure, folder, timeout=600, *, profile="original"):
     print(f"Verified treasure {treasure} on {evidence.save}. Rechecking room.", flush=True)
     observed = True
     try:
-        await verified_connection(seed, PLAYER, expected_slot, check, catalog_digest=digest)
+        await verify(check)
     except (Exception, asyncio.CancelledError, KeyboardInterrupt):
         if attempted:
             print("Submission outcome uncertain. Inspect !checked before retrying. No automatic resend.")

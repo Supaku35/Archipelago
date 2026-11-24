@@ -70,7 +70,7 @@ def wait_for_bridge_response(
         if (
             len(inbox_lines) < 2
             or inbox_lines[0] not in {
-                "OT0AP_TEST_V3", "OT0AP_QUERY_V1", "OT0AP_LIVE_V1"
+                "OT0AP_TEST_V3", "OT0AP_QUERY_V1", "OT0AP_LIVE_V1", "OT0AP_BOUND_ITEM_V1"
             }
             or inbox_lines[1] != request_id
         ):
@@ -142,3 +142,4 @@ def wait_for_bridge_response(
             )
 
         time.sleep(0.5)
+

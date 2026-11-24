@@ -10,7 +10,7 @@ from bridge_io import publish
 from two_chest_profiles import REVISED_SEED, verify_revised_room
 
 
-def request_save_binding(operation, *, test_mismatch=False, revised=False):
+def request_save_binding(operation, *, test_mismatch=False, revised=False, room=None):
     if operation not in {"initialize", "inspect", "authorize"}:
         raise ValueError("Unknown binding operation.")
     if test_mismatch and operation != "inspect":
@@ -21,8 +21,12 @@ def request_save_binding(operation, *, test_mismatch=False, revised=False):
     authorize = operation == "authorize"
 
     # This verifier requires the known seed, team 0, slot 1, and mappings.
-    seed = REVISED_SEED if revised else SEED
-    asyncio.run(verify_revised_room() if revised else inspect_connection())
+    if room is not None:
+        seed = room.seed
+        asyncio.run(room.verify())
+    else:
+        seed = REVISED_SEED if revised else SEED
+        asyncio.run(verify_revised_room() if revised else inspect_connection())
 
     if not re.fullmatch(r"[0-9]{1,64}", seed):
         raise RuntimeError("This metadata prototype supports numeric seed names only.")

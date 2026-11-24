@@ -10,7 +10,7 @@ from ap_history import EXPECTED_ITEM, read_verified_history, plan_pending
 from two_chest_profiles import REVISED_SEED, REVISED_SLOT_DATA
 from bridge_io import BridgeCancelled, publish, wait_for_bridge_response
 
-def main(argv=None, *, run_state=None):
+def main(argv=None, *, run_state=None, room=None):
     if run_state is None:
         run_state = {"delivery_attempted": False, "processed": False}
     parser = argparse.ArgumentParser()
@@ -24,8 +24,12 @@ def main(argv=None, *, run_state=None):
     if args.timeout < 1:
         raise RuntimeError("Timeout must be positive.")
 
-    history = asyncio.run(read_verified_history(revised=revised))
-    binding = request_save_binding("authorize", revised=revised)
+    options = {"room": room} if room is not None else {"revised": revised}
+    history = asyncio.run(read_verified_history(**options))
+    if room is not None:
+        seed = room.seed
+        item_id = room.slot_data["items"][0]["ap_item_id"]
+    binding = request_save_binding("authorize", **options)
     if binding is None:
         raise RuntimeError("No live binding. Initialize it separately first.")
 
@@ -43,7 +47,7 @@ def main(argv=None, *, run_state=None):
         print("Already caught up. No delivery request published.")
         print("Press Ctrl+F3 to clear this run's authorization.")
         return
-    elif revised:
+    elif revised or room is not None:
         # Observe the inventory delta for one received index per authorization.
         pending = pending[:1]
 
@@ -54,9 +58,14 @@ def main(argv=None, *, run_state=None):
 
     for index, item in pending:
         request_id = uuid.uuid4().hex
+        header = "OT0AP_LIVE_V1"
+        bridge_item = item["item"]
+        if room is not None:
+            header = "OT0AP_BOUND_ITEM_V1"
+            bridge_item = room.slot_data["items"][0]["game_item_id"]
         payload = (
-            f"OT0AP_LIVE_V1\n{request_id}\n{binding['token']}\n"
-            f"{seed}\n0\n1\n{index}\n{item['item']}\nEND\n"
+            f"{header}\n{request_id}\n{binding['token']}\n"
+            f"{seed}\n0\n1\n{index}\n{bridge_item}\nEND\n"
         )
         # An earlier processed response does not confirm this new request.
         run_state["processed"] = False
@@ -78,10 +87,10 @@ def main(argv=None, *, run_state=None):
     print("Press Ctrl+F3 to clear this run's authorization. No checks or goal submitted.")
 
 
-def run_cli(argv=None):
+def run_cli(argv=None, *, room=None):
     state = {"delivery_attempted": False, "processed": False}
     try:
-        main(argv, run_state=state)
+        main(argv, run_state=state, room=room)
     except BridgeCancelled:
         print("Live delivery cancelled: the bridge discarded this staged request.")
         print("No grant or progress change for the cancelled request. No automatic retry.")

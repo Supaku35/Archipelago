@@ -76,12 +76,17 @@ class WatchEvents:
         return status, states, newly_checked, lines[6]
 
 
-def observe_watch(folder, timeout, ids, *, live=False):
+def observe_watch(folder, timeout, ids, *, live=False, bound_seed=None):
     ids = validate_ids(ids)
     request_id = uuid.uuid4().hex
     events = WatchEvents(request_id, ids, live=live)
     header = 'OT0AP_LIVE_WATCH_QUERY_V1' if live else 'OT0AP_WATCH_QUERY_V2'
-    query = '\n'.join([header, request_id, str(len(ids)), *map(str, ids), 'END', ''])
+    fields = [header, request_id, str(len(ids)), *map(str, ids)]
+    if bound_seed is not None:
+        if not live or len(ids) != 1:
+            raise ValueError('Bound watches require a single live chest.')
+        fields = ['OT0AP_BOUND_WATCH_V1', request_id, bound_seed, '0', '1', str(ids[0])]
+    query = '\n'.join([*fields, 'END', ''])
     publish(folder / 'inbox.txt', query)
     if live:
         print('LIVE: Ctrl+F7 authorizes submitting the selected chest, including if already open.', flush=True)

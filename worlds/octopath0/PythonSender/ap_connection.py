@@ -60,10 +60,7 @@ async def receive_command(ws, wanted):
         if matches:
             return matches[0]
 
-async def verified_connection(seed, player, slot_data, after_verified=None, *, legacy_catalog=False, catalog_digest=None):
-    expected_catalog = {row["name"]: row["ap_location_id"] for row in slot_data["locations"]}
-    item_catalog = {row["name"]: row["ap_item_id"] for row in slot_data["items"]}
-    slot_ids = sorted(expected_catalog.values())
+async def verified_connection(seed, player, slot_data, after_verified=None, *, legacy_catalog=False, catalog_digest=None, validate_slot=None):
     async with asyncio.timeout(30):
         async with connect(
             SERVER, open_timeout=10, close_timeout=5, max_size=1_048_576
@@ -83,26 +80,28 @@ async def verified_connection(seed, player, slot_data, after_verified=None, *, l
             }]))
             package = await receive_command(ws, "DataPackage")
             game_data = package.get("data", {}).get("games", {}).get(GAME, {})
-            # A seed stores the game-wide catalog from its generation. Both
-            # catalogs can describe a schema-1 slot with just the cavern chest.
-            catalog = game_data.get("location_name_to_id")
-            trail = "Wishvale Trail - West near Squirrel"
-            if legacy_catalog and isinstance(catalog, dict) and trail in catalog:
-                expected_catalog[trail] = 10170115
-            if catalog_digest is None:
-                expect("Location catalog", catalog, expected_catalog)
-            else:
-                if not isinstance(catalog, dict):
-                    raise RuntimeError("Missing location catalog.")
-                serialized = json.dumps(catalog, sort_keys=True, separators=(",", ":")).encode()
-                expect("Pinned location catalog", hashlib.sha256(serialized).hexdigest(), catalog_digest)
-                for name, ap_id in expected_catalog.items():
-                    expect(name, catalog.get(name), ap_id)
-            expect(
-                "Item catalog", game_data.get("item_name_to_id"),
-                item_catalog,
-            )
-            print("Data-package mappings verified.", flush=True)
+            if validate_slot is None:
+                expected_catalog = {row["name"]: row["ap_location_id"] for row in slot_data["locations"]}
+                item_catalog = {row["name"]: row["ap_item_id"] for row in slot_data["items"]}
+                # A seed stores the game-wide catalog from its generation. Both
+                # catalogs can describe a schema-1 slot with just the cavern chest.
+                catalog = game_data.get("location_name_to_id")
+                trail = "Wishvale Trail - West near Squirrel"
+                if legacy_catalog and isinstance(catalog, dict) and trail in catalog:
+                    expected_catalog[trail] = 10170115
+                if catalog_digest is None:
+                    expect("Location catalog", catalog, expected_catalog)
+                else:
+                    if not isinstance(catalog, dict):
+                        raise RuntimeError("Missing location catalog.")
+                    serialized = json.dumps(catalog, sort_keys=True, separators=(",", ":")).encode()
+                    expect("Pinned location catalog", hashlib.sha256(serialized).hexdigest(), catalog_digest)
+                    for name, ap_id in expected_catalog.items():
+                        expect(name, catalog.get(name), ap_id)
+                expect(
+                    "Item catalog", game_data.get("item_name_to_id"),
+                    item_catalog,
+                )
 
             await ws.send(json.dumps([{
                 "cmd": "Connect",
@@ -124,7 +123,14 @@ async def verified_connection(seed, player, slot_data, after_verified=None, *, l
             slot_info = connected.get("slot_info", {}).get("1", {})
             expect("Player name", slot_info.get("name"), player)
             expect("Game", slot_info.get("game"), GAME)
-            expect("Slot data", connected.get("slot_data"), slot_data)
+            received_slot = connected.get("slot_data")
+            if validate_slot is not None:
+                expect("Solo player slots", list(connected["slot_info"]), ["1"])
+                validate_slot(received_slot, game_data)
+            else:
+                expect("Slot data", received_slot, slot_data)
+            slot_ids = sorted(row["ap_location_id"] for row in received_slot["locations"])
+            print("Data-package mappings verified.", flush=True)
 
             missing = connected.get("missing_locations")
             checked = connected.get("checked_locations")

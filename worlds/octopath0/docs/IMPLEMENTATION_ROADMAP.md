@@ -1,6 +1,6 @@
 # Octopath Traveler 0 Archipelago implementation roadmap
 
-**Next milestone · M2, support independently generated seeds.** The revised two-chest loop passed in-game. Start by reading the enabled chest and item mappings from versioned slot data, then verify that each of two generated rooms accepts its own bound save and rejects the other.
+**Current milestone · M2, support independently generated seeds.** Two local AP rooms passed the generated-room client test with simulated game saves. Each accepted its own save for a Wishvale check and shield delivery. Crossed saves were rejected in both directions. The [Windows playtest](GENERATED_ROOM_TEST.md) is next, followed by the repeatable post-intro Wishvale start.
 
 This is the working implementation order. The [original design notes](Octopath%200%20Archipelago.md) remain the reference for area inventories, route details, chapter thresholds and desired settings. The first proposed playable release targets **Master of All**, the design’s default goal. Bestower of All and Traveler Hunt have their own milestones. Milestone order is a recommendation. A playtest result can change it.
 
@@ -84,3 +84,5 @@ At the end of each milestone, update the opening status and its table row in the
 **2026-11-20 · M1, first delivery passed in-game.** On build `daa9ab7` the user confirmed the index 0 delivery, inventory and index after reload, and duplicate replay. For Cerulean, record Buckler and Small Shield counts separately before opening. The opening should submit `10070117` without adding either item. After the index 1 AP delivery, expect one additional Small Shield. Save, reload, and verify next index 2 with zero pending. Run `PythonSender/two_chest_goal.py --report-goal` after verifying those counts. A fresh invocation without arguments reads back the slot’s completion status. In-game results for this last sequence are pending.
 
 **2026-11-20 · M1 complete in-game.** Build `506d03f`, seed `84576831886948881492`, slot `OT0TwoChest`. The user confirmed Cerulean submitted `10070117` with Buckler and Small Shield counts unchanged on opening. Delivery index 1 added one Small Shield. After saving and reloading, the shield persisted, the next index was 2 and zero deliveries were pending. The server confirmed the two-shield goal and a fresh connection read it back as complete.
+
+**2026-11-24 · M2 generated-room tests.** The solo two-chest client reads schema 2 mappings from the connected slot, validates them against the AP data package and supported game operations, and checks the selected save before reporting a chest or delivering an item. Generator inputs 112001 and 112002 produced distinct rooms. Windows playtest results are pending.
