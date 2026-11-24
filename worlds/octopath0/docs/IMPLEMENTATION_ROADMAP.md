@@ -1,6 +1,6 @@
 # Octopath Traveler 0 Archipelago implementation roadmap
 
-**Current milestone · M2, a repeatable post-intro Wishvale start.** The two-room binding, chest submission and shield delivery playtest passed in-game, including crossed saves in both directions. Next, establish the reference state of a naturally reached Wishvale save with the workshop built.
+**Current milestone · M2, a repeatable post-intro Wishvale start.** The two-room binding, chest submission and shield delivery playtest passed in-game, including crossed saves in both directions. The natural post-workshop checkpoint is documented below. Next, verify the first conversation with Stia on a copy, then use that transition to test the seeded start.
 
 This is the working implementation order. The [original design notes](Octopath%200%20Archipelago.md) remain the reference for area inventories, route details, chapter thresholds and desired settings. The first proposed playable release targets **Master of All**, the design’s default goal. Bestower of All and Traveler Hunt have their own milestones. Milestone order is a recommendation. A playtest result can change it.
 
@@ -37,6 +37,31 @@ Baseline code and fixtures are in [the catalog integration commit](https://githu
 3. **Authorize index 0 once.** Compare shield count before and after, save to disk, fully reload, then reconcile again. A replay of index 0 must preserve the count. If the grant outcome is uncertain, inspect the loaded save and server history before attempting another grant.
 4. **Check Cerulean and process index 1.** Verify revised location `10070117`, the second shield and its own index. Check the native Buckler separately from the AP shield. Capture reward behavior on an unopened chest. An already-open observation can prove reporting only. Exercise the two-shield goal and reconnect.
 5. **Record the evidence.** Keep the seed name, client/mod revision, server checked set, received indices, inventory deltas and post-reload result. M1 closes when these agree for both deliveries.
+
+## Natural Wishvale reference
+
+Captured in-game on 2026-11-24. These are observations from one naturally played save. The seeded start retains the LV1 protagonist target and applies starting inventory and chapter availability according to the chosen settings.
+
+| Check | Observed state |
+|---|---|
+| Town | Wishvale, town level 1. Workshop is the only building. Its completion filled about one third of the town bar. |
+| Restoration | **The Restoration Begins**, 0/1. The HUD directs the player to progress through the side story “Rekindling the Flame.” |
+| Next story action | **Rekindling the Flame Pt. 1** is available. The menu says “Speak to Stia in Wishvale.” |
+| Other available quests | Master of Power Ch. 1 — The Scarlet Tyrant. Master of Wealth Ch. 1 — The Covetous Witch. Master of Fame Ch. 1 — The Genius Playwright. |
+| Workshop and travel | The workshop bed offers to restore HP and SP fully. Resting was the only workshop interaction reported. The player could leave Wishvale and re-enter freely. |
+| Party | Protagonist and Stia each at LV6, 140 EXP, 48 EXP to the next level and 30 JP. Protagonist's primary job is a player choice among eight. |
+| Map label | The game menu shows “Woodlands Region” over Wishvale. The design notes group the starting area under Frostlands. Resolve the AP region assignment when implementing region gates. |
+
+**Reported inventory on this save**
+
+| Category | Contents |
+|---|---|
+| Consumables | Healing Grape ×1, Olive of Life ×1, Energizing Pomegranate ×1, protagonist's favorite food ×1 |
+| Equipment | Sword of the Watch ×1, Handaxe ×1, base equipment for the chosen job, Buckler ×1, Villager's Clothes ×1, Leather Vest ×1 |
+| Character creation and masteries | Three chosen starting items ×1 each, Vacuum Slice Mastery ×1, two chosen skill masteries ×1 each |
+| Materials and ring | Lumber ×4, Stone ×6, Cloth ×2, Ring of Aelfric the Flamebringer ×1 |
+
+**Next comparison.** Preserve this slot before speaking to Stia. On a copy, speak to her once and record whether the quest advances, the new menu objective, and the town objective and counter. Reload the copy and check that the new objective persists. The same transition will be an acceptance test for a seeded start.
 
 ## Rules the implementation must preserve
 
