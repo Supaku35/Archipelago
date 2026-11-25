@@ -14,6 +14,8 @@ The packaged test character keeps the reference appearance and job. Both active 
 
 For Candidate 02, use an early unbound save from a separately created protagonist with a different primary job. Compare the name, appearance, job, equipment, favorite food and starter selections after loading and re-saving in Wishvale. Automatic startup from New Game and the final starting inventory are pending.
 
+**Candidate 02 built, in-game test pending.** An independent LV1 Hunter save supplied the protagonist’s appearance, job equipment, skill selections, favorite dish and starter inventory. When adding a missing piece of equipment from the reference, the builder now takes the quantity needed by the two active travelers. The next playtest checks the transferred character and inventory across workshop recovery and a disk reload.
+
 ## What we can reproduce today
 
 | Evidence | What it establishes |

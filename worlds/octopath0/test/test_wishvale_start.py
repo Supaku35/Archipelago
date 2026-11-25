@@ -73,13 +73,15 @@ class WishvaleStartTests(unittest.TestCase):
             start.set_int(row, "Num", 1)
             bag[ident] = row
         # Stia's armor and building materials must survive even if the donor lacks them.
-        del bag[120000], bag[130069]
+        del bag[120000], bag[130069], bag[103001]
         donor["SaveDataItem"].value = start.encode_rows(bag)
         raw = prefix + start.encode_tags(donor) + bytes(4)
         _, candidate = start.document(start.build(self.world, raw))
         self.assertEqual(candidate["SaveDataMainCharacter"], donor["SaveDataMainCharacter"])
         merged = start.records(candidate["SaveDataItem"], "ItemMsdID")
         self.assertTrue(set(gear) <= merged.keys())
+        # Only Stia uses this weapon with this job, despite two copies in the template.
+        self.assertEqual(start.integer(merged[103001]["Num"]), 1)
         self.assertEqual(start.integer(merged[120000]["Num"]), 1)
         self.assertEqual(start.integer(merged[130069]["Num"]), 4)
         variables = start.records(donor["SaveDataGameVariable"], "GameVariableMtdID")

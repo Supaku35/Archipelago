@@ -248,7 +248,8 @@ def build(template, character, name=None):
         if ident not in bag:
             require(ident in stock, f"Missing equipped item record {ident}")
             bag[ident] = stock[ident]
-        if integer(bag[ident]["Num"]) < minimum:
+            set_int(bag[ident], "Num", minimum)
+        elif integer(bag[ident]["Num"]) < minimum:
             set_int(bag[ident], "Num", minimum)
     world["SaveDataItem"].value = encode_rows(bag)
     return prefix + encode_tags(world) + bytes(4)
