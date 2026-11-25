@@ -1,6 +1,6 @@
 # Octopath Traveler 0 Archipelago implementation roadmap
 
-**Current milestone · M2, a repeatable post-intro Wishvale start.** The two-room binding, chest submission and shield delivery playtest passed in-game, including crossed saves in both directions. The natural post-workshop checkpoint is documented below. Next, verify the first conversation with Stia on a copy, then use that transition to test the seeded start.
+**Current milestone · M2, a repeatable post-intro Wishvale start.** The two-room binding, chest submission and shield delivery playtest passed in-game, including crossed saves in both directions. The natural post-workshop checkpoint is documented below. The first Stia quest transition is verified on a reloaded natural save. Reproduce it from the seeded start.
 
 This is the working implementation order. The [original design notes](Octopath%200%20Archipelago.md) remain the reference for area inventories, route details, chapter thresholds and desired settings. The first proposed playable release targets **Master of All**, the design’s default goal. Bestower of All and Traveler Hunt have their own milestones. Milestone order is a recommendation. A playtest result can change it.
 
@@ -61,7 +61,9 @@ Captured in-game on 2026-11-24. These are observations from one naturally played
 | Character creation and masteries | Three chosen starting items ×1 each, Vacuum Slice Mastery ×1, two chosen skill masteries ×1 each |
 | Materials and ring | Lumber ×4, Stone ×6, Cloth ×2, Ring of Aelfric the Flamebringer ×1 |
 
-**Next comparison.** Preserve this slot before speaking to Stia. On a copy, speak to her once and record whether the quest advances, the new menu objective, and the town objective and counter. Reload the copy and check that the new objective persists. The same transition will be an acceptance test for a seeded start.
+**2026-11-25 · First Stia conversation, verified in-game.** Before speaking to Stia, the menu says “Speak to Stia in Wishvale.” On the copy, accepting Rekindling the Flame Pt. 1 changed the objective to “Head to North Theatropolis Plains”. The town HUD still showed The Restoration Begins at 0/1. The player saved and reloaded the copy and observed the same quest objective and town counter.
+
+**Seeded-start acceptance test.** Begin at the pre-conversation objective with the workshop available. Accept the quest from Stia, verify the North Theatropolis Plains objective and the 0/1 town counter, then save and reload and check both again. Compare the two natural save slots to identify candidate quest-state changes. The reference run establishes the expected behavior. The underlying save fields and the seeded start still need verification.
 
 ## Rules the implementation must preserve
 
