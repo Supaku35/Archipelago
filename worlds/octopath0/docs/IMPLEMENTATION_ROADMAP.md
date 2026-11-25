@@ -78,7 +78,21 @@ Captured in-game on 2026-11-24. These are observations from one naturally played
 
 The row’s start and update timestamps also changed. Both saves already list `9001035` first in `SaveDataUser.QuestPriority`. The event list grew from 425 to 426 with one added row, `EventMsdID 99515`; all previously recorded events were byte-identical by ID. Treat that event as an observation until independently attributed. Party, inventory, treasure, village buildings, event flags and game variables were byte-identical in their respective top-level properties. Within `SaveDataVillage` only `CurrentBGM` changed. Playtime, position and battle count also differed between the saves.
 
-Use the first three quest fields as a read-only comparison when testing a seeded start. Let the normal Stia interaction advance them. Both reference saves already have the workshop, so identifying its construction state requires a checkpoint from **before** construction.
+Use the first three quest fields as a read-only comparison when testing a seeded start. Let the normal Stia interaction advance them. Both live saves contain the workshop. Their embedded event snapshots also preserve earlier village layouts.
+
+**2026-11-25 · Workshop comparison from event snapshots.** The village and building arrays in events `99514` and `98036` show town level 1 with no entries in `HasBuildIds` and completed town tasks `[1001, 1002, 1003]`. Both live saves have level 1, `Initialized = 3` (snapshot value 1), `HasBuildIds = [1000, 2031, 2018, 2015]` and one additional completed task, `1004`. The later event `99515` contains a building array byte-identical to the live pre-Stia array.
+
+Comparing the 344 building slots in event `98036` against live `BeforeStia` gives five changed slots. All five previously had `BuildingDataId = 0`; the other 339 rows match by parsed field values.
+
+| DataIndex | BuildingDataId after | PosX | PosY |
+|---:|---:|---:|---:|
+| 130 | 1000 | 20 | 27 |
+| 134 | 2031 | 18 | 23 |
+| 145 | 2018 | 20 | 30 |
+| 146 | 2015 | 21 | 30 |
+| 163 | 2015 | 22 | 30 |
+
+Use the layout and town-task list as read-only reference values for this save. The individual object names, the role of task `1004`, and the changes sufficient for a functioning workshop still need independent verification. Embedded snapshots cover village data, not a complete playable save. Validate the candidate start with the workshop rest prompt, round-trip travel and the recorded Stia transition.
 
 ## Rules the implementation must preserve
 
