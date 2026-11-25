@@ -1,6 +1,6 @@
 # Octopath Traveler 0 Archipelago implementation roadmap
 
-**Current milestone · M2, a repeatable post-intro Wishvale start.** The two-room binding, chest submission and shield delivery playtest passed in-game, including crossed saves in both directions. Wishvale Candidate 01 passed the offline start playtest, including the Stia transition and disk reload. Candidate 02 also passed with a separately created Hunter. The next step is the New Game handoff.
+**Current milestone · M2, a repeatable post-intro Wishvale start.** The two-room binding, chest submission and shield delivery playtest passed in-game, including crossed saves in both directions. Wishvale Candidate 01 passed the offline start playtest, including the Stia transition and disk reload. Candidate 02 also passed with a separately created Hunter. The next step is to connect the opening customization directly to the native primary-job picker, then enter post-workshop Wishvale.
 
 This is the working implementation order. The [original design notes](Octopath%200%20Archipelago.md) remain the reference for area inventories, route details, chapter thresholds and desired settings. The first proposed playable release targets **Master of All**, the design’s default goal. Bestower of All and Traveler Hunt have their own milestones. Milestone order is a recommendation. A playtest result can change it.
 
@@ -14,7 +14,11 @@ The packaged test character keeps the reference appearance and job. Both active 
 
 **2026-11-25 · Candidate 02 passed in game.** The separately created LV1 Hunter retained the chosen name, appearance, job, equipment, masteries, favorite dish and starting items in Wishvale. Workshop rest restored the Hunter to 250 HP and 45 SP. The party left and re-entered town, and a manual save and reload preserved the character and pre-Stia objective.
 
-The slot preview showed the reference protagonist’s name and appearance at LV2 with Stia, even though loading the slot produced the correct LV1 Hunter. The cause is unverified. Revisit the preview if it recurs on a slot created through the normal New Game handoff. The next milestone is to identify when the game has committed the player’s character and primary-job choices and use that point to start in Wishvale. Final starting inventory tuning remains open.
+The slot preview showed the reference protagonist’s name and appearance at LV2 with Stia, even though loading the slot produced the correct LV1 Hunter. The cause is unverified. Revisit the preview if it recurs on a slot created through the normal New Game handoff. Final starting inventory tuning remains open.
+
+**New Game sequence for an Archipelago run.** The normal game separates opening customization from primary-job selection with intro gameplay. Keep the opening choices, then send the player directly to the native primary-job picker. On confirmation, carry the selected protagonist and job-specific equipment and skills into LV1 Wishvale with Stia, the workshop built, and “Speak to Stia in Wishvale” available. The player should reach that state without playing the intervening intro or swapping a save file.
+
+Identify the native transition after the last opening choice, the action that opens the initial job picker, and what the game initializes on job confirmation. The Hunter file was captured after selection and verifies the resulting data. It does not identify those transitions. First test the two menus back-to-back, including backing out where the native UI permits, then verify entry into Wishvale and one save/reload without reopening either menu. Limit the alternate sequence to an Archipelago start.
 
 ## What we can reproduce today
 
@@ -108,7 +112,7 @@ Use the layout and town-task list as read-only reference values for this save. T
 
 ## Rules the implementation must preserve
 
-**Starting state and Wishvale.** Skip the intro and exclude its three chests and one hidden item. Target Wishvale with the workshop built, a LV1 protagonist, base gear for the chosen class and the Ring of Aelfric the Flamebringer. Preserve protagonist customization. Decide between in-game selection and YAML after testing startup. Apply Frostlands access when regions are randomized, the Spurring Ribbon when selected, available Master arcs when chapters are vanilla, and any configured LV1 starting travelers. Keep Wishvale quest progression in sequence. Test instant crop growth and animal production in Path to Self-Sustainability against the next quest trigger.
+**Starting state and Wishvale.** Skip the intro and exclude its three chests and one hidden item. Target Wishvale with the workshop built, a LV1 protagonist, base gear for the chosen class and the Ring of Aelfric the Flamebringer. Preserve protagonist customization. Use the native customization and primary-job screens in sequence for an Archipelago start. Apply Frostlands access when regions are randomized, the Spurring Ribbon when selected, available Master arcs when chapters are vanilla, and any configured LV1 starting travelers. Keep Wishvale quest progression in sequence. Test instant crop growth and animal production in Path to Self-Sustainability against the next quest trigger.
 
 **Geography and chapters.** A region item permits entry through a reachable exit. Build edges from the area and questline lists in the design notes. For example, test entry to Coastlands from Flatlands and via the long western route through Woodlands, Cliftlands, Riverlands, Sunlands and Highlands. Test the documented travel condition separately. An undiscovered exit marked with hashes in the notes needs an in-game traversal before it becomes a generator edge. Chapter access combines its region, predecessor, quest/key items and combat requirements. Treat a key’s pickup and the door or chapter flag it unlocks as separate events.
 
