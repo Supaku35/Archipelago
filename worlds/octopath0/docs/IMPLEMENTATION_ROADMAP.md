@@ -1,6 +1,6 @@
 # Octopath Traveler 0 Archipelago implementation roadmap
 
-**Current milestone · M2, a repeatable post-intro Wishvale start.** The two-room binding, chest submission and shield delivery playtest passed in-game, including crossed saves in both directions. Wishvale Candidate 01 passed the offline start playtest, including the Stia transition and disk reload. The next test carries a separately created character into the verified checkpoint.
+**Current milestone · M2, a repeatable post-intro Wishvale start.** The two-room binding, chest submission and shield delivery playtest passed in-game, including crossed saves in both directions. Wishvale Candidate 01 passed the offline start playtest, including the Stia transition and disk reload. Candidate 02 also passed with a separately created Hunter. The next step is the New Game handoff.
 
 This is the working implementation order. The [original design notes](Octopath%200%20Archipelago.md) remain the reference for area inventories, route details, chapter thresholds and desired settings. The first proposed playable release targets **Master of All**, the design’s default goal. Bestower of All and Traveler Hunt have their own milestones. Milestone order is a recommendation. A playtest result can change it.
 
@@ -12,9 +12,9 @@ The packaged test character keeps the reference appearance and job. Both active 
 
 **2026-11-25 · Candidate 01 passed in game.** The player loaded Wren and Stia at LV1, recovered both at the workshop, and left and re-entered Wishvale. Accepting Rekindling the Flame Pt. 1 changed the objective from “Speak to Stia in Wishvale” to “Head to North Theatropolis Plains” while The Restoration Begins stayed at 0/1. Party level, objective and town counter persisted through a manual save and reload.
 
-For Candidate 02, use an early unbound save from a separately created protagonist with a different primary job. Compare the name, appearance, job, equipment, favorite food and starter selections after loading and re-saving in Wishvale. Automatic startup from New Game and the final starting inventory are pending.
+**2026-11-25 · Candidate 02 passed in game.** The separately created LV1 Hunter retained the chosen name, appearance, job, equipment, masteries, favorite dish and starting items in Wishvale. Workshop rest restored the Hunter to 250 HP and 45 SP. The party left and re-entered town, and a manual save and reload preserved the character and pre-Stia objective.
 
-**Candidate 02 built, in-game test pending.** An independent LV1 Hunter save supplied the protagonist’s appearance, job equipment, skill selections, favorite dish and starter inventory. When adding a missing piece of equipment from the reference, the builder now takes the quantity needed by the two active travelers. The next playtest checks the transferred character and inventory across workshop recovery and a disk reload.
+The slot preview showed the reference protagonist’s name and appearance at LV2 with Stia, even though loading the slot produced the correct LV1 Hunter. The cause is unverified. Revisit the preview if it recurs on a slot created through the normal New Game handoff. The next milestone is to identify when the game has committed the player’s character and primary-job choices and use that point to start in Wishvale. Final starting inventory tuning remains open.
 
 ## What we can reproduce today
 
