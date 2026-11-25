@@ -65,6 +65,21 @@ Captured in-game on 2026-11-24. These are observations from one naturally played
 
 **Seeded-start acceptance test.** Begin at the pre-conversation objective with the workshop available. Accept the quest from Stia, verify the North Theatropolis Plains objective and the 0/1 town counter, then save and reload and check both again. Compare the two natural save slots to identify candidate quest-state changes. The reference run establishes the expected behavior. The underlying save fields and the seeded start still need verification.
 
+
+**2026-11-25 · Read-only save comparison.** The two natural saves each contain 105 quest records. Comparing complete serialized rows by `QuestMsdID` found exactly one changed row, `9001035`. The matching in-game objectives are recorded above.
+
+| Field in quest 9001035 | Before speaking to Stia | After accepting and reloading |
+|---|---:|---:|
+| `SeqState` | 1 | 2 |
+| `Progress` | 0 | 1 |
+| `CurrentTaskID` | 0 | 90368 |
+| `ClearNum` | 0 | 0 |
+| `ClearTick` | 0 | 0 |
+
+The row’s start and update timestamps also changed. Both saves already list `9001035` first in `SaveDataUser.QuestPriority`. The event list grew from 425 to 426 with one added row, `EventMsdID 99515`; all previously recorded events were byte-identical by ID. Treat that event as an observation until independently attributed. Party, inventory, treasure, village buildings, event flags and game variables were byte-identical in their respective top-level properties. Within `SaveDataVillage` only `CurrentBGM` changed. Playtime, position and battle count also differed between the saves.
+
+Use the first three quest fields as a read-only comparison when testing a seeded start. Let the normal Stia interaction advance them. Both reference saves already have the workshop, so identifying its construction state requires a checkpoint from **before** construction.
+
 ## Rules the implementation must preserve
 
 **Starting state and Wishvale.** Skip the intro and exclude its three chests and one hidden item. Target Wishvale with the workshop built, a LV1 protagonist, base gear for the chosen class and the Ring of Aelfric the Flamebringer. Preserve protagonist customization. Decide between in-game selection and YAML after testing startup. Apply Frostlands access when regions are randomized, the Spurring Ribbon when selected, available Master arcs when chapters are vanilla, and any configured LV1 starting travelers. Keep Wishvale quest progression in sequence. Test instant crop growth and animal production in Path to Self-Sustainability against the next quest trigger.
