@@ -4,6 +4,12 @@
 
 This is the working implementation order. The [original design notes](Octopath%200%20Archipelago.md) remain the reference for area inventories, route details, chapter thresholds and desired settings. The first proposed playable release targets **Master of All**, the design’s default goal. Bestower of All and Traveler Hunt have their own milestones. Milestone order is a recommendation. A playtest result can change it.
 
+## Wishvale candidate 01
+
+`tools/build_wishvale_start.py` creates a disposable offline slot from the verified pre-Stia reference. The builder recognizes the decoded reference by SHA-256. Supply that local save as the first argument and an unused output path as the second. For a compressed input, pass `--decoder` pointing to a trusted local Oodle library or libooz. An early, unbound `--character` save can supply appearance, primary job, job records, names and inventory. Early-play items and learned skills may carry over. Reference saves and generated slots stay private.
+
+The packaged test character keeps the reference appearance and job. Both active travelers begin at LV1, 0 EXP, 0 current JP, 1 HP and 0 SP so the workshop bed can verify native recovery. The village, quest data, two unopened prototype chests and unbound room state match the natural reference on disk. The next gate is loading the disposable slot in game, resting, traveling out and back, taking Stia’s quest, and saving and reloading. Automatic startup after character creation and the final starting inventory are still pending.
+
 ## What we can reproduce today
 
 | Evidence | What it establishes |
