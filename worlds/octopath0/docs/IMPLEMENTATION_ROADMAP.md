@@ -26,6 +26,8 @@ The first Windows attempt reached the hotkey and found six event contexts withou
 
 **Native load observation.** The optional `OctopathArchipelago/prototypes/OT0APLoadTrace` mod uses Ctrl+Alt+L to bracket a normal load of the existing Wishvale slot. It records observed calls, including the save object, restart initialization flag and level argument when exposed, plus before/after snapshots of the active save and field level. `SaveDataUser.LastMapMsdID` and `LastTownMapMsdID` are distinct in the natural reference. Verify the destination from the active level as well as the save record. A function missing from the trace is inconclusive because direct native calls can bypass reflected hooks. The post-job handoff is pending.
 
+**2026-11-25 · Candidate 02 loaded on Wishvale Trail.** All 18 trace hooks armed and four calls were observed, in order: `SaveLoadMenuBase:OnLoad`, `TitleUI:OnFinishLoadGame`, `LevelManager:LevelLoadedField`, and `LevelManager:LevelShownField`. The save object received by the title callback was the same object active after the field appeared. It carried Hunter job 6, last map 900011, last town 900002 and playing event 0. Both the active field name and load label were `Map_FP_Forest_N0_9001_A1` on the trail. `StartLevel` read `None` at both endpoints. No restart arguments or save-setter calls were observed. Calling the title callback from character creation has not been verified. The next comparison is a normal walk from the trail into Wishvale with the same trace, ending outdoors after control returns.
+
 ## What we can reproduce today
 
 | Evidence | What it establishes |
