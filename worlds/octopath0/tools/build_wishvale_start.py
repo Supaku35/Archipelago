@@ -148,6 +148,13 @@ def int_list(tag):
     return struct.unpack_from(f"<{n}i", tag.value, 4)
 
 
+def equipped_items(row):
+    items = Counter()
+    for field in ("EquipWeaponMsdID", "EquipArmorMsdID", "EquipAccessoryMsdID", "EquipRuneMsdID"):
+        items.update(ident for ident in int_list(row[field]) if ident > 0)
+    return items
+
+
 def stored(data):
     # Independent, literal Kraken blocks. Standard framing avoids an encoder dependency.
     return struct.pack("<Q", len(data)) + b"".join(
@@ -229,7 +236,6 @@ def build(template, character, name=None, *, outside_workshop=False):
             set_int(pcs[ident], key, value)
     world["SaveDataPC"].value = encode_rows(pcs)
 
-    required_gear = Counter()
     for key in CHARACTER_TABLES:
         local = records(world[key], "PCMsdID")
         source = records(donor[key], "PCMsdID")
@@ -239,10 +245,6 @@ def build(template, character, name=None, *, outside_workshop=False):
         if key == "SaveDataPCSkillBoard":
             for ident in (*HERO_ROWS, STIA):
                 set_int(local[ident], "NowJp", 0)
-        if key == "SaveDataPCSetEquip":
-            for ident in (900 + job, STIA):
-                for field in ("EquipWeaponMsdID", "EquipArmorMsdID", "EquipAccessoryMsdID", "EquipRuneMsdID"):
-                    required_gear.update(i for i in int_list(local[ident][field]) if i > 0)
         world[key].value = encode_rows(local)
 
     # Keep native starter choices (including food/masteries) from the donor.
@@ -251,7 +253,12 @@ def build(template, character, name=None, *, outside_workshop=False):
     bag = records(donor["SaveDataItem"], "ItemMsdID")
     for ident in WORLD_SUPPLIES:
         bag[ident] = stock[ident]
-    for ident, minimum in required_gear.items():
+    # The protagonist's native loadout can reference a weapon without a bag
+    # row. Only bringing Stia into the party requires reconciling inventory.
+    equips = records(world["SaveDataPCSetEquip"], "PCMsdID")
+    hero_gear = equipped_items(equips[HERO + job])
+    for ident, worn_by_stia in equipped_items(equips[STIA]).items():
+        minimum = worn_by_stia + hero_gear[ident]
         if ident not in bag:
             require(ident in stock, f"Missing equipped item record {ident}")
             bag[ident] = stock[ident]

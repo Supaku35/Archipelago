@@ -104,6 +104,29 @@ class WishvaleStartTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unbound"):
             start.build(self.world, prefix + start.encode_tags(donor) + bytes(4))
 
+    def test_job_two_can_equip_a_weapon_without_a_bag_row(self):
+        prefix, donor = start.document(self.world)
+        avatar = start.fields(donor["SaveDataMainCharacter"])
+        start.set_int(avatar, "JobID", 2)
+        start.set_int(avatar, "ReleasedJob", 1 << 2)
+        donor["SaveDataMainCharacter"].value = start.encode_tags(avatar)
+        equips = start.records(donor["SaveDataPCSetEquip"], "PCMsdID")
+        # Reproduce the reported Makeshift Axe. Use a shared Handaxe in the
+        # other slot to exercise both ownership cases in the same merge.
+        equips[902]["EquipWeaponMsdID"].value = struct.pack("<3i", 2, 104000, 104001)
+        donor["SaveDataPCSetEquip"].value = start.encode_rows(equips)
+        bag = start.records(donor["SaveDataItem"], "ItemMsdID")
+        self.assertNotIn(104000, bag)
+        self.assertEqual(start.integer(bag[104001]["Num"]), 1)
+        raw = prefix + start.encode_tags(donor) + bytes(4)
+        _, result = start.document(start.build(self.world, raw, outside_workshop=True))
+        merged = start.records(result["SaveDataItem"], "ItemMsdID")
+        self.assertNotIn(104000, merged)
+        self.assertEqual(start.integer(merged[104001]["Num"]), 2)
+        equipped = start.records(result["SaveDataPCSetEquip"], "PCMsdID")
+        self.assertEqual(equipped[902], equips[902])
+        self.assertEqual(equipped[start.STIA], equips[start.STIA])
+
     def test_existing_slot_survives_cli(self):
         with TemporaryDirectory() as directory:
             template = Path(directory) / "template.gvas"
