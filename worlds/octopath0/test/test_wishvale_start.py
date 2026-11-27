@@ -58,6 +58,18 @@ class WishvaleStartTests(unittest.TestCase):
         names = start.fields(after["SaveNames"])
         self.assertEqual(start.fstring(names["MainCharacterName"].value, 0)[0], "Wren")
 
+    def test_workshop_spawn_only_changes_the_four_location_fields(self):
+        _, trail = start.document(start.build(self.world, self.world))
+        _, town = start.document(start.build(self.world, self.world, outside_workshop=True))
+        self.assertEqual({k for k in trail if trail[k] != town[k]}, {"SaveDataUser"})
+        before, after = (start.fields(doc["SaveDataUser"]) for doc in (trail, town))
+        self.assertEqual({k for k in before if before[k] != after[k]},
+                         {"LastMapMsdID", "LastUniquePath", "LastPosition", "LastDirect"})
+        for key, value in (("LastTownMapMsdID", 900002), ("LastMapMsdID", 900002),
+                           ("LastUniquePath", 3), ("LastDirect", 0)):
+            self.assertEqual(start.integer(after[key]), value)
+        self.assertEqual(after["LastPosition"].value, struct.pack("<i3f", 3, -3995.36521, -1975.57263, 334.000152))
+
     def test_other_job_donor_and_binding_guard(self):
         prefix, donor = start.document(self.world)
         avatar = start.fields(donor["SaveDataMainCharacter"])

@@ -189,7 +189,7 @@ def unpack_save(path, decoder=None):
     return target.raw[:size]
 
 
-def build(template, character, name=None):
+def build(template, character, name=None, *, outside_workshop=False):
     require(hashlib.sha256(template).hexdigest() == WORLD_SHA256,
             "World template must be the verified pre-Stia reference")
     prefix, world = document(template)
@@ -213,6 +213,13 @@ def build(template, character, name=None):
     user, origin = fields(world["SaveDataUser"]), fields(donor["SaveDataUser"])
     for key in ("PlayerNameLanguage", "FavoriteDishLanguage"):
         set_int(user, key, integer(origin[key]))
+    if outside_workshop:
+        # Live actor pose at the chosen workshop spot. The save's cached pose
+        # still described a different point after the walk into town.
+        set_int(user, "LastMapMsdID", 900002)
+        set_int(user, "LastUniquePath", 3)
+        set_int(user, "LastDirect", 0)
+        user["LastPosition"].value = struct.pack("<i3f", 3, -3995.36521, -1975.57263, 334.000152)
     world["SaveDataUser"].value = encode_tags(user)
 
     pcs = records(world["SaveDataPC"], "PCMsdID")
@@ -262,10 +269,12 @@ def main():
     parser.add_argument("--character", type=Path, help="An early unbound save with a chosen job")
     parser.add_argument("--name", help="Optional test-slot display name")
     parser.add_argument("--decoder", type=Path, help="Trusted local native decoder for compressed input")
+    parser.add_argument("--outside-workshop", action="store_true",
+                        help="Start at the measured outdoor Wishvale position instead of the trail checkpoint")
     args = parser.parse_args()
     template = unpack_save(args.template, args.decoder)
     character = unpack_save(args.character, args.decoder) if args.character else template
-    candidate = stored(build(template, character, args.name))
+    candidate = stored(build(template, character, args.name, outside_workshop=args.outside_workshop))
     # Exclusive creation also protects inputs and pre-existing slots.
     with args.output.open("xb") as output:
         try:
